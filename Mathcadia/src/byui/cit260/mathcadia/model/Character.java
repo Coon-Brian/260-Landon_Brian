@@ -26,12 +26,13 @@ public class Character implements Serializable{
         
     }
     
-    public void addItem(/*item goes here*/){
+    
+    public void addItem(/* Item goes here*/){
         
     }
     
     public void addHealth(Integer points){
-        
+        gradePoints += points;
     }
     
     public void addExperience(Integer points){

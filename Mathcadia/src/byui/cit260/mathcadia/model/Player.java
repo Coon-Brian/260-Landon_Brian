@@ -4,21 +4,25 @@
 package byui.cit260.mathcadia.model;
 
 import java.io.Serializable;
+import java.util.Map;
 import java.util.Objects;
 
 /**
  *
  * @author Brian
  */
-public class Player implements Serializable{
+public class Player extends Character implements Serializable{
     private String userName;
-    private String playerInventory;
+    private Map<String,Integer> playerInventory;
     private double experience;
     private double bestScore;
 
     public Player() {
     }
     
+    public Player(String name){
+        userName = name;
+    }
     
 
     public String getUserName() {
@@ -29,14 +33,18 @@ public class Player implements Serializable{
         this.userName = userName;
     }
 
-    public String getPlayerInventory() {
+    public Map<String, Integer> getPlayerInventory() {
         return playerInventory;
     }
 
-    public void setPlayerInventory(String playerInventory) {
-        this.playerInventory = playerInventory;
+    /* This function takes in a string and an Integer, it adds an item to
+    our map(or "item holder") and sets the string as the name of our item and 
+    the Integer as the number of items
+    */
+    public void setPlayerInventory(String itemName, Integer num) {
+        this.playerInventory.put(itemName,num);
     }
-
+    
     public double getExperience() {
         return experience;
     }

@@ -18,7 +18,7 @@ public class Mathcadia {
         Player playerOne = new Player();
         
         playerOne.setUserName("George");
-        playerOne.setPlayerInventory("Hammer, wrench");
+        playerOne.setPlayerInventory("Hammer", 2);
         playerOne.setExperience(8.00);
         playerOne.setBestScore(6.00);
         
