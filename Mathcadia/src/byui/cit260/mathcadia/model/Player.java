@@ -4,6 +4,7 @@
 package byui.cit260.mathcadia.model;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -18,6 +19,10 @@ public class Player extends Character implements Serializable{
     private double bestScore;
 
     public Player() {
+        userName = "";
+        playerInventory = new HashMap<>();
+        experience = 0;
+        bestScore = 0;
     }
     
     public Player(String name){
@@ -61,6 +66,41 @@ public class Player extends Character implements Serializable{
         this.bestScore = bestScore;
     }
 
+    public void addItem(String itemName){
+        Integer numItems = playerInventory.get(itemName);
+        //if the item added does not exist, create new spot for it
+        if (numItems == null){
+            playerInventory.put(itemName, 1);
+        }
+        //else increment the number of the item that currently exists
+        else
+            playerInventory.put(itemName, numItems + 1);
+    }
+    
+    /** This method test to see if an item is found within the inventory.
+     * if it is then it is used and taken out of the inventory. A boolean is
+     * returned based on whether an item was actually used.
+     * @param itemName
+     */
+    public boolean useItem(String itemName){
+        boolean itemNotUsed = false;
+        
+        Integer numItems = playerInventory.get(itemName);
+        //if the item requested does not exist, display error
+        if (numItems == null){
+            System.out.print("You cannot use that item!");
+            //return false so that the player must choose again
+            return false;
+        }
+        //else decrement the number that currently exists
+        else
+            playerInventory.put(itemName, numItems - 1);
+        //if the item has run out, remove it from the inventory
+        if (playerInventory.get(itemName) == 0)
+            playerInventory.remove(itemName);
+        return true;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;
