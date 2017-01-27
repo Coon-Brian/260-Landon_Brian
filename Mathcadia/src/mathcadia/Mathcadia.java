@@ -22,7 +22,8 @@ public class Mathcadia {
     public static void main(String[] args) {
         Bedroom playerOne = new Bedroom();
         
-       
+
+        
       
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
