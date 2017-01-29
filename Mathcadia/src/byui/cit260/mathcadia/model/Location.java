@@ -5,7 +5,9 @@
  */
 package byui.cit260.mathcadia.model;
 
+import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * This class holds the methods that are similar between all of the rooms
@@ -13,14 +15,14 @@ import java.util.List;
  * @author Landon Shumway
  * @since 1/26/17
  */
-public abstract class Location{
+public abstract class Location implements Serializable{
     
-    private Integer roomNumber;
-    private String roomName;
-    private List<String/*change to item*/> roomItems;
-    private List<String> locationStory;
+    protected Integer roomNumber;
+    protected String roomName;
+    protected List<Item> roomItems;
+    protected List<String> locationStory;
     
-    Location(){    
+    public Location(){    
     }
 
     public Integer getRoomNumber() {
@@ -31,7 +33,7 @@ public abstract class Location{
         return roomName;
     }
 
-    public List<String> getRoomItems() {
+    public List<Item> getRoomItems() {
         return roomItems;
     }
 
@@ -47,7 +49,7 @@ public abstract class Location{
         this.roomName = roomName;
     }
 
-    public void setRoomItems(List<String> roomItems) {
+    public void setRoomItems(List<Item> roomItems) {
         this.roomItems = roomItems;
     }
 
@@ -71,16 +73,55 @@ public abstract class Location{
         
     }
     
-    //public Item searchRoom()
+    public Item searchRoom(){
+        return null;
+    }
     
     public boolean promptSave(){
         boolean answer = false;
         return answer;
     }
-    
-    
-    
-    
-    
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 37 * hash + Objects.hashCode(this.roomNumber);
+        hash = 37 * hash + Objects.hashCode(this.roomName);
+        hash = 37 * hash + Objects.hashCode(this.roomItems);
+        hash = 37 * hash + Objects.hashCode(this.locationStory);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Location other = (Location) obj;
+        if (!Objects.equals(this.roomName, other.roomName)) {
+            return false;
+        }
+        if (!Objects.equals(this.roomNumber, other.roomNumber)) {
+            return false;
+        }
+        if (!Objects.equals(this.roomItems, other.roomItems)) {
+            return false;
+        }
+        if (!Objects.equals(this.locationStory, other.locationStory)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Location{" + "roomNumber=" + roomNumber + ", roomName=" + roomName + ", roomItems=" + roomItems + ", locationStory=" + locationStory + '}';
+    }
     
 }

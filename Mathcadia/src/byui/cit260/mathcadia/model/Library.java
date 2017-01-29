@@ -7,6 +7,7 @@ package byui.cit260.mathcadia.model;
 
 import java.awt.Desktop;
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -16,10 +17,13 @@ import java.net.URISyntaxException;
  * @author Landon
  * @since Jan. 26 2017
  */
-public class Library extends Location {
+public class Library extends Location implements Serializable{
     
-    Library(){
-        
+    public Library(){
+        roomNumber = 2;
+        roomName = "Library";
+        roomItems = null;
+        locationStory = null;
     }
     
     @Override
@@ -52,4 +56,6 @@ public class Library extends Location {
             }
         }
     }
+    
+    
 }
