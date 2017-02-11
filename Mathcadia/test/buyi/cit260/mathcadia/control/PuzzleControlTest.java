@@ -61,5 +61,63 @@ public class PuzzleControlTest {
         assertEquals(expResult, result);
         
     }
+
+    /**
+     * Test of calcVolumeOfCone method, of class PuzzleControl.
+     */
+    @Test
+    public void testCalcVolumeOfCone() {
+        System.out.println("calcVolumeOfCone");
+        
+        System.out.println("Test Case #1");
+        double diameter = 5.0;
+        double height = 7.0;
+        PuzzleControl instance = new PuzzleControl();
+        double expResult = 45.8149;
+        double result = instance.calcVolumeOfCone(diameter, height);
+        assertEquals(expResult, result, 0.0001);
+        
+        System.out.println("Test Case #2");
+        diameter = -1.0;
+        height = 7.0;
+        expResult = -1;
+        result = instance.calcVolumeOfCone(diameter, height);
+        assertEquals(expResult, result, 0.0001);
+        
+        System.out.println("Test Case #3");
+        diameter = 6.0;
+        height = -1.0;
+        expResult = -1;
+        result = instance.calcVolumeOfCone(diameter, height);
+        assertEquals(expResult, result, 0.0001);
+        
+        System.out.println("Test Case #4");
+        diameter = 7.0;
+        height = 8.0;
+        expResult = -1;
+        result = instance.calcVolumeOfCone(diameter, height);
+        assertEquals(expResult, result, 0.0001);
+
+        System.out.println("Test Case #5");
+        diameter = 0.0;
+        height = 7.0;
+        expResult = -1;
+        result = instance.calcVolumeOfCone(diameter, height);
+        assertEquals(expResult, result, 0.0001);
+
+        System.out.println("Test Case #6");
+        diameter = 6.0;
+        height = 0.0;
+        expResult = -1;
+        result = instance.calcVolumeOfCone(diameter, height);
+        assertEquals(expResult, result, 0.0001);
+
+        System.out.println("Test Case #7");
+        diameter = 6.0;
+        height = 7.0;
+        expResult = 65.9734;
+        result = instance.calcVolumeOfCone(diameter, height);
+        assertEquals(expResult, result, 0.0001);
+    }
     
 }
