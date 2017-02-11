@@ -51,8 +51,9 @@ public class PuzzleControl {
     * a smaller number greater than 2 that is a factor of the first. They will 
     * input two numbers. The function tests if the smaller number is a factor of
     * the larger. If it is, the function returns the other factor.
-    * @param number
-    * @param potentialFactor 
+    * @param largeNum
+    * @param potentialF 
+    * @author Landon Shumway
     */
     public int isFactor(String largeNum, String potentialF){
         //make sure input is valid
