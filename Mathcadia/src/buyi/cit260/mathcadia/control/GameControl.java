@@ -27,5 +27,9 @@ public class GameControl {
         
         return new Player();
     }
+
+    public static void createNewGame(Player player) {
+        //nothing here yet!
+    }
     
 }

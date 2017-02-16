@@ -24,6 +24,8 @@ public class Mathcadia {
     /**
      * @param args the command line arguments
      */
+    private static Player player;
+ 
     public static void main(String[] args) {
     
         // create StartProgramViewOrig and display the start progam view
@@ -33,4 +35,11 @@ public class Mathcadia {
     }
 
     
+     public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        Mathcadia.player = player;
+    }
 }
