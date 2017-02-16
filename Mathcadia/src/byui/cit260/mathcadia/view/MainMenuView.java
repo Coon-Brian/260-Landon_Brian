@@ -64,7 +64,8 @@ public class MainMenuView {
                 this.loadSaveGame();
                 break;
             case "H":
-                //help menu
+                HelpMenuView help = new HelpMenuView();
+                help.displayHelpMenuView();
                 break;
             case "S":
                 this.saveGame();

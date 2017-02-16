@@ -23,7 +23,7 @@ public class HelpMenuView {
                     "\nQ - Return to the game";
     }
     
-    public void displayMainMenuView(){
+    public void displayHelpMenuView(){
         boolean done = false;
         
         do{
