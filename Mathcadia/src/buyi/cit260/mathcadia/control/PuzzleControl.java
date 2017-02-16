@@ -69,7 +69,7 @@ public class PuzzleControl {
         if (number <= 100 || potentialFactor <= 2)
             return -1;
 
-        //check if it is a factor
+        //check if it is a factor, return other factor if true
         if (number % potentialFactor == 0)
             return number / potentialFactor;
         else 

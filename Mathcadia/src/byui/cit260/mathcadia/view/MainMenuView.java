@@ -11,4 +11,12 @@ package byui.cit260.mathcadia.view;
  */
 public class MainMenuView {
     
+    public MainMenuView(){
+        
+    }
+    
+    public void displayMainMenuView(){
+        System.out.println("\n running display main menu ***");
+    }
+    
 }

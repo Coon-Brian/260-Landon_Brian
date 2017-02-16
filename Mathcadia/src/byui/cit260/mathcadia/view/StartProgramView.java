@@ -5,6 +5,10 @@
  */
 package byui.cit260.mathcadia.view;
 
+import buyi.cit260.mathcadia.control.GameControl;
+import byui.cit260.mathcadia.model.Player;
+import java.util.Scanner;
+
 /**
  *
  * @author Brian
@@ -12,9 +16,11 @@ package byui.cit260.mathcadia.view;
 public class StartProgramView {
     
     private String promptMessage;
+    Scanner userInput;
     
     public StartProgramView() {
         this.promptMessage = "\nPlease enter your name: ";
+        
         // display the banner when view is created
         this.displayBanner();
     }
@@ -33,11 +39,11 @@ public class StartProgramView {
               + "\n* work together to unlock the power of algebraic       *"
               + "\n* spells by solving problems involving different       *"
               + "\n* aspects of math. Your knowledge in the math arts     *"
-              + "\n* knowledge in the math arts can be used to fight      *"
-              + "\n* monsters and unlock special abilities. You and       *"
-              + "\n* Matica are both working to gain the title of Math    *"
-              + "\n* Master and finally graduate from your studies.       *"
-              + "\n*                                                      *"
+              + "\n* can be used to fight monsters and unlock special     *"
+              + "\n* abilities. You and Matica are both working to gain   *"
+              + "\n* the title of Math Master and finally graduate from   *"
+              + "\n* your studies.                                        *"
+              + "\n*                                                      *"          
               + "\n* You will be studying for an exam by sparring with    *"
               + "\n* monsters. You will have to advance through 20        *"
               + "\n* different training rooms by solving math problems    *"
@@ -53,6 +59,60 @@ public class StartProgramView {
     }
 
     public void displayStartProgramView() {
-        System.out.println("\n*** displayStartProgram() function called ***");
+        
+        boolean done = false;
+        do{
+            String playersName = getPlayersName();
+            if (playersName.toUpperCase().equals("Q"))
+                return;
+            done = this.doAction(playersName);
+            
+        } while(!done);
+    }
+    
+    private String getPlayersName(){
+        Scanner keyBoard = new Scanner(System.in);
+        String value = "";
+        boolean valid = false;
+        
+        while (!valid){
+            System.out.println("\n" + this.promptMessage);
+            value = keyBoard.nextLine();
+            value = value.trim();
+            if (value.length() < 1){
+                System.out.println("\nInvald value: value cannot be blank");
+                continue;
+            }
+            break;
+        }
+        return value;
+    }
+    
+    public boolean doAction(String playerName){
+        if (playerName.length() < 2){
+            System.out.println("\nInvalid Player name: " + 
+                    "the name must be greater than one character in length");
+            return false;
+        }
+        
+        Player player = GameControl.createPlayer(playerName);
+        
+        if (player == null){
+            System.out.println("\nError creating the player");
+            return false;
+        }
+        
+        this.displayNextView(player);
+        
+        return true;
+    }
+
+    private void displayNextView(Player player) {
+        System.out.print("\nmessage Here!");
+        
+        
+        MainMenuView mainMenu = new MainMenuView();
+        
+        mainMenu.displayMainMenuView();
     }
 }

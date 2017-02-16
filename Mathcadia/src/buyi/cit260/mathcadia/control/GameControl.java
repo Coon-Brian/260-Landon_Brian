@@ -5,10 +5,27 @@
  */
 package buyi.cit260.mathcadia.control;
 
+import byui.cit260.mathcadia.model.Game;
+import byui.cit260.mathcadia.model.Player;
+
 /**
  *
  * @author Brian
  */
 public class GameControl {
+
+    public static Player createPlayer(String name) {
+        
+        if (name == null){
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setName(name);
+        
+        Game.setPlayer(player);
+        
+        return new Player();
+    }
     
 }
