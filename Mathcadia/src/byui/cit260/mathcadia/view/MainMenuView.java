@@ -18,7 +18,15 @@ public class MainMenuView {
     private String menu;
     
     public MainMenuView(){
-        this.menu = "\n menu HERE!";
+        this.menu = "\n------------------------------"
+                  + "\n|          Main Menu         |"
+                  + "\n------------------------------"
+                  + "\n N - Start new game"
+                  + "\n L - Load saved game"
+                  + "\n H - Help menu"
+                  + "\n S - Save game"
+                  + "\n E - Exit Game"
+                  + "\n------------------------------";
     }
     
     public void displayMainMenuView(){
@@ -78,8 +86,6 @@ public class MainMenuView {
                 break;
         }
                        
-        
-        
         return false;
     } 
 

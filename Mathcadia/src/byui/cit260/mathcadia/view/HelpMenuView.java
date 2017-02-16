@@ -81,15 +81,15 @@ public class HelpMenuView {
     } 
 
     private void displayObjective() {
-        
+
     }
 
     private void displayMovement() {
-        
+
     }
 
     private void displayRules() {
-        
+
     }
     
 }
