@@ -5,6 +5,8 @@
  */
 package byui.cit260.mathcadia.model;
 
+import buyi.cit260.mathcadia.control.GameControl;
+
 /**
  *
  * @author Landon
@@ -13,8 +15,15 @@ public class Game {
 
   
     private static Player player;
+    String gameFile;
+    Map gameMap;
+    GameControl gameHandler;
     
-    Game(){
+    Game(){ 
+    }
+    
+    //non-default contructor
+    Game(Player player){
         
     }
     

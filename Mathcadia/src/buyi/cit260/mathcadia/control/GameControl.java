@@ -25,11 +25,12 @@ public class GameControl {
         
         Game.setPlayer(player);
         
-        return new Player();
+        return player;
     }
 
     public static void createNewGame(Player player) {
         //nothing here yet!
+        System.out.println("\nCreating new game...");
     }
     
 }

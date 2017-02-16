@@ -108,7 +108,10 @@ public class StartProgramView {
     }
 
     private void displayNextView(Player player) {
-        System.out.print("\nmessage Here!");
+        System.out.print
+        ("\n*======================================================*" +
+         "\n* Hello " + player.getName() + ", welcome to MathCadia" +
+         "\n*======================================================*");
         
         
         MainMenuView mainMenu = new MainMenuView();

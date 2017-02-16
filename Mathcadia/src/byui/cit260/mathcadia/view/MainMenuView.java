@@ -84,16 +84,20 @@ public class MainMenuView {
 
     private void startNewGame() {
         GameControl.createNewGame(Mathcadia.getPlayer());
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
     private void loadSaveGame() {
-    
+        System.out.println("\nLoading game...");
     }
 
     private void saveGame() {
+        System.out.println("\nSaving game...");
     }
 
     private void exitGame() {
-        
+        System.out.println("\nExiting game...");
     }
 }
