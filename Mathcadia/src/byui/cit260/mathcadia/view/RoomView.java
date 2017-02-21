@@ -65,11 +65,13 @@ public class RoomView {
         Scanner keyBoard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
+        boolean notVisited = true;
         
         //here we are checking if the player is currently
         //in the library, if they are display alternative menu
-        if("text/library.txt".equals(currentFile)){
+        if("text/library.txt".equals(currentFile) && notVisited){
             this.displayLibraryMenu();
+            notVisited = false;
         }
         
         while (!valid){
@@ -127,7 +129,7 @@ public class RoomView {
     }
 
     private void displayLibraryMenu() {
-        
+        System.out.println("Read from the Library? (y/n)");
         Scanner keyBoard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
@@ -146,9 +148,13 @@ public class RoomView {
             case "Y":
                 Library library = new Library();
                 library.openWebBrowser();
+                System.out.println("Once you're done reading, head to the battle room!");
                 break;
             case "N":
                 System.out.println("Well then let's go fight");
+                break;
+            default:
+                System.out.println("\nInvald value: value should be Y or N");
                 break;
         }
     }
