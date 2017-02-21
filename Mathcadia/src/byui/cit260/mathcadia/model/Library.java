@@ -23,7 +23,7 @@ public class Library extends Location implements Serializable{
         roomNumber = 2;
         roomName = "Library";
         roomItems = null;
-        locationStory = null;
+        battleRoomFileNames = null;
     }
     
     @Override

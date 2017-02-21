@@ -20,7 +20,7 @@ public abstract class Location implements Serializable{
     protected Integer roomNumber;
     protected String roomName;
     protected List<Item> roomItems;
-    protected List<String> locationStory;
+    protected static List<String> battleRoomFileNames;
     
     public Location(){    
     }
@@ -37,8 +37,8 @@ public abstract class Location implements Serializable{
         return roomItems;
     }
 
-    public List<String> getLocationStory() {
-        return locationStory;
+    public static List<String> getLocationStory() {
+        return battleRoomFileNames;
     }
 
     public void setRoomNumber(Integer roomNumber) {
@@ -54,7 +54,7 @@ public abstract class Location implements Serializable{
     }
 
     public void setLocationStory(List<String> locationStory) {
-        this.locationStory = locationStory;
+        this.battleRoomFileNames = locationStory;
     }
     
     
@@ -88,7 +88,7 @@ public abstract class Location implements Serializable{
         hash = 37 * hash + Objects.hashCode(this.roomNumber);
         hash = 37 * hash + Objects.hashCode(this.roomName);
         hash = 37 * hash + Objects.hashCode(this.roomItems);
-        hash = 37 * hash + Objects.hashCode(this.locationStory);
+        hash = 37 * hash + Objects.hashCode(this.battleRoomFileNames);
         return hash;
     }
 
@@ -113,7 +113,7 @@ public abstract class Location implements Serializable{
         if (!Objects.equals(this.roomItems, other.roomItems)) {
             return false;
         }
-        if (!Objects.equals(this.locationStory, other.locationStory)) {
+        if (!Objects.equals(this.battleRoomFileNames, other.battleRoomFileNames)) {
             return false;
         }
         return true;
@@ -121,7 +121,7 @@ public abstract class Location implements Serializable{
 
     @Override
     public String toString() {
-        return "Location{" + "roomNumber=" + roomNumber + ", roomName=" + roomName + ", roomItems=" + roomItems + ", locationStory=" + locationStory + '}';
+        return "Location{" + "roomNumber=" + roomNumber + ", roomName=" + roomName + ", roomItems=" + roomItems + ", locationStory=" + battleRoomFileNames + '}';
     }
     
 }

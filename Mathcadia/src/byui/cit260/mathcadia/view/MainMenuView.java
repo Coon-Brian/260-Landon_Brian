@@ -6,7 +6,10 @@
 package byui.cit260.mathcadia.view;
 
 import buyi.cit260.mathcadia.control.GameControl;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import mathcadia.Mathcadia;
 
 /**
@@ -92,8 +95,14 @@ public class MainMenuView {
     private void startNewGame() {
         GameControl.createNewGame(Mathcadia.getPlayer());
         
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        RoomView bedroom;
+        try {
+            bedroom = new RoomView("bedroom.txt");
+            bedroom.displayRoomView();
+        } catch (FileNotFoundException ex) {
+            System.out.print(ex.getMessage());
+        }
+        
     }
 
     private void loadSaveGame() {

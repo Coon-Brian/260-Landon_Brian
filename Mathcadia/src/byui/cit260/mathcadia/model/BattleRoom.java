@@ -26,7 +26,7 @@ public class BattleRoom extends Location implements Serializable {
         roomNumber = 5;
         roomName = "Battle-Room 5";
         roomItems = null;
-        locationStory = null;
+        battleRoomFileNames = null;
     }
     
     BattleRoom(Integer roomNum, Monster monster){
@@ -91,7 +91,7 @@ public class BattleRoom extends Location implements Serializable {
 
     @Override
     public String toString() {
-        return "BattleRoom{" + "roomNumber=" + roomNumber + ", roomName=" + roomName + ", roomItems=" + roomItems + ", locationStory=" + locationStory + ", roomMonster=" + roomMonster + ", equations=" + equations + '}';
+        return "BattleRoom{" + "roomNumber=" + roomNumber + ", roomName=" + roomName + ", roomItems=" + roomItems + ", locationStory=" + battleRoomFileNames + ", roomMonster=" + roomMonster + ", equations=" + equations + '}';
     }
     
     

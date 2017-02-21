@@ -33,4 +33,8 @@ public class GameControl {
         System.out.println("\nCreating new game...");
     }
     
+    public static void saveGame(Player player){
+        System.out.println("\nSaving game...");
+    }
+    
 }

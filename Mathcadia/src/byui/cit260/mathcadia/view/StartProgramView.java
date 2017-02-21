@@ -107,7 +107,7 @@ public class StartProgramView {
         return true;
     }
 
-    private void displayNextView(Player player) {
+    private void displayNextView(Player player){
         System.out.print
         ("\n*======================================================*" +
          "\n* Hello " + player.getName() + ", welcome to MathCadia" +

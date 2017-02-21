@@ -5,10 +5,25 @@
  */
 package buyi.cit260.mathcadia.control;
 
+import byui.cit260.mathcadia.model.Item;
+import byui.cit260.mathcadia.model.Location;
+import java.util.List;
+
 /**
  *
  * @author Brian
  */
 public class LocationControl {
     
+    
+    public static String getBattleLocationFile(){
+        String fileName = Location.getLocationStory().get(0);
+        Location.getLocationStory().remove(0);
+        return fileName;
+    }
+    
+    public static Item searchRoom(){
+        System.out.println("Searching Room ... Nothing here");
+        return null;
+    }
 }

@@ -6,31 +6,45 @@
 package byui.cit260.mathcadia.view;
 
 import buyi.cit260.mathcadia.control.GameControl;
+import buyi.cit260.mathcadia.control.LocationControl;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
-
+import mathcadia.Mathcadia;
 
 /**
  *
- * @author Brian
+ * @author Landon
  */
-public class GamePlayMenuView {
-
-    private String menu;
+public class RoomView {
     
-    public GamePlayMenuView(){
+    private String menu;
+    private String roomText = "";
+    
+    public RoomView(String filename) throws FileNotFoundException{
+        
         this.menu = "\n------------------------------"
-                  + "\n|      Game Play Menu        |"
+                  + "\n|          Main Menu         |"
                   + "\n------------------------------"
-                  + "\n H - Hint Menu"
-                  + "\n M - Move to a different location"
-                  + "\n L - List of Monsters"
-                  + "\n F - Monsters Found"
-                  + "\n H - Help Menu"
-                  + "\n Q - Quit"
+                  + "\n L - Go to Library"
+                  + "\n B - Go to next battle Room"
+                  + "\n F - Explore Room"
+                  + "\n H - Help menu"
+                  + "\n S - Save game"
+                  + "\n E - Exit Game"
                   + "\n------------------------------";
-    }    
-    public void GamePlayMenuView(){
+        
+        File file = new File(filename);
+        Scanner fileReader = new Scanner(file);
+        while (fileReader.hasNextLine()){
+            this.roomText += fileReader.nextLine() + "\n";
+        }
+        
+    }
+    
+    public void displayRoomView() throws FileNotFoundException{
         boolean done = false;
+        System.out.print(roomText);
         
         do{
             String menuOption = this.getMenuOption();
@@ -40,9 +54,10 @@ public class GamePlayMenuView {
             done = this.doAction(menuOption);
         }while (!done);
         
-    }    
-
-    private String getMenuOption() {
+        
+    }
+    
+    private String getMenuOption(){
         Scanner keyBoard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
@@ -59,62 +74,42 @@ public class GamePlayMenuView {
         }
         return value;
     }
-
-    private boolean doAction(String menuOption) {
+    
+    private boolean doAction(String menuOption) throws FileNotFoundException{
         String choice = menuOption.toUpperCase();
         
         switch (choice){
-            case "V":
-                this.viewMap();
-                break;
-            case "C":
-                this.hintMen();
-                break;
-            case "M":
-                this.moveLocation();
-                break;
             case "L":
-                this.listMonsters();
+                RoomView library = new RoomView("library.txt");
+                library.displayRoomView();
                 break;
-            case "F":
-                this.foundMonsters();
+            case "B":
+                String fileName = LocationControl.getBattleLocationFile();
+                RoomView battleRoom = new RoomView(fileName);
+                battleRoom.displayRoomView();
                 break;
             case "H":
                 HelpMenuView help = new HelpMenuView();
                 help.displayHelpMenuView();
                 break;
-            case "Q":
-                MainMenuView mainMenu = new MainMenuView();
-                mainMenu.displayMainMenuView();
-                break;                
+            case "S":
+                GameControl.saveGame(Mathcadia.getPlayer());
+                break;
+            case "E":
+                this.exitGame();
+                break;
+            case "F":
+                LocationControl.searchRoom();
+                break;
             default:
                 System.out.println("\n Invalid selection, Please try again.");
                 break;
         }
                        
         return false;
-    }
-
-    private void viewMap() {
-        System.out.println("\nViewing map...");
+    } 
+    
+    private void exitGame(){
         
     }
-
-    private void hintMen() {
-        System.out.println("\nHint menu...");
-    }
-
-    private void moveLocation() {
-        System.out.println("\nMove to a new location...");
-    }
-
-    private void listMonsters() {
-        System.out.println("\nList of monsters...");
-    }
-
-    private void foundMonsters() {
-        System.out.println("\nMonsters that have been found...");
-    }
-
-
 }
