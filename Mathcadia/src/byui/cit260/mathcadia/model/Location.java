@@ -17,7 +17,7 @@ import java.util.Objects;
  */
 public abstract class Location implements Serializable{
     
-    protected Integer roomNumber;
+    protected static Integer roomNumber = 1;
     protected String roomName;
     protected List<Item> roomItems;
     protected static List<String> battleRoomFileNames;
@@ -25,8 +25,8 @@ public abstract class Location implements Serializable{
     public Location(){    
     }
 
-    public Integer getRoomNumber() {
-        return roomNumber;
+    public static Integer getRoomNumber() {
+        return Location.roomNumber;
     }
 
     public String getRoomName() {
@@ -42,7 +42,7 @@ public abstract class Location implements Serializable{
     }
 
     public void setRoomNumber(Integer roomNumber) {
-        this.roomNumber = roomNumber;
+        Location.roomNumber = roomNumber;
     }
 
     public void setRoomName(String roomName) {

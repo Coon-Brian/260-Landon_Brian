@@ -19,6 +19,7 @@ public class PuzzleRoom implements Serializable{
     private String puzzle;
 
     public PuzzleRoom() {
+        
     }
     
 

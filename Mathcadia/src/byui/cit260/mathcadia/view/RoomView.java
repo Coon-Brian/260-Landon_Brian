@@ -36,6 +36,7 @@ public class RoomView {
                   + "\n H - Help menu"
                   + "\n S - Save game"
                   + "\n E - Exit Game"
+                  + "\n D - Go to final room"
                   + "\n------------------------------";
         
         File file = new File(filename);
@@ -95,11 +96,8 @@ public class RoomView {
                 library.displayRoomView();
                 break;
             case "B":
-                //get the file from Location Control, this changes everytime 
-                //it is used and takes the player to the next room
-                String fileName = LocationControl.getBattleLocationFile();
-                RoomView battleRoom = new RoomView("text/" + fileName);
-                battleRoom.displayRoomView();
+                BattleRoomView battleRoom = new BattleRoomView();
+                battleRoom.battleMenuView();
                 break;
             case "H":
                 HelpMenuView help = new HelpMenuView();
@@ -113,6 +111,10 @@ public class RoomView {
                 break;
             case "F":
                 LocationControl.searchRoom();
+                break;
+            case "D":
+                FinalRoomView lastRoom = new FinalRoomView();
+                lastRoom.finalMenuView();
                 break;
             default:
                 System.out.println("\n Invalid selection, Please try again.");
