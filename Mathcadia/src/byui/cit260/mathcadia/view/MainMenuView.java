@@ -97,7 +97,8 @@ public class MainMenuView {
         
         RoomView bedroom;
         try {
-            bedroom = new RoomView("bedroom.txt");
+            String fileName = "bedroom.txt"; 
+            bedroom = new RoomView("text/" + fileName);
             bedroom.displayRoomView();
         } catch (FileNotFoundException ex) {
             System.out.print(ex.getMessage());
