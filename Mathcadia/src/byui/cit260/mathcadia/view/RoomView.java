@@ -65,13 +65,11 @@ public class RoomView {
         Scanner keyBoard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
-        boolean notVisited = true;
         
         //here we are checking if the player is currently
         //in the library, if they are display alternative menu
-        if("text/library.txt".equals(currentFile) && notVisited){
+        if("text/library.txt".equals(currentFile)){
             this.displayLibraryMenu();
-            notVisited = false;
         }
         
         while (!valid){
