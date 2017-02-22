@@ -62,8 +62,6 @@ public class FinalRoomView {
         String choice = menuOption.toUpperCase();
         
         switch (choice){
-           //to do: change all of these choices to match the menu and create
-           //simple methods for them
             case "F":
                 this.fightBoss();
                 break;
