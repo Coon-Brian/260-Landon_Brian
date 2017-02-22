@@ -5,6 +5,7 @@
  */
 package byui.cit260.mathcadia.view;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
@@ -17,13 +18,13 @@ public class FinalRoomView {
 
     public FinalRoomView(){
         this.menu = "\n------------------------------"
-                  + "\n|      Game Play Menu        |"
+                  + "\n|      Final Room Menu       |"
                   + "\n------------------------------"
                   + "\n F - Proceed to final battle"
                   + "\n L - Back to Library"
                   + "\n H - Help Menu"
-                  + "\n H - Save Game"
-                  + "\n Q - Quit"
+                  + "\n S - Save Game"
+                  + "\n M - Main Menu"
                   + "\n------------------------------";
     }    
     public void finalMenuView(){
@@ -64,19 +65,25 @@ public class FinalRoomView {
            //to do: change all of these choices to match the menu and create
            //simple methods for them
             case "F":
-                //this.fightBoss();
+                this.fightBoss();
                 break;
             case "L":
-                //this.hintMen();
-                break;
-            case "M":
-               // this.moveLocation();
+                RoomView library;
+             try {
+                    library = new RoomView("text/library.txt");
+                    library.displayRoomView();
+                } catch (FileNotFoundException ex) {
+                System.out.println(ex.getMessage());
+                }
                 break;
             case "H":
                 HelpMenuView help = new HelpMenuView();
                 help.displayHelpMenuView();
                 break;
-            case "Q":
+            case "S":
+                this.saveGame();
+                break;    
+            case "M":
                 MainMenuView mainMenu = new MainMenuView();
                 mainMenu.displayMainMenuView();
                 break;                
@@ -86,5 +93,13 @@ public class FinalRoomView {
         }
     
         return false;
+    }
+
+    private void fightBoss() {
+        System.out.println("\nProceeding to final battle...");
+    }
+
+    private void saveGame() {
+        System.out.println("\nSaving the game from final room...");
     }
 }
