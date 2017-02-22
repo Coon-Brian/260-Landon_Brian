@@ -8,8 +8,6 @@ package byui.cit260.mathcadia.view;
 import buyi.cit260.mathcadia.control.GameControl;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import mathcadia.Mathcadia;
 
 /**

@@ -20,7 +20,6 @@ import java.net.URISyntaxException;
 public class Library extends Location implements Serializable{
     
     public Library(){
-        roomNumber = 2;
         roomName = "Library";
         roomItems = null;
         battleRoomFileNames = null;
@@ -53,6 +52,7 @@ public class Library extends Location implements Serializable{
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
+                return;
             }
         }
     }

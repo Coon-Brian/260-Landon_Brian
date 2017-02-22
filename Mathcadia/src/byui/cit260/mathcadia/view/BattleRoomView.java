@@ -32,7 +32,7 @@ public class BattleRoomView {
     }    
     public void battleMenuView(){
         boolean done = false;
-        System.out.println("Welcome to battle room " + Location.getRoomNumber());
+        System.out.println("\nWelcome to battle room " + Location.getRoomNumber());
         do{
             String menuOption = this.getMenuOption();
             if(menuOption.toUpperCase().equals("Q"))
