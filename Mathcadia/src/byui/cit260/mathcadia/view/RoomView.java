@@ -31,11 +31,11 @@ public class RoomView {
                   + "\n|          Main Menu         |"
                   + "\n------------------------------"
                   + "\n L - Go to Library"
-                  + "\n B - Go to next battle Room"
-                  + "\n F - Explore Room"
+                  + "\n B - Go to battle Room"
+                  + "\n E - Explore Room"
                   + "\n H - Help menu"
                   + "\n S - Save game"
-                  + "\n E - Exit Game"
+                  + "\n Q - Exit Game"
                   + "\n D - Go to final room"
                   + "\n------------------------------";
         
@@ -106,10 +106,10 @@ public class RoomView {
             case "S":
                 GameControl.saveGame(Mathcadia.getPlayer());
                 break;
-            case "E":
+            case "Q":
                 this.exitGame();
                 break;
-            case "F":
+            case "E":
                 LocationControl.searchRoom();
                 break;
             case "D":

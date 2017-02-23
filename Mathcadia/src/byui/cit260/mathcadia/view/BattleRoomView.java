@@ -24,8 +24,8 @@ public class BattleRoomView {
                   + "\n------------------------------"
                   + "\n F - Fight Monster"
                   + "\n L - Return to Library"
-                  + "\n E - Search Room"
-                  + "\n F - Save game"
+                  + "\n E - Explore Room"
+                  + "\n S - Save game"
                   + "\n H - Help Menu"
                   + "\n Q - Quit"
                   + "\n------------------------------";
@@ -100,10 +100,10 @@ public class BattleRoomView {
     }
 
     private void startBattle() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("starting battle...");
     }
 
     private void saveGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       System.out.println("saving game...");
     }
 }

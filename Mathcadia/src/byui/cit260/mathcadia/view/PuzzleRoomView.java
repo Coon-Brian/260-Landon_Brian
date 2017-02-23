@@ -5,6 +5,7 @@
  */
 package byui.cit260.mathcadia.view;
 
+import buyi.cit260.mathcadia.control.LocationControl;
 import byui.cit260.mathcadia.model.Location;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -23,7 +24,7 @@ public class PuzzleRoomView {
         this.menu = "\n------------------------------"
                   + "\n|      Game Play Menu        |"
                   + "\n------------------------------"
-                  + "\n F - Fight Monster"
+                  + "\n P - Solve Puzzle"
                   + "\n L - Return to Library"
                   + "\n E - Search Room"
                   + "\n F - Save game"
@@ -66,9 +67,8 @@ public class PuzzleRoomView {
         String choice = menuOption.toUpperCase();
         
         switch (choice){
-            case "B":
-                BattleRoomView room = new BattleRoomView();
-                room.battleMenuView();
+            case "P":
+                this.solvePuzzle();
                 break;
             case "L":
                 RoomView library;
@@ -78,6 +78,9 @@ public class PuzzleRoomView {
                 } catch (FileNotFoundException ex) {
                 System.out.println(ex.getMessage());
                 }
+                break;
+            case "E":
+                LocationControl.searchRoom();
                 break;
             case "H":
                 HelpMenuView help = new HelpMenuView();
@@ -95,7 +98,8 @@ public class PuzzleRoomView {
         return false;
     }
 
-    private void startBattle() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+    private void solvePuzzle() {
+        System.out.println("Puzzle goes here");
     }
 }
