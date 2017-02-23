@@ -83,7 +83,7 @@ public class PuzzleControl {
      * Description:
      * The user is given a cone paper cup to fill with water. They are to find
      * the diameter and the height that will fill the cup with a volume higher
-     * than 40 without spilling, a volume of 65.9735. Errors will be returned
+     * than 40 without spilling, a volume of 65.9734. Errors will be returned
      * if a negative number or 0 is entered for diameter or height. An error will
      * also be returned if the volume is 40 or less and higher than 65.9735.
      * @param diameter
