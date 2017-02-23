@@ -9,8 +9,6 @@ import buyi.cit260.mathcadia.control.LocationControl;
 import byui.cit260.mathcadia.model.Location;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
