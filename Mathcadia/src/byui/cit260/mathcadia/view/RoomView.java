@@ -17,17 +17,12 @@ import mathcadia.Mathcadia;
  *
  * @author Landon
  */
-public class RoomView {
+public class RoomView extends View {
     
-    private String menu;
-    private String roomText = "";
-    private String currentFile = "";
+    private String currentFile;
     
-    public RoomView(String filename) throws FileNotFoundException{
-        
-        this.currentFile = filename;
-        
-        this.menu = "\n------------------------------"
+    public RoomView(String filename){
+       super("\n------------------------------"
                   + "\n|          Main Menu         |"
                   + "\n------------------------------"
                   + "\n L - Go to Library"
@@ -37,32 +32,15 @@ public class RoomView {
                   + "\n S - Save game"
                   + "\n Q - Exit Game"
                   + "\n D - Go to final room"
-                  + "\n------------------------------";
+                  + "\n------------------------------", filename);
         
-        File file = new File(filename);
-        Scanner fileReader = new Scanner(file);
-        while (fileReader.hasNextLine()){
-            this.roomText += fileReader.nextLine() + "\n";
-        }
-        
+       currentFile = filename;
     }
     
-    public void displayRoomView() throws FileNotFoundException{
-        boolean done = false;
-        System.out.print(roomText);
-        
-        do{
-            String menuOption = this.getMenuOption();
-            if(menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-        }while (!done);
-        
-        
-    }
     
-    private String getMenuOption(){
+    
+    @Override
+    public String getInput(){
         Scanner keyBoard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
@@ -74,7 +52,7 @@ public class RoomView {
         }
         
         while (!valid){
-            System.out.println("\n" + this.menu);
+            System.out.println("\n" + this.displayMessage);
             value = keyBoard.nextLine();
             value = value.trim();
             if (value.length() < 1){
@@ -86,22 +64,23 @@ public class RoomView {
         return value;
     }
     
-    private boolean doAction(String menuOption) throws FileNotFoundException{
+    @Override
+    public boolean doAction(String menuOption){
         String choice = menuOption.toUpperCase();
         
         switch (choice){
             case "L":
                 //read the file from our text directory
                 RoomView library = new RoomView("text/library.txt");
-                library.displayRoomView();
+                library.display();
                 break;
             case "B":
                 BattleRoomView battleRoom = new BattleRoomView();
-                battleRoom.battleMenuView();
+                battleRoom.display();
                 break;
             case "H":
                 HelpMenuView help = new HelpMenuView();
-                help.displayHelpMenuView();
+                help.display();
                 break;
             case "S":
                 GameControl.saveGame(Mathcadia.getPlayer());
@@ -114,7 +93,7 @@ public class RoomView {
                 break;
             case "D":
                 FinalRoomView lastRoom = new FinalRoomView();
-                lastRoom.finalMenuView();
+                lastRoom.display();
                 break;
             default:
                 System.out.println("\n Invalid selection, Please try again.");

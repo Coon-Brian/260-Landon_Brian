@@ -11,50 +11,20 @@ import java.util.Scanner;
  *
  * @author Brian
  */
-public class HelpMenuView {
+public class HelpMenuView extends View{
     
-    private String menu;
     
     public HelpMenuView(){
-        this.menu = "\nHelp Menu:" +
+        super("\nHelp Menu:" +
                     "\nP - What is the purpose of the game\n" +
                     "\nM - How to move in the game\n" +
                     "\nR - Rules of the game\n" +
-                    "\nQ - Return to the game";
+                    "\nQ - Return to the game");
     }
     
-    public void displayHelpMenuView(){
-        boolean done = false;
-        
-        do{
-            String menuOption = this.getMenuOption();
-            if(menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-        }while (!done);
-        
-    }
-    
-    private String getMenuOption(){
-        Scanner keyBoard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid){
-            System.out.println("\n" + this.menu);
-            value = keyBoard.nextLine();
-            value = value.trim();
-            if (value.length() < 1){
-                System.out.println("\nInvald value: value cannot be blank");
-                continue;
-            }
-            break;
-        }
-        return value;
-    }
-    
-    private boolean doAction(String menuOption){
+   
+    @Override
+    public boolean doAction(String menuOption){
         String choice = menuOption.toUpperCase();
         
         switch (choice){

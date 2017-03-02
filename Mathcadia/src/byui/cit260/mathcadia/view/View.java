@@ -1,7 +1,11 @@
 
 package byui.cit260.mathcadia.view;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -10,20 +14,38 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface{
     
     protected String displayMessage;
-    private String menu;
+    protected String roomText = "";
     
     public View(){
     }
     public View(String message){
         this.displayMessage = message;
     }
+    public View(String menu, String fileName){
+        displayMessage = menu;
+        
+         File file = new File(fileName);
+        Scanner fileReader;
+        try {
+            fileReader = new Scanner(file);
+            while (fileReader.hasNextLine()){
+            this.roomText += fileReader.nextLine() + "\n";
+        }
+        } catch (FileNotFoundException ex) {
+            System.out.print(ex.getMessage());
+        }
+        
+        
+    }
     
     @Override
     public void display(){  //code copied from displayMainMenuView()
         boolean done = false;
+        if (roomText != null)
+            System.out.println(roomText);
         
         do{
-            String menuOption = this.getMenuOption(); // created method to resolve error message (see below)
+            String menuOption = this.getInput(); // created method to resolve error message (see below)
             if(menuOption.toUpperCase().equals("Q"))  // not sure if it was the right thing to do. 
                 return;
             
@@ -38,7 +60,7 @@ public abstract class View implements ViewInterface{
         boolean valid = false;
         
         while (!valid){
-            System.out.println("\n" + this.menu); // created field "menu" to resolve error
+            System.out.println("\n" + this.displayMessage); // created field "menu" to resolve error
             value = keyBoard.nextLine();
             value = value.trim();
             if (value.length() < 1){
@@ -50,7 +72,4 @@ public abstract class View implements ViewInterface{
         return value;
     }    
 
-    private String getMenuOption() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

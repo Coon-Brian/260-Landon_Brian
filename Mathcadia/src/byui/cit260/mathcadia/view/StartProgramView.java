@@ -13,13 +13,10 @@ import java.util.Scanner;
  *
  * @author Brian
  */
-public class StartProgramView {
-    
-    private String promptMessage;
-    Scanner userInput;
+public class StartProgramView extends View{
     
     public StartProgramView() {
-        this.promptMessage = "\nPlease enter your name: ";
+        super("\nPlease enter your name: ");
         
         // display the banner when view is created
         this.displayBanner();
@@ -58,36 +55,8 @@ public class StartProgramView {
         );
     }
 
-    public void displayStartProgramView() {
-        
-        boolean done = false;
-        do{
-            String playersName = getPlayersName();
-            if (playersName.toUpperCase().equals("Q"))
-                return;
-            done = this.doAction(playersName);
-            
-        } while(!done);
-    }
-    
-    private String getPlayersName(){
-        Scanner keyBoard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid){
-            System.out.println("\n" + this.promptMessage);
-            value = keyBoard.nextLine();
-            value = value.trim();
-            if (value.length() < 1){
-                System.out.println("\nInvald value: value cannot be blank");
-                continue;
-            }
-            break;
-        }
-        return value;
-    }
-    
+   
+    @Override
     public boolean doAction(String playerName){
         if (playerName.length() < 2){
             System.out.println("\nInvalid Player name: " + 
@@ -116,6 +85,6 @@ public class StartProgramView {
         
         MainMenuView mainMenu = new MainMenuView();
         
-        mainMenu.displayMainMenuView();
+        mainMenu.display();
     }
 }

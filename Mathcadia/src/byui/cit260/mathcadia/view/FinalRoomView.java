@@ -12,12 +12,11 @@ import java.util.Scanner;
  *
  * @author Landon
  */
-public class FinalRoomView {
+public class FinalRoomView extends View{
     
-    private String menu;
 
     public FinalRoomView(){
-        this.menu = "\n------------------------------"
+       super("\n------------------------------"
                   + "\n|      Final Room Menu       |"
                   + "\n------------------------------"
                   + "\n F - Proceed to final battle"
@@ -25,40 +24,12 @@ public class FinalRoomView {
                   + "\n H - Help Menu"
                   + "\n S - Save Game"
                   + "\n M - Main Menu"
-                  + "\n------------------------------";
+                  + "\n------------------------------");
     }    
-    public void finalMenuView(){
-        boolean done = false;
-        
-        do{
-            String menuOption = this.getMenuOption();
-            if(menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-        }while (!done);
-        
-    }    
+       
 
-    private String getMenuOption() {
-        Scanner keyBoard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid){
-            System.out.println("\n" + this.menu);
-            value = keyBoard.nextLine();
-            value = value.trim();
-            if (value.length() < 1){
-                System.out.println("\nInvald value: value cannot be blank");
-                continue;
-            }
-            break;
-        }
-        return value;
-    }
-
-    private boolean doAction(String menuOption) {
+    @Override
+    public boolean doAction(String menuOption) {
         String choice = menuOption.toUpperCase();
         
         switch (choice){
@@ -67,23 +38,19 @@ public class FinalRoomView {
                 break;
             case "L":
                 RoomView library;
-             try {
-                    library = new RoomView("text/library.txt");
-                    library.displayRoomView();
-                } catch (FileNotFoundException ex) {
-                System.out.println(ex.getMessage());
-                }
+                library = new RoomView("text/library.txt");
+                library.display();
                 break;
             case "H":
                 HelpMenuView help = new HelpMenuView();
-                help.displayHelpMenuView();
+                help.display();
                 break;
             case "S":
                 this.saveGame();
                 break;    
             case "M":
                 MainMenuView mainMenu = new MainMenuView();
-                mainMenu.displayMainMenuView();
+                mainMenu.display();
                 break;                
             default:
                 System.out.println("\n Invalid selection, Please try again.");

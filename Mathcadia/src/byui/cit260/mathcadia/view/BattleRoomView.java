@@ -7,19 +7,16 @@ package byui.cit260.mathcadia.view;
 
 import buyi.cit260.mathcadia.control.LocationControl;
 import byui.cit260.mathcadia.model.Location;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
 
 /**
  *
  * @author Landon
  */
-public class BattleRoomView {
+public class BattleRoomView extends View{
     
-    private String menu;
     
     public BattleRoomView(){
-        this.menu = "\n------------------------------"
+        super("\n------------------------------"
                   + "\n|      Game Play Menu        |"
                   + "\n------------------------------"
                   + "\n F - Fight Monster"
@@ -28,13 +25,15 @@ public class BattleRoomView {
                   + "\n S - Save game"
                   + "\n H - Help Menu"
                   + "\n Q - Quit"
-                  + "\n------------------------------";
+                  + "\n------------------------------");
     }    
-    public void battleMenuView(){
+    
+    @Override
+    public void display(){
         boolean done = false;
         System.out.println("\nWelcome to battle room " + Location.getRoomNumber());
         do{
-            String menuOption = this.getMenuOption();
+            String menuOption = this.getInput();
             if(menuOption.toUpperCase().equals("Q"))
                 return;
             
@@ -43,25 +42,8 @@ public class BattleRoomView {
         
     }    
 
-    private String getMenuOption() {
-        Scanner keyBoard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid){
-            System.out.println("\n" + this.menu);
-            value = keyBoard.nextLine();
-            value = value.trim();
-            if (value.length() < 1){
-                System.out.println("\nInvald value: value cannot be blank");
-                continue;
-            }
-            break;
-        }
-        return value;
-    }
-
-    private boolean doAction(String menuOption) {
+    @Override
+    public boolean doAction(String menuOption) {
         String choice = menuOption.toUpperCase();
         
         switch (choice){
@@ -70,12 +52,8 @@ public class BattleRoomView {
                 break;
             case "L":
                 RoomView library;
-        try {
-            library = new RoomView("text/library.txt");
-            library.displayRoomView();
-        } catch (FileNotFoundException ex) {
-            System.out.println(ex.getMessage());
-        }
+                library = new RoomView("text/library.txt");
+                library.display();
                 break;
             case "E":
                 LocationControl.searchRoom();
@@ -85,11 +63,11 @@ public class BattleRoomView {
                 break;
             case "H":
                 HelpMenuView help = new HelpMenuView();
-                help.displayHelpMenuView();
+                help.display();
                 break;
             case "Q":
                 MainMenuView mainMenu = new MainMenuView();
-                mainMenu.displayMainMenuView();
+                mainMenu.display();
                 break;                
             default:
                 System.out.println("\n Invalid selection, Please try again.");

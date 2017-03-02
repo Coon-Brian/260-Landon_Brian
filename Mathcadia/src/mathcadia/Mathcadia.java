@@ -30,7 +30,7 @@ public class Mathcadia {
     
         // create StartProgramViewOrig and display the start progam view
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();
+        startProgramView.display();
 
     }
 

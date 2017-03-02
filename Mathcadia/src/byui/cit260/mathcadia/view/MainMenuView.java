@@ -14,12 +14,10 @@ import mathcadia.Mathcadia;
  *
  * @author Brian
  */
-public class MainMenuView {
-    
-    private String menu;
+public class MainMenuView extends View{
     
     public MainMenuView(){
-        this.menu = "\n------------------------------"
+        super("\n------------------------------"
                   + "\n|          Main Menu         |"
                   + "\n------------------------------"
                   + "\n N - Start new game"
@@ -27,42 +25,11 @@ public class MainMenuView {
                   + "\n H - Help menu"
                   + "\n S - Save game"
                   + "\n E - Exit Game"
-                  + "\n------------------------------";
+                  + "\n------------------------------");
     }
     
-    public void displayMainMenuView(){
-        boolean done = false;
-        
-        do{
-            String menuOption = this.getMenuOption();
-            if(menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-        }while (!done);
-        
-        
-    }
-    
-    private String getMenuOption(){
-        Scanner keyBoard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while (!valid){
-            System.out.println("\n" + this.menu);
-            value = keyBoard.nextLine();
-            value = value.trim();
-            if (value.length() < 1){
-                System.out.println("\nInvald value: value cannot be blank");
-                continue;
-            }
-            break;
-        }
-        return value;
-    }
-    
-    private boolean doAction(String menuOption){
+    @Override
+    public boolean doAction(String menuOption){
         String choice = menuOption.toUpperCase();
         
         switch (choice){
@@ -74,14 +41,14 @@ public class MainMenuView {
                 break;
             case "H":
                 HelpMenuView help = new HelpMenuView();
-                help.displayHelpMenuView();
+                help.display();
                 break;
             case "S":
                 this.saveGame();
                 break;
             case "E":
                 this.exitGame();
-                break;
+                return true;
             default:
                 System.out.println("\n Invalid selection, Please try again.");
                 break;
@@ -94,13 +61,9 @@ public class MainMenuView {
         GameControl.createNewGame(Mathcadia.getPlayer());
         
         RoomView bedroom;
-        try {
-            String fileName = "bedroom.txt"; 
-            bedroom = new RoomView("text/" + fileName);
-            bedroom.displayRoomView();
-        } catch (FileNotFoundException ex) {
-            System.out.print(ex.getMessage());
-        }
+        String fileName = "bedroom.txt";
+        bedroom = new RoomView("text/" + fileName);
+        bedroom.display();
         
     }
 
