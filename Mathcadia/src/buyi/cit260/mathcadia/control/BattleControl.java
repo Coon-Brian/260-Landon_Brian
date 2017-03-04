@@ -11,4 +11,5 @@ package buyi.cit260.mathcadia.control;
  */
 public class BattleControl {
     
+    
 }

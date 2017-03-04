@@ -6,6 +6,7 @@
 package byui.cit260.mathcadia.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -18,11 +19,11 @@ import java.util.Objects;
 public class BattleRoom extends Location implements Serializable {
     
     private Monster roomMonster;
-    private List<Question> equations;
+    private List<Question> questions;
     
     public BattleRoom(){
         roomMonster = null;
-        equations = null;
+        questions = new ArrayList<>();
         roomNumber = 5;
         roomName = "Battle-Room 5";
         roomItems = null;
@@ -38,16 +39,16 @@ public class BattleRoom extends Location implements Serializable {
         return roomMonster;
     }
 
-    public List<Question> getEquations() {
-        return equations;
+    public List<Question> getQuestions() {
+        return questions;
     }
 
     public void setRoomMonster(Monster roomMonster) {
         this.roomMonster = roomMonster;
     }
 
-    public void setEquations(List<Question> equations) {
-        this.equations = equations;
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
     }
     
     @Override
@@ -64,7 +65,7 @@ public class BattleRoom extends Location implements Serializable {
     public int hashCode() {
         int hash = 7;
         hash = 97 * hash + Objects.hashCode(this.roomMonster);
-        hash = 97 * hash + Objects.hashCode(this.equations);
+        hash = 97 * hash + Objects.hashCode(this.questions);
         return hash;
     }
 
@@ -83,7 +84,7 @@ public class BattleRoom extends Location implements Serializable {
         if (!Objects.equals(this.roomMonster, other.roomMonster)) {
             return false;
         }
-        if (!Objects.equals(this.equations, other.equations)) {
+        if (!Objects.equals(this.questions, other.questions)) {
             return false;
         }
         return true;
@@ -91,7 +92,7 @@ public class BattleRoom extends Location implements Serializable {
 
     @Override
     public String toString() {
-        return "BattleRoom{" + "roomNumber=" + roomNumber + ", roomName=" + roomName + ", roomItems=" + roomItems + ", locationStory=" + battleRoomFileNames + ", roomMonster=" + roomMonster + ", equations=" + equations + '}';
+        return "BattleRoom{" + "roomNumber=" + roomNumber + ", roomName=" + roomName + ", roomItems=" + roomItems + ", locationStory=" + battleRoomFileNames + ", roomMonster=" + roomMonster + ", equations=" + questions + '}';
     }
     
     

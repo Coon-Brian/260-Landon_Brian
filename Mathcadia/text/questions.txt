@@ -1,0 +1,70 @@
+Which number does not have a reciprocal?
+(A) –1
+(B) 0
+(C) 1 / 1000
+(D) 3 
+B
+
+Which of these is equal to 5(8 − x)?
+(A) 5x – 40
+(B) x – 40
+(C) 40 – 5x
+(D) 5 – 8x
+C
+
+Suppose 2(2 − y) = 3x. When y = 8, what is the value of x ?
+(A) –20/3
+(B) 20/3
+(C) 4
+(D) −4
+D
+
+Simplify 15ax^2 / 5x
+(A) 3ax
+(B) 3ax^2
+(C) 5ax^2
+(D) 5ax
+A
+
+Simplify a(c - b) - b(a - c)
+(A) ac - 2ab - bc
+(B) ac - 2ab + bc
+(C) ac + 2ab + bc
+(D) ac + bc
+B
+
+Expand and simplfy (x - 5)(x + 4)
+(A) x^2 + 9x - 20
+(B) x^2 - x - 9
+(C) x^2 - x - 1
+(D) x^2 - x - 20
+D
+
+Expand and simplfy (x - y)(x + y)
+(A)x^2 - 2xy + y^2
+(B)x^2 + 2xy + y^2
+(C)x^2 - y^2
+(D)x^2 + y^2
+C
+
+(a - b)^2 =
+(A) a^2 - 2ab + b^2
+(B) a^2 + 2ab + b^2
+(C) a^2 - b^2
+(D) a^2 + b^2
+A
+
+Factorise -20x^2 - 9x + 20
+(A)(5 + 4x)(4 - 5x)
+(B)(5 - 4x)(4 - 5x)
+(C)(5 - 4x)(4 + 5x)
+(D)(5 + 4x)(4 + 5x)
+A
+
+Simplify (3x / 2y)(x / 3y)
+(A) x / 2y
+(B) (3x^2) / (2y^2)
+(C) x^2 / (6y^2)
+(D) x^2 / (2y^2)
+D
+

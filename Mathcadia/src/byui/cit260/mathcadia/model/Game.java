@@ -6,6 +6,7 @@
 package byui.cit260.mathcadia.model;
 
 import buyi.cit260.mathcadia.control.GameControl;
+import java.util.List;
 
 /**
  *
@@ -15,23 +16,67 @@ public class Game {
 
   
     private static Player player;
-    String gameFile;
-    Map gameMap;
-    GameControl gameHandler;
+    private String gameFile;
+    private Location currentRoom;
+    private GameControl gameHandler;
+    private List<Question> questions;
     
-    Game(){ 
-    }
     
-    //non-default contructor
-    Game(Player player){
+    public Game(){ 
+        gameHandler = new GameControl();
+        questions = gameHandler.buildQuestions();
         
     }
     
-      public Player getPlayer() {
+    //non-default contructor
+    public Game(Player player){
+        
+    }
+    
+      public static Player getPlayer() {
         return player;
     }
 
     public static void setPlayer(Player player) {
         Game.player = player;
+    }
+    
+    public String getGameFile() {
+        return gameFile;
+    }
+
+    public void setGameFile(String gameFile) {
+        this.gameFile = gameFile;
+    }
+
+    public Location getCurrentRoom() {
+        return currentRoom;
+    }
+
+    public void setCurrentRoom(Location currentRoom) {
+        this.currentRoom = currentRoom;
+    }
+
+    public GameControl getGameHandler() {
+        return gameHandler;
+    }
+
+    public void setGameHandler(GameControl gameHandler) {
+        this.gameHandler = gameHandler;
+    }
+
+    public List<Question> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+    }
+
+    private void displayQuestions() {
+        for(int i = 0; i < questions.size();i++)
+        System.out.println(this.questions.get(i).getProblem());
+        
+        
     }
 }

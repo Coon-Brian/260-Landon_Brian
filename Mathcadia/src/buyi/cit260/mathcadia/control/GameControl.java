@@ -7,6 +7,12 @@ package buyi.cit260.mathcadia.control;
 
 import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Player;
+import byui.cit260.mathcadia.model.Question;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  *
@@ -37,4 +43,39 @@ public class GameControl {
         System.out.println("\nSaving game...");
     }
     
+    public List<Question> buildQuestions(){
+        List<Question> questions = new ArrayList<>();
+        String problem = "";
+        
+         File file = new File("text/questions.txt");
+        Scanner fileReader;
+        try {
+            fileReader = new Scanner(file);
+            while(fileReader.hasNextLine()){
+                //reset question
+                Question currentQuestion = new Question();
+                //read in 5 lines of question text
+                for(int i = 0; i < 5; i++){
+                 problem += fileReader.nextLine() + "\n";
+                }
+                //read in answer
+                currentQuestion.setAnswer(fileReader.nextLine());
+                currentQuestion.setProblem(problem);
+                
+                //add current question to list of questions
+                questions.add(currentQuestion);
+                //skip blank line
+                fileReader.nextLine();
+                //reset variable
+                problem = "";
+            
+        }
+        } catch (FileNotFoundException ex) {
+            System.out.print(ex.getMessage());
+        }
+        
+        
+        return questions;
+    }
+        
 }

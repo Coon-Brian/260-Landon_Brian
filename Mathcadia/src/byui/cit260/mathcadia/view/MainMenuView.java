@@ -6,6 +6,7 @@
 package byui.cit260.mathcadia.view;
 
 import buyi.cit260.mathcadia.control.GameControl;
+import byui.cit260.mathcadia.model.Game;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import mathcadia.Mathcadia;
@@ -58,7 +59,7 @@ public class MainMenuView extends View{
     } 
 
     private void startNewGame() {
-        GameControl.createNewGame(Mathcadia.getPlayer());
+        GameControl.createNewGame(Game.getPlayer());
         
         RoomView bedroom;
         String fileName = "bedroom.txt";

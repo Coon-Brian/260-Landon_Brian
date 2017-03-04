@@ -5,8 +5,6 @@
  */
 package byui.cit260.mathcadia.view;
 
-import java.io.FileNotFoundException;
-import java.util.Scanner;
 
 /**
  *

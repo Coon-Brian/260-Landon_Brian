@@ -7,6 +7,7 @@ package byui.cit260.mathcadia.view;
 
 import buyi.cit260.mathcadia.control.GameControl;
 import buyi.cit260.mathcadia.control.LocationControl;
+import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Library;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -83,7 +84,7 @@ public class RoomView extends View {
                 help.display();
                 break;
             case "S":
-                GameControl.saveGame(Mathcadia.getPlayer());
+                GameControl.saveGame(Game.getPlayer());
                 break;
             case "Q":
                 this.exitGame();

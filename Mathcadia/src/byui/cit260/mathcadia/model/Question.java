@@ -19,6 +19,8 @@ public class Question implements Serializable{
     private String answer;
 
     public Question() {
+        problem = "";
+        answer = "";
     }
     
 
