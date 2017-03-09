@@ -59,6 +59,8 @@ public class MainMenuView extends View{
     } 
 
     private void startNewGame() {
+        
+        
         GameControl.createNewGame(Game.getPlayer());
         
         RoomView bedroom;

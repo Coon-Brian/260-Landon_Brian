@@ -20,6 +20,8 @@ import java.util.Scanner;
  */
 public class GameControl {
 
+    public static Game mathcadia;
+    
     public static Player createPlayer(String name) {
         
         if (name == null){
@@ -35,13 +37,24 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-        //nothing here yet!
-        System.out.println("\nCreating new game...");
+        
+        //All of our code for setting up the game is in the constructor
+        mathcadia = new Game();
+        
+        //the static variable player has already been set, so we don't need to 
+        //do it again
+        
+        //for debugging
+        //System.out.println(mathcadia.toString());
+        //System.out.println(mathcadia.getPlayer().toString());
     }
     
     public static void saveGame(Player player){
         System.out.println("\nSaving game...");
     }
+    
+    
+    
     
     public List<Question> buildQuestions(){
         List<Question> questions = new ArrayList<>();

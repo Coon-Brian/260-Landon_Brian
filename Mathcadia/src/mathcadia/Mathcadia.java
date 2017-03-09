@@ -26,12 +26,11 @@ public class Mathcadia {
     /**
      * @param args the command line arguments
      */
-    
+    private static Game mathcadia;
  
     public static void main(String[] args) {
     
-        //for now this builds the questions we will use later in the game
-        Game mathcadia = new Game();
+        
         // create StartProgramViewOrig and display the start progam view
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();

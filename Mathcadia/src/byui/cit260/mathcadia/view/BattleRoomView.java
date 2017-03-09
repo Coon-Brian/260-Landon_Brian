@@ -31,7 +31,7 @@ public class BattleRoomView extends View{
     @Override
     public void display(){
         boolean done = false;
-        System.out.println("\nWelcome to battle room " + Location.getRoomNumber());
+        System.out.println("\nWelcome to the battle room! ");
         do{
             String menuOption = this.getInput();
             if(menuOption.toUpperCase().equals("Q"))

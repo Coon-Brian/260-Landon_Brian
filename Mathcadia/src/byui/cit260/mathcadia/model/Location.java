@@ -15,59 +15,60 @@ import java.util.Objects;
  * @author Landon Shumway
  * @since 1/26/17
  */
-public abstract class Location implements Serializable{
+public class Location implements Serializable{
     
-    protected static Integer roomNumber = 1;
+    protected Integer roomNumber = 1;
     protected String roomName;
-    protected List<Item> roomItems;
-    protected static List<String> battleRoomFileNames;
+    protected Item roomItem;
+    protected String roomFileName;
     
     public Location(){    
+        
+        
+        
+    }
+    
+    public Location (String file, Integer roomNum){
+        
+        roomFileName = "text/" + file;
+        this.roomNumber = roomNum;
+        roomName = "";
+        
     }
 
-    public static Integer getRoomNumber() {
-        return Location.roomNumber;
+    public Integer getRoomNumber() {
+        return this.roomNumber;
     }
 
     public String getRoomName() {
         return roomName;
     }
 
-    public List<Item> getRoomItems() {
-        return roomItems;
+    public Item getRoomItem() {
+        return roomItem;
     }
 
-    public static List<String> getLocationStory() {
-        return battleRoomFileNames;
+    public String getLocationStory() {
+        return roomFileName;
     }
 
     public void setRoomNumber(Integer roomNumber) {
-        Location.roomNumber = roomNumber;
+        this.roomNumber = roomNumber;
     }
 
     public void setRoomName(String roomName) {
         this.roomName = roomName;
     }
 
-    public void setRoomItems(List<Item> roomItems) {
-        this.roomItems = roomItems;
+    public void setRoomItem(Item roomItem) {
+        this.roomItem = roomItem;
     }
 
-    public void setLocationStory(List<String> locationStory) {
-        this.battleRoomFileNames = locationStory;
+    public void setLocationStory(String locationStory) {
+        this.roomFileName = locationStory;
     }
     
-    
-    
-    //displays the differnt options the user may enter
-    abstract void displayOptions();
-    //displays the menu instructions
-    abstract void displayMenuText();
-    
-    public char getUserInput(){
-    //returning dummy variable until later
-        return 'a';    
-    }
+   
     
     public void readStoryFile(String fileName){
         
@@ -87,8 +88,8 @@ public abstract class Location implements Serializable{
         int hash = 7;
         hash = 37 * hash + Objects.hashCode(this.roomNumber);
         hash = 37 * hash + Objects.hashCode(this.roomName);
-        hash = 37 * hash + Objects.hashCode(this.roomItems);
-        hash = 37 * hash + Objects.hashCode(this.battleRoomFileNames);
+        hash = 37 * hash + Objects.hashCode(this.roomItem);
+        hash = 37 * hash + Objects.hashCode(this.roomFileName);
         return hash;
     }
 
@@ -110,10 +111,10 @@ public abstract class Location implements Serializable{
         if (!Objects.equals(this.roomNumber, other.roomNumber)) {
             return false;
         }
-        if (!Objects.equals(this.roomItems, other.roomItems)) {
+        if (!Objects.equals(this.roomItem, other.roomItem)) {
             return false;
         }
-        if (!Objects.equals(this.battleRoomFileNames, other.battleRoomFileNames)) {
+        if (!Objects.equals(this.roomFileName, other.roomFileName)) {
             return false;
         }
         return true;
@@ -121,7 +122,7 @@ public abstract class Location implements Serializable{
 
     @Override
     public String toString() {
-        return "Location{" + "roomNumber=" + roomNumber + ", roomName=" + roomName + ", roomItems=" + roomItems + ", locationStory=" + battleRoomFileNames + '}';
+        return "Location{" + "roomNumber=" + roomNumber + ", roomName=" + roomName + ", roomItems=" + roomItem + ", locationStory=" + roomFileName + '}';
     }
     
 }

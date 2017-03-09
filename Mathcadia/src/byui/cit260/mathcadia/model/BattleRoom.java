@@ -26,8 +26,8 @@ public class BattleRoom extends Location implements Serializable {
         questions = new ArrayList<>();
         roomNumber = 5;
         roomName = "Battle-Room 5";
-        roomItems = null;
-        battleRoomFileNames = null;
+        roomItem = null;
+        roomFileName = null;
     }
     
     BattleRoom(Integer roomNum, Monster monster){
@@ -51,15 +51,6 @@ public class BattleRoom extends Location implements Serializable {
         this.questions = questions;
     }
     
-    @Override
-    public void displayMenuText(){
-        
-    }
-    
-    @Override
-    public void displayOptions(){
-        
-    }
 
     @Override
     public int hashCode() {
@@ -92,7 +83,7 @@ public class BattleRoom extends Location implements Serializable {
 
     @Override
     public String toString() {
-        return "BattleRoom{" + "roomNumber=" + roomNumber + ", roomName=" + roomName + ", roomItems=" + roomItems + ", locationStory=" + battleRoomFileNames + ", roomMonster=" + roomMonster + ", equations=" + questions + '}';
+        return "BattleRoom{" + "roomNumber=" + roomNumber + ", roomName=" + roomName + ", roomItems=" + roomItem + ", locationStory=" + roomFileName + ", roomMonster=" + roomMonster + ", equations=" + questions + '}';
     }
     
     

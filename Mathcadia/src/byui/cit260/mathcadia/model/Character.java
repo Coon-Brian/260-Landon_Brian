@@ -14,13 +14,13 @@ import java.util.Objects;
  */
 public class Character implements Serializable{
     //character stats that affect fighting
-    private Integer gradePoints;
-    private Integer knowledge;
-    private Integer power;
-    private Integer experience;
-    private double bestScore;
+    protected Integer gradePoints;
+    protected Integer knowledge;
+    protected Integer power;
+    protected Integer experience;
+    protected double bestScore;
     //used to determine when battle is over
-    Boolean alive;
+    protected Boolean alive;
     
     public Character(){
         

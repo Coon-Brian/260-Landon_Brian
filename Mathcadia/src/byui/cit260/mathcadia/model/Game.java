@@ -14,17 +14,23 @@ import java.util.List;
  */
 public class Game {
 
+   
+
   
     private static Player player;
     private String gameFile;
     private Location currentRoom;
     private GameControl gameHandler;
     private List<Question> questions;
+    private int bestScore;
     
     
     public Game(){ 
         gameHandler = new GameControl();
         questions = gameHandler.buildQuestions();
+        gameFile = "";
+        currentRoom = new Location();
+        bestScore = 0;
         
     }
     
@@ -72,11 +78,25 @@ public class Game {
     public void setQuestions(List<Question> questions) {
         this.questions = questions;
     }
+    
+    
+    public int getBestScore() {
+        return bestScore;
+    }
+
+    public void setBestScore(int bestScore) {
+        this.bestScore = bestScore;
+    }
 
     private void displayQuestions() {
         for(int i = 0; i < questions.size();i++)
         System.out.println(this.questions.get(i).getProblem());
         
         
+    }
+    
+     @Override
+    public String toString() {
+        return "Game{" + "gameFile=" + gameFile + ", currentRoom=" + currentRoom + ", gameHandler=" + gameHandler + ", questions=" + questions + ", bestScore=" + bestScore + '}';
     }
 }

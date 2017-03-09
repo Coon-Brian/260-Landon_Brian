@@ -21,18 +21,12 @@ public class Library extends Location implements Serializable{
     
     public Library(){
         roomName = "Library";
-        roomItems = null;
-        battleRoomFileNames = null;
+        roomItem = null;
+        roomFileName = null;
     }
     
-    @Override
-    public void displayMenuText(){
-        
-    }
+
     
-    @Override
-    public void displayOptions(){
-    }
     
     public void openWebBrowser(){
         String url = "http://www.coolmath.com/algebra";

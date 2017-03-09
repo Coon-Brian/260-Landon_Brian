@@ -6,54 +6,47 @@
 package byui.cit260.mathcadia.model;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
  * @author Brian
  */
-public class Item implements Serializable{
+public enum Item implements Serializable{
+    
+    ExtraCredit("Extra Credit Potion", 1, 10),
+    Knowledge("Knowledge Potion", 2, 2),
+    Wisdom("Wisdom Potion", 3, 5),
+    Experience("Experience potion", 4, 100);
+    
+    
     
     // Class instance variables
-    private String itemName;
-    private double itemType;
-    private double bonusValue;
+    private final String itemName;
+    private final int itemType;
+    private final int bonusValue;
 
-    public Item() {
+    Item(String name, int type, int bonusValue) {
+
+        itemName = name;
+        itemType = type;
+        this.bonusValue = bonusValue;
+        
+
     }
 
     public String getItemName() {
         return itemName;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
-
-    public double getItemType() {
+    public int getItemType() {
         return itemType;
     }
 
-    public void setItemType(double itemType) {
-        this.itemType = itemType;
-    }
-
-    public double getBonusValue() {
+    public int getBonusValue() {
         return bonusValue;
     }
 
-    public void setBonusValue(double bonusValue) {
-        this.bonusValue = bonusValue;
-    }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.itemName);
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.itemType) ^ (Double.doubleToLongBits(this.itemType) >>> 32));
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.bonusValue) ^ (Double.doubleToLongBits(this.bonusValue) >>> 32));
-        return hash;
-    }
 
     @Override
     public String toString() {
@@ -61,29 +54,6 @@ public class Item implements Serializable{
     }
     
     
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Item other = (Item) obj;
-        if (Double.doubleToLongBits(this.itemType) != Double.doubleToLongBits(other.itemType)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.bonusValue) != Double.doubleToLongBits(other.bonusValue)) {
-            return false;
-        }
-        if (!Objects.equals(this.itemName, other.itemName)) {
-            return false;
-        }
-        return true;
-    }
     
     
     

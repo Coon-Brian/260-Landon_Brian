@@ -17,13 +17,13 @@ public class LocationControl {
     
     
     public static String getBattleLocationFile(){
-        String fileName = Location.getLocationStory().get(0);
-        Location.getLocationStory().remove(0);
+        String fileName = null;
         return fileName;
     }
     
     public static Item searchRoom(){
         System.out.println("Searching Room ... Nothing here");
+        //enter item code with enum
         return null;
     }
 }
