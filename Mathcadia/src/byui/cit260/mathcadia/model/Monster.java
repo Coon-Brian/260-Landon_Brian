@@ -12,16 +12,19 @@ import java.util.Objects;
  *
  * @author Brian
  */
-public class Monster implements Serializable{
+public class Monster extends Character implements Serializable{
     
     // class instance variables
     private String monster;
     private boolean die;
 
     public Monster() {
+        gradePoints = 10;
+        knowledge = 10;
+        power = 0;
     }
     
-
+    
     public String getMonster() {
         return monster;
     }

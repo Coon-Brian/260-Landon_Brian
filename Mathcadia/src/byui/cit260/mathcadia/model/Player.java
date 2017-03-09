@@ -16,8 +16,7 @@ import java.util.Objects;
 public class Player extends Character implements Serializable{
     private String userName;
     private ArrayList<Item> playerInventory;
-    private double experience;
-    private double bestScore;
+    private int level;
 
     public Player() {
         userName = "";
@@ -25,8 +24,8 @@ public class Player extends Character implements Serializable{
         experience = 0;
         bestScore = 0;
         gradePoints = 1000;
-        knowledge = 1;
-        power = 1;
+        knowledge = 5;
+        power = 2;
     }
     
     public Player(String name){
@@ -40,6 +39,12 @@ public class Player extends Character implements Serializable{
     }
     
 
+    
+    
+    public void addItem(Item item){
+        this.playerInventory.add(item);
+    }
+    
     public String getName() {
         return userName;
     }
@@ -64,21 +69,26 @@ public class Player extends Character implements Serializable{
         return experience;
     }
 
-    public void setExperience(double experience) {
+    public void setExperience(int experience) {
         this.experience = experience;
     }
 
-    public double getBestScore() {
-        return bestScore;
-    }
 
     public void setBestScore(double bestScore) {
         this.bestScore = bestScore;
     }
-
-    public void addItem(Item item){
-        playerInventory.add(item);
+    
+    @Override
+    public Boolean isAlive(){
+        //if the player's grade is still above 69% they are alive
+        return gradePoints > 699;
     }
+
+    
+    public void displayInventory(){
+        System.out.println("Nothing here yet...");
+    }
+    
     
     /** This method test to see if an item is found within the inventory.
      * if it is then it is used and taken out of the inventory. A boolean is
@@ -135,6 +145,11 @@ public class Player extends Character implements Serializable{
         return true;
     }
     
-    
+    public void levelUp(){
+        this.level++;
+        this.knowledge = level * 5;
+        this.power = level * 2;
+        
+    }
     
 }

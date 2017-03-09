@@ -5,7 +5,9 @@
  */
 package byui.cit260.mathcadia.view;
 
+import buyi.cit260.mathcadia.control.BattleControl;
 import buyi.cit260.mathcadia.control.LocationControl;
+import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Location;
 
 /**
@@ -24,6 +26,7 @@ public class BattleRoomView extends View{
                   + "\n E - Explore Room"
                   + "\n S - Save game"
                   + "\n H - Help Menu"
+                  + "\n I - Display Inventory"
                   + "\n Q - Quit"
                   + "\n------------------------------");
     }    
@@ -65,6 +68,9 @@ public class BattleRoomView extends View{
                 HelpMenuView help = new HelpMenuView();
                 help.display();
                 break;
+            case "I":
+                Game.getPlayer().displayInventory();
+                break;
             case "Q":
                 MainMenuView mainMenu = new MainMenuView();
                 mainMenu.display();
@@ -78,7 +84,8 @@ public class BattleRoomView extends View{
     }
 
     private void startBattle() {
-        System.out.println("starting battle...");
+        System.out.println("A monster approaches...");
+        BattleControl.battleMonster();
     }
 
     private void saveGame() {

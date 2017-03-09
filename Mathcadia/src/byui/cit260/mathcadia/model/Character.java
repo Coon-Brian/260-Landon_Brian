@@ -27,32 +27,34 @@ public class Character implements Serializable{
     }
     
     
-    public void addItem(/* Item goes here*/){
-        
-    }
-    
+    //all of the add methods are going to be used with items
     public void addHealth(Integer points){
-        gradePoints += points;
+        this.gradePoints += points;
     }
     
     public void addExperience(Integer points){
-        
+        this.experience += points;
     }
     
     public void addKnowledge(Integer points){
-        
+        this.experience += points;
     }
     
     public void addPower(Integer points){
-        
+        this.experience += points;
     }
     
+    //for very end of game
     public void setPercentage(double points){
         
     }
     
     public Integer getHealth(){
         return gradePoints;
+    }
+    
+    public void setHealth(int health){
+        gradePoints = health;
     }
     
     public Integer getExp(){
@@ -72,15 +74,17 @@ public class Character implements Serializable{
     }
     
     public void attack(Character foe){
-        
+        int damage = this.knowledge - foe.power;
+        foe.takeDamage(damage);
     }
     
     public void takeDamage(Integer damage){
-        
+        int health = this.gradePoints - damage;
+        this.setHealth(health);
     }
     
     public Boolean isAlive(){
-        return alive;
+        return gradePoints > 0;
     }
     
       @Override

@@ -56,8 +56,8 @@ public class GameControl {
     
     
     
-    public List<Question> buildQuestions(){
-        List<Question> questions = new ArrayList<>();
+    public ArrayList<Question> buildQuestions(){
+        ArrayList<Question> questions = new ArrayList<>();
         String problem = "";
         
          File file = new File("text/questions.txt");

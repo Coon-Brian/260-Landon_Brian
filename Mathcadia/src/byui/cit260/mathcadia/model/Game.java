@@ -6,6 +6,7 @@
 package byui.cit260.mathcadia.model;
 
 import buyi.cit260.mathcadia.control.GameControl;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,7 +22,7 @@ public class Game {
     private String gameFile;
     private Location currentRoom;
     private GameControl gameHandler;
-    private List<Question> questions;
+    private ArrayList<Question> questions;
     private int bestScore;
     
     
@@ -71,11 +72,11 @@ public class Game {
         this.gameHandler = gameHandler;
     }
 
-    public List<Question> getQuestions() {
+    public ArrayList<Question> getQuestions() {
         return questions;
     }
 
-    public void setQuestions(List<Question> questions) {
+    public void setQuestions(ArrayList<Question> questions) {
         this.questions = questions;
     }
     

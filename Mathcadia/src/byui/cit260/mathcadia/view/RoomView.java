@@ -9,10 +9,7 @@ import buyi.cit260.mathcadia.control.GameControl;
 import buyi.cit260.mathcadia.control.LocationControl;
 import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Library;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
-import mathcadia.Mathcadia;
 
 /**
  *
@@ -32,7 +29,7 @@ public class RoomView extends View {
                   + "\n H - Help menu"
                   + "\n S - Save game"
                   + "\n Q - Exit Game"
-                  + "\n D - Go to final room"
+                  + "\n I - Display inventory"
                   + "\n------------------------------", filename);
         
        currentFile = filename;
@@ -92,9 +89,8 @@ public class RoomView extends View {
             case "E":
                 LocationControl.searchRoom();
                 break;
-            case "D":
-                FinalRoomView lastRoom = new FinalRoomView();
-                lastRoom.display();
+            case "I":
+                Game.getPlayer().displayInventory();
                 break;
             default:
                 System.out.println("\n Invalid selection, Please try again.");

@@ -8,6 +8,7 @@ package buyi.cit260.mathcadia.control;
 import byui.cit260.mathcadia.model.Item;
 import byui.cit260.mathcadia.model.Location;
 import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -15,6 +16,7 @@ import java.util.List;
  */
 public class LocationControl {
     
+    public static int battleRoomNumber = 1;
     
     public static String getBattleLocationFile(){
         String fileName = null;
@@ -22,8 +24,25 @@ public class LocationControl {
     }
     
     public static Item searchRoom(){
-        System.out.println("Searching Room ... Nothing here");
-        //enter item code with enum
+        Item roomItem = null;
+        System.out.println("Searching Room ...");
+        //use random int to generate item
+        Random rand = new Random();
+        int itemNumber = rand.nextInt(4);
+        //insert item iterating code here...
+        
+        
+        
+        if(roomItem == null)
+            System.out.println("nothing here");
         return null;
+    }
+    
+    public int getBattleRoomNum(){
+        return battleRoomNumber;
+    }
+    
+    public void nextBattleNumber(){
+        battleRoomNumber++;
     }
 }

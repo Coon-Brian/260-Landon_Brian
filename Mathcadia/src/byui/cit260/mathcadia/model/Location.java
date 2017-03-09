@@ -17,7 +17,7 @@ import java.util.Objects;
  */
 public class Location implements Serializable{
     
-    protected Integer roomNumber = 1;
+    protected Integer roomNumber;
     protected String roomName;
     protected Item roomItem;
     protected String roomFileName;
