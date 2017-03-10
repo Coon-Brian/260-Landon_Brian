@@ -97,10 +97,9 @@ public class Player extends Character implements Serializable{
 
     
     public void displayInventory(){
+        //replace code here with your assignment
         System.out.println("Nothing here yet...");
-        for(Item currentItem: playerInventory){
-            System.out.println(currentItem.getItemName());
-        }
+       
     }
     
     
