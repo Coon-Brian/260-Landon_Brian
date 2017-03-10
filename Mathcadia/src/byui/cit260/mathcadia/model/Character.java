@@ -73,9 +73,10 @@ public class Character implements Serializable{
         return bestScore;
     }
     
-    public void attack(Character foe){
+    public int attack(Character foe){
         int damage = this.knowledge - foe.power;
         foe.takeDamage(damage);
+        return damage;
     }
     
     public void takeDamage(Integer damage){

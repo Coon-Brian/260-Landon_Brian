@@ -5,6 +5,7 @@
  */
 package buyi.cit260.mathcadia.control;
 
+import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Item;
 import byui.cit260.mathcadia.model.Location;
 import java.util.List;
@@ -23,6 +24,13 @@ public class LocationControl {
         return fileName;
     }
     
+    
+    /************************************
+     * This method generates a random number and selects an item from our
+     * enum list based on that number and returns it to the player. 
+     * It iterates through the item list using the Enhanced for-loop
+     * @return 
+     */
     public static Item searchRoom(){
         Item roomItem = null;
         System.out.println("Searching Room ...");
@@ -30,12 +38,22 @@ public class LocationControl {
         Random rand = new Random();
         int itemNumber = rand.nextInt(4);
         //insert item iterating code here...
+        for(Item currentItem: Item.values()){
+            if(itemNumber == currentItem.ordinal())
+                roomItem = currentItem;
+        }
         
         
-        
-        if(roomItem == null)
+        if(roomItem == null){
             System.out.println("nothing here");
-        return null;
+            return null;
+        }
+        else{
+            System.out.println("You found a " + roomItem.getItemName() + "!");
+            Game.getPlayer().addItem(roomItem);
+            return roomItem;
+        }
+            
     }
     
     public int getBattleRoomNum(){

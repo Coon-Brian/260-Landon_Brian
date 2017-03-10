@@ -19,11 +19,16 @@ public class Game {
 
   
     private static Player player;
+    //this array holds the experience values needed to level up
+    private static int[] levelUp = { 0, 100, 300, 600, 1000, 1500, 2100, 2800 }; 
+
     private String gameFile;
     private Location currentRoom;
     private GameControl gameHandler;
     private ArrayList<Question> questions;
     private int bestScore;
+    public static boolean endGame = false;
+    
     
     
     public Game(){ 
@@ -32,6 +37,7 @@ public class Game {
         gameFile = "";
         currentRoom = new Location();
         bestScore = 0;
+        
         
     }
     
@@ -87,6 +93,11 @@ public class Game {
 
     public void setBestScore(int bestScore) {
         this.bestScore = bestScore;
+    }
+    
+    
+    public static int[] getLevelUp() {
+        return levelUp;
     }
 
     private void displayQuestions() {

@@ -26,6 +26,7 @@ public class Player extends Character implements Serializable{
         gradePoints = 1000;
         knowledge = 5;
         power = 2;
+        level = 1;
     }
     
     public Player(String name){
@@ -77,6 +78,16 @@ public class Player extends Character implements Serializable{
     public void setBestScore(double bestScore) {
         this.bestScore = bestScore;
     }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+    
+    
     
     @Override
     public Boolean isAlive(){
@@ -87,6 +98,9 @@ public class Player extends Character implements Serializable{
     
     public void displayInventory(){
         System.out.println("Nothing here yet...");
+        for(Item currentItem: playerInventory){
+            System.out.println(currentItem.getItemName());
+        }
     }
     
     
