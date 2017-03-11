@@ -15,8 +15,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- *
- * @author Brian
+ *This control class takes care of all methods related to the player fighting
+ * monsters, using items, and increasing stats.
+ * @author Brian, Landon
  */
 public class BattleControl {
     
@@ -102,7 +103,7 @@ public class BattleControl {
         }
     }
     
-    
+    //searches the player inventory arraylist and selects an item to use
     public static void useItem(){
         
         boolean itemUsed = false;
@@ -154,6 +155,8 @@ public class BattleControl {
                 hero.addExperience(Item.Experience.getBonusValue());
                 System.out.println("you gained " + 
                         Item.Experience.getBonusValue() + " Experience Points!\n");
+                //check to see if they leveled up
+                BattleControl.checkLevelUp();
                 break;
             default:
                 System.out.println("Item not found... Please try again or cancel");
