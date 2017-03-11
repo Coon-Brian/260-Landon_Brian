@@ -7,6 +7,7 @@ package buyi.cit260.mathcadia.control;
 
 import static buyi.cit260.mathcadia.control.GameControl.mathcadia;
 import byui.cit260.mathcadia.model.Game;
+import byui.cit260.mathcadia.model.Item;
 import byui.cit260.mathcadia.model.Monster;
 import byui.cit260.mathcadia.model.Player;
 import byui.cit260.mathcadia.model.Question;
@@ -36,11 +37,16 @@ public class BattleControl {
         //6. if neither is dead, start over at step 1;
         
         while(hero.isAlive() && monster.isAlive()){
-            System.out.println("Insert an answer: A,B,C, or D\n");
+            System.out.println("Insert an answer: A,B,C,D  or use an item with U\n");
             System.out.println(questions.get(0).getProblem());
             
             
-            String answer = userInput.nextLine();
+            String answer = userInput.nextLine().toUpperCase();
+            
+            if(answer.equals("U")){
+                BattleControl.useItem();
+                continue;
+            }
             
             Question oldQuestion = questions.get(0);
             //remove first question from list
@@ -49,7 +55,7 @@ public class BattleControl {
             questions.add(oldQuestion);
             
             //check user answer
-            if(oldQuestion.getAnswer().equals(answer.toUpperCase())){
+            if(oldQuestion.getAnswer().equals(answer)){
                 int damage = hero.attack(monster);
                 System.out.println("You did " + damage + " damage to the monster\n");
             }
@@ -93,6 +99,68 @@ public class BattleControl {
         if(counter > hero.getLevel()){
             System.out.println("You have leveled up!\n");
             hero.levelUp();
+        }
+    }
+    
+    
+    public static void useItem(){
+        
+        boolean itemUsed = false;
+        Player hero = Game.getPlayer();
+        while(!itemUsed){
+        System.out.println("\nWhich item would you like to use? (type in name of item or Q to cancel)");
+        hero.displayInventory();
+        //get user answer
+        String itemName = userInput.nextLine().toUpperCase();
+        //check for cancel
+        if(itemName.equals("Q"))
+            break;
+        
+        //this number will tell us what bonus to give
+        int itemNum = -1;
+        
+        
+        
+        //loop through player inventory for match
+        for(Item currentItem: hero.getPlayerInventory()){
+            //if it matches return the enum ordinal number
+            if(itemName.equals(currentItem.getItemName())){
+                
+                itemNum = currentItem.ordinal();
+                //remove item from inventory
+                hero.getPlayerInventory().remove(currentItem);
+                break;
+            }
+                
+        }
+        //give the hero their bonus
+        switch(itemNum){
+            case 0:
+                hero.addHealth(Item.ExtraCredit.getBonusValue());
+                System.out.println("you gained " + 
+                        Item.ExtraCredit.getBonusValue() + " Health Points!\n");
+                break;
+            case 1:
+                hero.addKnowledge(Item.Knowledge.getBonusValue());
+                System.out.println("you gained " + 
+                        Item.Knowledge.getBonusValue() + " Knowledge!\n");
+                break;
+            case 2:
+                hero.addPower(Item.Power.getBonusValue());
+                System.out.println("you gained " + 
+                        Item.Power.getBonusValue() + " Power!\n");
+                break;
+            case 3:
+                hero.addExperience(Item.Experience.getBonusValue());
+                System.out.println("you gained " + 
+                        Item.Experience.getBonusValue() + " Experience Points!\n");
+                break;
+            default:
+                System.out.println("Item not found... Please try again or cancel");
+                continue;
+        }
+        
+        itemUsed = true;
         }
     }
     

@@ -27,6 +27,7 @@ public class BattleRoomView extends View{
                   + "\n S - Save game"
                   + "\n H - Help Menu"
                   + "\n I - Display Inventory"
+                  + "\n U - Use Item"
                   + "\n Q - Leave Battle Room"
                   + "\n------------------------------");
     }    
@@ -35,6 +36,7 @@ public class BattleRoomView extends View{
     public void display(){
         boolean done = false;
         System.out.println("\nWelcome to the battle room! ");
+        System.out.println("Your grade is currently at " + Game.getPlayer().getPercent());
         do{
             String menuOption = this.getInput();
             if(menuOption.toUpperCase().equals("Q"))
@@ -70,6 +72,9 @@ public class BattleRoomView extends View{
                 break;
             case "I":
                 Game.getPlayer().displayInventory();
+                break;
+            case "U":
+                BattleControl.useItem();
                 break;
             case "Q":
                 MainMenuView mainMenu = new MainMenuView();

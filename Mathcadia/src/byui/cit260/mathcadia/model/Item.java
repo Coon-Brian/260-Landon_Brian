@@ -13,22 +13,20 @@ import java.io.Serializable;
  */
 public enum Item implements Serializable{
     
-    ExtraCredit("Extra Credit Potion", 1, 10),
-    Knowledge("Knowledge Potion", 2, 2),
-    Wisdom("Wisdom Potion", 3, 5),
-    Experience("Experience potion", 4, 100);
+    ExtraCredit("EXTRA CREDIT POTION", 100),
+    Knowledge("KNOWLEDGE POTION", 2),
+    Power("POWER POTION", 5),
+    Experience("EXPERIENCE POTION", 100);
     
     
     
     // Class instance variables
     private final String itemName;
-    private final int itemType;
     private final int bonusValue;
 
-    Item(String name, int type, int bonusValue) {
+    Item(String name, int bonusValue) {
 
-        itemName = name;
-        itemType = type;
+        this.itemName = name;
         this.bonusValue = bonusValue;
         
 
@@ -38,9 +36,6 @@ public enum Item implements Serializable{
         return itemName;
     }
 
-    public int getItemType() {
-        return itemType;
-    }
 
     public int getBonusValue() {
         return bonusValue;
@@ -50,7 +45,7 @@ public enum Item implements Serializable{
 
     @Override
     public String toString() {
-        return "Item{" + "itemName=" + itemName + ", itemType=" + itemType + ", bonusValue=" + bonusValue + '}';
+        return "Item{" + "itemName=" + itemName + ", bonusValue=" + bonusValue + '}';
     }
     
     

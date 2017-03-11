@@ -87,7 +87,12 @@ public class Player extends Character implements Serializable{
         this.level = level;
     }
     
-    
+    //for displaying current grade
+    public String getPercent(){
+        double points = gradePoints / 10.0;
+        String percent = points + "%";
+        return percent;
+    }
     
     @Override
     public Boolean isAlive(){
