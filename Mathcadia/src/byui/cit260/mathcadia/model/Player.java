@@ -95,7 +95,7 @@ public class Player extends Character implements Serializable{
         return gradePoints > 699;
     }
 
-
+    // displays players current inventory
     public void displayInventory(){
         System.out.println("____  THIS IS YOUR INVENTORY  ____" + "\n");
         for (Item currentItem: playerInventory){

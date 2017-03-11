@@ -27,7 +27,7 @@ public class BattleRoomView extends View{
                   + "\n S - Save game"
                   + "\n H - Help Menu"
                   + "\n I - Display Inventory"
-                  + "\n Q - Quit"
+                  + "\n Q - Leave Battle Room"
                   + "\n------------------------------");
     }    
     
@@ -84,7 +84,7 @@ public class BattleRoomView extends View{
     }
 
     private void startBattle() {
-        System.out.println("A monster approaches...");
+        System.out.println("A monster approaches...\n");
         BattleControl.battleMonster();
     }
 

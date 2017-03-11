@@ -28,7 +28,7 @@ public class RoomView extends View {
                   + "\n E - Explore Room"
                   + "\n H - Help menu"
                   + "\n S - Save game"
-                  + "\n Q - Exit Game"
+                  + "\n Q - Exit Room"
                   + "\n I - Display inventory"
                   + "\n------------------------------", filename);
         

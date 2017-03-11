@@ -51,11 +51,11 @@ public class BattleControl {
             //check user answer
             if(oldQuestion.getAnswer().equals(answer.toUpperCase())){
                 int damage = hero.attack(monster);
-                System.out.println("You did " + damage + "damage to the monster");
+                System.out.println("You did " + damage + " damage to the monster\n");
             }
             else{
                 int damage = monster.attack(hero);
-                System.out.println("The monster did " + damage + " damage to you!");
+                System.out.println("The monster did " + damage + " damage to you!\n");
             }
             
             if(!monster.isAlive()){
@@ -91,7 +91,7 @@ public class BattleControl {
         }
 
         if(counter > hero.getLevel()){
-            System.out.println("You have leveled up!");
+            System.out.println("You have leveled up!\n");
             hero.levelUp();
         }
     }
