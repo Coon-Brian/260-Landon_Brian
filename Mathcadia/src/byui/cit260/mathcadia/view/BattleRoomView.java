@@ -30,6 +30,7 @@ public class BattleRoomView extends View{
                   + "\n U - Use Item"
                   + "\n Q - Leave Battle Room"
                   + "\n------------------------------");
+        searched = false;
     }    
     
     @Override
@@ -61,7 +62,13 @@ public class BattleRoomView extends View{
                 library.display();
                 break;
             case "E":
+                if(!searched){
                 LocationControl.searchRoom();
+                searched = true;
+                }
+                else{
+                    System.out.println("You've already searched this room!");
+                }
                 break;
             case "S":
                 this.saveGame();

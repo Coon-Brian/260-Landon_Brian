@@ -18,6 +18,8 @@ import java.util.Scanner;
 public class RoomView extends View {
     
     private String currentFile;
+    private boolean read;
+    private boolean searched;
     
     public RoomView(String filename){
        super("\n------------------------------"
@@ -33,6 +35,8 @@ public class RoomView extends View {
                   + "\n------------------------------", filename);
         
        currentFile = filename;
+       read = false;
+       searched = false;
     }
     
     
@@ -43,13 +47,16 @@ public class RoomView extends View {
         String value = "";
         boolean valid = false;
         
-        //here we are checking if the player is currently
-        //in the library, if they are display alternative menu
-        if("text/library.txt".equals(currentFile)){
-            this.displayLibraryMenu();
-        }
+        
+        
         
         while (!valid){
+            //here we are checking if the player is currently
+            //in the library, if they are display alternative menu
+            if("text/library.txt".equals(currentFile) && !read){
+            this.displayLibraryMenu();
+            read = true;
+        } else{
             System.out.println("\n" + this.displayMessage);
             value = keyBoard.nextLine();
             value = value.trim();
@@ -59,7 +66,10 @@ public class RoomView extends View {
             }
             break;
         }
+        }
         return value;
+        
+        
     }
     
     @Override
@@ -87,7 +97,13 @@ public class RoomView extends View {
                 this.exitGame();
                 break;
             case "E":
+                if(!searched){
                 LocationControl.searchRoom();
+                searched = true;
+                }
+                else{
+                    System.out.println("You've already searched this room!");
+                }
                 break;
             case "I":
                 Game.getPlayer().displayInventory();

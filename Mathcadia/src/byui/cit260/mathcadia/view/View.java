@@ -13,6 +13,7 @@ public abstract class View implements ViewInterface{
     
     protected String displayMessage;
     protected String roomText = "";
+    protected boolean searched;
     
     public View(){
     }

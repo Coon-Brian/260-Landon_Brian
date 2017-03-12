@@ -22,7 +22,7 @@ public class Library extends Location implements Serializable{
     public Library(){
         roomName = "Library";
         roomItem = null;
-        roomFileName = null;
+        roomFileName = "library.txt";
     }
     
 

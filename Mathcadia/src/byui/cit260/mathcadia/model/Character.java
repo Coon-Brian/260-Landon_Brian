@@ -37,11 +37,11 @@ public class Character implements Serializable{
     }
     
     public void addKnowledge(Integer points){
-        this.experience += points;
+        this.knowledge += points;
     }
     
     public void addPower(Integer points){
-        this.experience += points;
+        this.power += points;
     }
     
     //for very end of game
