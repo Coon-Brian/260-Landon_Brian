@@ -175,12 +175,9 @@ A
 
 (4x^2 −2x + 8)−(x^2 + 3x − 2)=
 (A) 3x^2 + x + 6
-
 (B) 3x^2 + x + 10
 (C) 3x^2 + 5x + 6
-
 (D) 3x^2 + 5x + 10
-
 D
 
 Evaluate 11 + sqrt(-4 + 6 × 4 ÷ 3)
@@ -269,8 +266,7 @@ D
 
 Which quadratic function, when graphed, has x-intercepts of 4 and −3 ?
 (A) y =(x −3)(x + 4)
-(B) y =(x +3)(2x −8
-)
+(B) y =(x +3)(2x −8)
 (C) y =(3x −1)(4x +1)
 (D) y =(3x +1)(8x −2)
 B
@@ -300,7 +296,6 @@ What is the complete factorization of 32 − 8z^2 ?
 (A) −8(2 + z)(2 − z)
 (B) 8(2 + z)(2 −z) 
 (C) −8(2 + z)^2
-
 (D) 8(2 - z)^2
 B
 
