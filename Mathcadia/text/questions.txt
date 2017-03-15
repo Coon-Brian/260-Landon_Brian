@@ -349,7 +349,6 @@ If f(2x + 3) = 2x - 1, then f(3x + 4) =
 (C) 6x + 11
 (D) 9x + 15
 B
-
 If the whole graph of function f lies in quadrant IV, then the graph of the inverse of lies in quadrant?
 (A) I
 (B) II
@@ -362,4 +361,4 @@ Simplify (2x^-3 y^4)^3 (x^3 + y)^0 / (4xy^-2)^3
 (B) (1/4)(y^16 / x^12)
 (C) (1/6)(y^18 / x^14)
 (D) (1/8)(y^16 / x^14)
-A
+D
