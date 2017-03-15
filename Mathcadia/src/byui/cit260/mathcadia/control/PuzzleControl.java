@@ -22,7 +22,7 @@ public class PuzzleControl {
      * @param bottomLength
      * @return boolean
     */
-    public boolean calcDoorSize(int height, int bottomLength){
+    public static boolean calcDoorSize(int height, int bottomLength){
        
         int topLength = 3;
         

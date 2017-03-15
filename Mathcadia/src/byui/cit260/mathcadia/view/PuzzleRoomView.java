@@ -5,7 +5,10 @@
  */
 package byui.cit260.mathcadia.view;
 
+import byui.cit260.mathcadia.control.GameControl;
 import byui.cit260.mathcadia.control.LocationControl;
+import byui.cit260.mathcadia.control.PuzzleControl;
+import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Location;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -20,15 +23,14 @@ public class PuzzleRoomView extends View {
     
     public PuzzleRoomView(){
         super("\n------------------------------"
-                  + "\n|      Game Play Menu        |"
+                  + "\n|      Puzzle Menu        |"
                   + "\n------------------------------"
                   + "\n P - Solve Puzzle"
-                  + "\n L - Return to Library"
-                  + "\n E - Search Room"
                   + "\n F - Save game"
+                  + "\n E - Explore Room"
                   + "\n H - Help Menu"
                   + "\n Q - Quit"
-                  + "\n------------------------------");
+                  + "\n------------------------------", "text/puzzle01.txt");
     }    
       
 
@@ -41,10 +43,8 @@ public class PuzzleRoomView extends View {
             case "P":
                 this.solvePuzzle();
                 break;
-            case "L":
-                RoomView library;
-                library = new RoomView("text/library.txt");
-                library.display();
+            case "S":
+                GameControl.saveGame(Game.getPlayer());
                 break;
             case "E":
                 LocationControl.searchRoom();
@@ -67,6 +67,24 @@ public class PuzzleRoomView extends View {
 
 
     private void solvePuzzle() {
-        System.out.println("Puzzle goes here");
+        boolean passedTest = false;
+        
+        while(!passedTest){
+            System.out.println("Enter the height of door");
+            Scanner keyBoard = new Scanner(System.in);
+            int height = keyBoard.nextInt();
+            System.out.println("Enter the bottom length of door");
+            int length = keyBoard.nextInt();
+
+
+
+            passedTest = PuzzleControl.calcDoorSize(height, length);
+            if(passedTest){
+                System.out.println("GOOD JOB BRO!");
+            }
+            else{
+                System.out.println("Incorrect: you are still trapped!");
+            }
+        }
     }
 }

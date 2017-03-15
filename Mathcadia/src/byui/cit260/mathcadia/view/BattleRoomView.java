@@ -29,6 +29,7 @@ public class BattleRoomView extends View{
                   + "\n I - Display Inventory"
                   + "\n U - Use Item"
                   + "\n Q - Leave Battle Room"
+                  + "\n P - (DEBUG) go to puzzle room #1"
                   + "\n------------------------------");
         searched = false;
     }    
@@ -86,7 +87,11 @@ public class BattleRoomView extends View{
             case "Q":
                 MainMenuView mainMenu = new MainMenuView();
                 mainMenu.display();
-                break;                
+                break; 
+            case "P":
+                PuzzleRoomView puzzleRoom1 = new PuzzleRoomView();
+                puzzleRoom1.display();
+                break; 
             default:
                 System.out.println("\n Invalid selection, Please try again.");
                 break;
@@ -98,6 +103,10 @@ public class BattleRoomView extends View{
     private void startBattle() {
         System.out.println("A monster approaches...\n");
         BattleControl.battleMonster();
+        if(LocationControl.battleRoomNumber == 1){
+            PuzzleRoomView puzzleRoom1 = new PuzzleRoomView();
+            puzzleRoom1.display();
+        }
     }
 
     private void saveGame() {

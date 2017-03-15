@@ -1,1 +1,9 @@
-In this room, there is a trapezoid door . . .
+A secret passage way has opened. You follow it down a winding set of steps
+leading into a strange room. The walls are covered in trapezoid holes of
+various sizes. As you enter the wall shuts behind you, leaving you trapped.
+
+On the far wall you see a trapezoid shaped door. The door has two
+rotating knobs, allowing you to magically change the size of the door.
+To pass this puzzle, you must enter two integer values to change the 
+size of the door. The area of the trapezoid must be larger than 10 feet^2, yet
+smaller than 25 feet^2.
