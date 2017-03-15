@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package buyi.cit260.mathcadia.control;
+package byui.cit260.mathcadia.control;
 
-import static buyi.cit260.mathcadia.control.GameControl.mathcadia;
+import static byui.cit260.mathcadia.control.GameControl.mathcadia;
 import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Item;
 import byui.cit260.mathcadia.model.Monster;

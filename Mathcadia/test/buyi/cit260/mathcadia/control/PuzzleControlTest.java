@@ -5,6 +5,7 @@
  */
 package buyi.cit260.mathcadia.control;
 
+import byui.cit260.mathcadia.control.PuzzleControl;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

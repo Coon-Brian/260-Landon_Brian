@@ -5,7 +5,7 @@
  */
 package byui.cit260.mathcadia.view;
 
-import buyi.cit260.mathcadia.control.LocationControl;
+import byui.cit260.mathcadia.control.LocationControl;
 import byui.cit260.mathcadia.model.Location;
 import java.io.FileNotFoundException;
 import java.util.Scanner;

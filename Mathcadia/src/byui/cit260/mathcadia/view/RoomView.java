@@ -5,8 +5,8 @@
  */
 package byui.cit260.mathcadia.view;
 
-import buyi.cit260.mathcadia.control.GameControl;
-import buyi.cit260.mathcadia.control.LocationControl;
+import byui.cit260.mathcadia.control.GameControl;
+import byui.cit260.mathcadia.control.LocationControl;
 import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Library;
 import java.util.Scanner;

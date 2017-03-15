@@ -5,7 +5,7 @@
  */
 package byui.cit260.mathcadia.model;
 
-import buyi.cit260.mathcadia.control.GameControl;
+import byui.cit260.mathcadia.control.GameControl;
 import java.util.ArrayList;
 import java.util.List;
 

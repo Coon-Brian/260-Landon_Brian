@@ -1,5 +1,5 @@
 
-package buii.cit260.mathcadia.exceptions;
+package byui.cit260.mathcadia.exceptions;
 
 /**
  *
