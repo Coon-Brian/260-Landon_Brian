@@ -154,7 +154,7 @@ There are 58 DVD's and CD's. If the number of CD's is two more than three times 
 (B) -4
 (C) 1
 (D) -1
-C
+C
 
 The equation - mx + 1 = 13 - 4(x + 3) is an identity if m = 
 (A) 42
@@ -175,7 +175,7 @@ Which of the following is a factor of the polynomial x^2 – x – 20 ?
 (B) x – 4
 (C) x + 5
 (D) x + 10
-A
+A
 
 (4x^2 −2x + 8)−(x^2 + 3x − 2)=
 (A) 3x^2 + x + 6
