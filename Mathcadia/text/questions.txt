@@ -118,14 +118,10 @@ Add the following: 3x - 2y + 2y + 3z + 2 z - 4x - 5y
 D
 
 The opposite of a number is less than the original number. Which is the correct answer is for this statement?
-(A) This statement is never true.
-
-(B) This statement is always true.
-
-(C) This statement is true for positive numbers.
-
-(D) This statement is true for negative numbers.
-
+(A) This statement is never true
+(B) This statement is always true
+(C) This statement is true for positive numbers
+(D) This statement is true for negative numbers
 C
 
 What are the solutions to 6x^2 = 18x ?
@@ -277,7 +273,7 @@ Which quadratic function, when graphed, has x-intercepts of 4 and −3 ?
 )
 (C) y =(3x −1)(4x +1)
 (D) y =(3x +1)(8x −2)
-B 
+B
 
 If ln(3x - 2) = 1, then x =
 (A) 2/3
@@ -304,7 +300,7 @@ What is the complete factorization of 32 − 8z^2 ?
 (A) −8(2 + z)(2 − z)
 (B) 8(2 + z)(2 −z) 
 (C) −8(2 + z)^2
- 
+
 (D) 8(2 - z)^2
 B
 
