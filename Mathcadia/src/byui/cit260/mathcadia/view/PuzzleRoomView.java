@@ -10,6 +10,7 @@ import byui.cit260.mathcadia.control.LocationControl;
 import byui.cit260.mathcadia.control.PuzzleControl;
 import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Location;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -20,8 +21,10 @@ import java.util.Scanner;
 public class PuzzleRoomView extends View {
     
     private String puzzle;
+    private int roomNum;
     
-    public PuzzleRoomView(){
+    public PuzzleRoomView(int roomNum){
+        
         super("\n------------------------------"
                   + "\n|      Puzzle Menu        |"
                   + "\n------------------------------"
@@ -30,7 +33,10 @@ public class PuzzleRoomView extends View {
                   + "\n E - Explore Room"
                   + "\n H - Help Menu"
                   + "\n Q - Quit"
-                  + "\n------------------------------", "text/puzzle01.txt");
+                  + "\n------------------------------");
+        
+        this.displayPuzzle(roomNum);
+        this.roomNum = roomNum;
     }    
       
 
@@ -86,5 +92,101 @@ public class PuzzleRoomView extends View {
                 System.out.println("Incorrect: you are still trapped!");
             }
         }
+    }
+    
+    private void solvePuzzleOne(){
+        boolean passedTest = false;
+        
+        while(!passedTest){
+            System.out.println("Enter the height of door");
+            Scanner keyBoard = new Scanner(System.in);
+            int height = keyBoard.nextInt();
+            System.out.println("Enter the bottom length of door");
+            int length = keyBoard.nextInt();
+
+
+
+            passedTest = PuzzleControl.calcDoorSize(height, length);
+            if(passedTest){
+                System.out.println("GOOD JOB BRO!");
+            }
+            else{
+                System.out.println("Incorrect: you are still trapped!");
+            }
+        }
+    }
+    
+    private void solvePuzzleTwo() {
+         boolean passedTest = false;
+        
+        
+        while(!passedTest){
+            System.out.println("Enter the large number");
+            Scanner keyBoard = new Scanner(System.in);
+            String largeNum = keyBoard.next();
+            System.out.println("Enter the potential factor");
+            String pFactor = keyBoard.next();
+
+
+
+           // int otherFactor = PuzzleControl.isFactor(largeNum, pFactor);
+            if(passedTest){
+                System.out.println("GOOD JOB BRO!");
+            }
+            else{
+                System.out.println("Incorrect: you are still trapped!");
+            }
+        }
+    }
+    
+    private void solvePuzzleThree(){
+         boolean passedTest = false;
+        
+        while(!passedTest){
+            System.out.println("Enter the height of door");
+            Scanner keyBoard = new Scanner(System.in);
+            int height = keyBoard.nextInt();
+            System.out.println("Enter the bottom length of door");
+            int length = keyBoard.nextInt();
+
+
+
+            passedTest = PuzzleControl.calcDoorSize(height, length);
+            if(passedTest){
+                System.out.println("GOOD JOB BRO!");
+            }
+            else{
+                System.out.println("Incorrect: you are still trapped!");
+            }
+        }
+    }
+
+    private void displayPuzzle(int roomNum) {
+        String puzzleDescription = "";
+        String fileName = "text/";
+        
+        switch(roomNum){
+            case 1:
+                fileName += "puzzle01.txt"; 
+                break;
+            case 2:
+                fileName += "puzzle02.txt";
+                break;
+            case 3:
+                fileName += "puzzle03.txt";
+                break;
+                
+        }
+        
+        File file = new File(fileName);
+                Scanner fileReader;
+                try {
+                    fileReader = new Scanner(file);
+                    while (fileReader.hasNextLine()){
+                    this.roomText += fileReader.nextLine() + "\n";
+                }
+                } catch (FileNotFoundException ex) {
+                    System.out.print(ex.getMessage());
+                }
     }
 }

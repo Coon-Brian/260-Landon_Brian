@@ -5,6 +5,8 @@
  */
 package byui.cit260.mathcadia.control;
 
+import byui.cit260.mathcadia.exceptions.PuzzleControlException;
+
 /**
  *
  * @author Brian
@@ -25,6 +27,7 @@ public class PuzzleControl {
     public static boolean calcDoorSize(int height, int bottomLength){
        
         int topLength = 3;
+        
         
         //check to make sure the input is integers
         if (height != (int)height || bottomLength != (int)bottomLength){
@@ -55,11 +58,11 @@ public class PuzzleControl {
     * @param potentialF 
     * @author Landon Shumway
     */
-    public int isFactor(String largeNum, String potentialF){
+    public static int isFactor(String largeNum, String potentialF)throws PuzzleControlException{
         //make sure input is valid
         // if the string contains anything but int, return failed
        if (!largeNum.matches("^\\d*$") || !potentialF.matches("^\\d*$"))
-            return  -1;
+            throw new PuzzleControlException("You must enter");
        
         //convert input to int
         int number = Integer.parseInt(largeNum);
@@ -67,7 +70,8 @@ public class PuzzleControl {
         
         
         if (number <= 100 || potentialFactor <= 2)
-            return -1;
+            throw new PuzzleControlException("You entered a number that was too large"
+                                                    + "or a factor that was too small");
 
         //check if it is a factor, return other factor if true
         if (number % potentialFactor == 0)
@@ -90,7 +94,7 @@ public class PuzzleControl {
      * @param height
      * @return 
     */  
-    public double calcVolumeOfCone(double diameter, double height) {
+    public static double calcVolumeOfCone(double diameter, double height) {
         
         // checks to see if diameter is too small or large
         if (diameter <= 0 || diameter >= 7){
