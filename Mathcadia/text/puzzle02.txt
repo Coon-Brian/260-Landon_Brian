@@ -1,1 +1,1 @@
-This is puzzle 2, enter two values:
+This is puzzle 2, enter two numbers:

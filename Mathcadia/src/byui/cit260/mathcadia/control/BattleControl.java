@@ -109,13 +109,22 @@ public class BattleControl {
         boolean itemUsed = false;
         Player hero = Game.getPlayer();
         while(!itemUsed){
-        System.out.println("\nWhich item would you like to use? (type in name of item or Q to cancel)");
+        if(hero.getPlayerInventory().size() > 0)
+            System.out.println("\nWhich item would you like to use? "
+                                + "(Put in a number between 1 and " + 
+                        hero.getPlayerInventory().size() + " Q to cancel)");
+        else
+            System.out.println("You don't have any items, press Q to return");
         hero.displayInventory();
         //get user answer
-        String itemName = userInput.nextLine().toUpperCase();
+        String itemSlot = userInput.nextLine();
         //check for cancel
-        if(itemName.equals("Q"))
+        if(itemSlot.equals("Q"))
             break;
+        
+        try {
+            
+        }
         
         //this number will tell us what bonus to give
         int itemNum = -1;
@@ -123,13 +132,13 @@ public class BattleControl {
         
         
         //loop through player inventory for match
-        for(Item currentItem: hero.getPlayerInventory()){
+        for(int i = 0; i < hero.getPlayerInventory().size(); i++){
             //if it matches return the enum ordinal number
-            if(itemName.equals(currentItem.getItemName())){
+            if(i+1 == itemSlot){
                 
-                itemNum = currentItem.ordinal();
+                itemNum = hero.getPlayerInventory().get(i).ordinal();
                 //remove item from inventory
-                hero.getPlayerInventory().remove(currentItem);
+                hero.getPlayerInventory().remove(i);
                 break;
             }
                 
