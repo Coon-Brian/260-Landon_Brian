@@ -61,23 +61,31 @@ public class PuzzleControl {
     public static int isFactor(String largeNum, String potentialF)throws PuzzleControlException{
         //make sure input is valid
         // if the string contains anything but int, return failed
-       if (!largeNum.matches("^\\d*$") || !potentialF.matches("^\\d*$"))
-            throw new PuzzleControlException("You must enter");
+       // if (!largeNum.matches("^\\d*$") || !potentialF.matches("^\\d*$"))
+        
+        int number = 0;
+        int potentialFactor = 0;
        
         //convert input to int
-        int number = Integer.parseInt(largeNum);
-        int potentialFactor = Integer.parseInt(potentialF);
+        try{
+            number = Integer.parseInt(largeNum);
+            potentialFactor = Integer.parseInt(potentialF);
+        }catch(NumberFormatException nf){
+            System.out.println("You must enter a valid integer. "
+            + " Try again or press Q to quit.");
+            throw new PuzzleControlException("");
+        }
         
         
         if (number <= 100 || potentialFactor <= 2)
             throw new PuzzleControlException("You entered a number that was too large"
-                                                    + "or a factor that was too small");
+                                                    + " or a factor that was too small");
 
         //check if it is a factor, return other factor if true
         if (number % potentialFactor == 0)
             return number / potentialFactor;
         else 
-            return -1;
+            throw new PuzzleControlException("Your potential factor was not an actual factor");
 
     }
     

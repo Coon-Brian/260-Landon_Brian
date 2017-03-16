@@ -8,6 +8,7 @@ package byui.cit260.mathcadia.view;
 import byui.cit260.mathcadia.control.GameControl;
 import byui.cit260.mathcadia.control.LocationControl;
 import byui.cit260.mathcadia.control.PuzzleControl;
+import byui.cit260.mathcadia.exceptions.PuzzleControlException;
 import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Location;
 import java.io.File;
@@ -75,22 +76,20 @@ public class PuzzleRoomView extends View {
     private void solvePuzzle() {
         boolean passedTest = false;
         
-        while(!passedTest){
-            System.out.println("Enter the height of door");
-            Scanner keyBoard = new Scanner(System.in);
-            int height = keyBoard.nextInt();
-            System.out.println("Enter the bottom length of door");
-            int length = keyBoard.nextInt();
-
-
-
-            passedTest = PuzzleControl.calcDoorSize(height, length);
-            if(passedTest){
-                System.out.println("GOOD JOB BRO!");
-            }
-            else{
-                System.out.println("Incorrect: you are still trapped!");
-            }
+        switch(roomNum){
+            case 1:
+                solvePuzzleOne();
+                break;
+            case 2:
+                try {
+                solvePuzzleTwo();
+                }catch(PuzzleControlException me){
+                    System.out.println(me.getMessage());
+                }
+                break;
+            case 3:
+                solvePuzzleThree();
+                break;
         }
     }
     
@@ -116,7 +115,7 @@ public class PuzzleRoomView extends View {
         }
     }
     
-    private void solvePuzzleTwo() {
+    private void solvePuzzleTwo() throws PuzzleControlException {
          boolean passedTest = false;
         
         
@@ -129,13 +128,11 @@ public class PuzzleRoomView extends View {
 
 
 
-           // int otherFactor = PuzzleControl.isFactor(largeNum, pFactor);
-            if(passedTest){
-                System.out.println("GOOD JOB BRO!");
-            }
-            else{
-                System.out.println("Incorrect: you are still trapped!");
-            }
+           int otherFactor = PuzzleControl.isFactor(largeNum, pFactor);
+           passedTest = true; 
+           System.out.println("GOOD JOB BRO!");
+            
+            
         }
     }
     

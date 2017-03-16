@@ -30,10 +30,15 @@ public class Mathcadia {
  
     public static void main(String[] args) {
     
-        
         // create StartProgramViewOrig and display the start progam view
         StartProgramView startProgramView = new StartProgramView();
+        try{
+            
         startProgramView.display();
-
+        }catch (Throwable te){
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.display();
+        }
     }
 }
