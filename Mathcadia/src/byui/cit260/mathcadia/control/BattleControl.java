@@ -117,14 +117,18 @@ public class BattleControl {
             System.out.println("You don't have any items, press Q to return");
         hero.displayInventory();
         //get user answer
-        String itemSlot = userInput.nextLine();
+        String itemPos = userInput.nextLine();
         //check for cancel
-        if(itemSlot.equals("Q"))
+        if(itemPos.equals("Q"))
             break;
         
+        int itemSlot = -1;
         try {
-            
-        }
+            itemSlot = Integer.parseInt(itemPos);
+        }catch(NumberFormatException nf){
+            System.out.println("You must enter a number between 1 and " + 
+                        hero.getPlayerInventory().size() + " Q to cancel)");      
+                    }
         
         //this number will tell us what bonus to give
         int itemNum = -1;
