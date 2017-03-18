@@ -46,7 +46,7 @@ public class BattleControl {
             String answer = userInput.nextLine().toUpperCase();
             
             if(answer.equals("U")){
-                BattleControl.useItem();
+                    BattleControl.useItem();
                 continue;
             }
             
@@ -134,11 +134,10 @@ public class BattleControl {
         //this number will tell us what bonus to give
         int itemNum = -1;
         
-        if (itemSlot <= 0 || itemSlot > hero.getPlayerInventory().size() 
+        if (itemSlot <= 0 || itemSlot > hero.getPlayerInventory().size())
                 throw new BattleControlException("You must enter a number between 1 and " + 
                         hero.getPlayerInventory().size() + " Q to cancel)");
-                )
-        
+                
         //loop through player inventory for match
         for(int i = 0; i < hero.getPlayerInventory().size(); i++){
             //if it matches return the enum ordinal number
