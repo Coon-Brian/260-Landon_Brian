@@ -49,7 +49,7 @@ public class PuzzleRoomView extends View {
         switch (choice){
             case "P":
                 this.solvePuzzle();
-                break;
+                return true;
             case "S":
                 GameControl.saveGame(Game.getPlayer());
                 break;
@@ -99,10 +99,18 @@ public class PuzzleRoomView extends View {
         while(!passedTest){
             System.out.println("Enter the height of door");
             Scanner keyBoard = new Scanner(System.in);
-            int height = keyBoard.nextInt();
+            String userHeight = keyBoard.next();
             System.out.println("Enter the bottom length of door");
-            int length = keyBoard.nextInt();
+            String userLength = keyBoard.next();
+            int height = 0;
+            int length = 0;
 
+            try{
+                height = Integer.parseInt(userHeight);
+                length = Integer.parseInt(userLength);
+            }catch(NumberFormatException nf){
+                System.out.println("You must enter a valid number");
+            }
 
 
             passedTest = PuzzleControl.calcDoorSize(height, length);

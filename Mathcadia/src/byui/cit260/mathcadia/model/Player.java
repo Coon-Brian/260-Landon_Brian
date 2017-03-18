@@ -102,9 +102,10 @@ public class Player extends Character implements Serializable{
 
     // displays players current inventory
     public void displayInventory(){
+        int counter = 1;
         System.out.println("____  THIS IS YOUR INVENTORY  ____" + "\n");
         for (Item currentItem: playerInventory){
-            System.out.println("--- " + currentItem.getItemName());
+            System.out.println("--- " + currentItem.getItemName() + "\t" + counter++);
         }
     }
     

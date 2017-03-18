@@ -7,8 +7,11 @@ package byui.cit260.mathcadia.view;
 
 import byui.cit260.mathcadia.control.BattleControl;
 import byui.cit260.mathcadia.control.LocationControl;
+import byui.cit260.mathcadia.exceptions.BattleControlException;
 import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Location;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -83,7 +86,11 @@ public class BattleRoomView extends View{
                 Game.getPlayer().displayInventory();
                 break;
             case "U":
-                BattleControl.useItem();
+                try {
+                    BattleControl.useItem();
+                } catch (BattleControlException ex) {
+                    System.out.println(ex.getMessage());
+                }
                 break;
             case "Q":
                 MainMenuView mainMenu = new MainMenuView();
