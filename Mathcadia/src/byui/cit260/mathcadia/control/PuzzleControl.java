@@ -28,13 +28,6 @@ public class PuzzleControl {
        
         int topLength = 3;
         
-        
-        //check to make sure the input is integers
-        if (height != (int)height || bottomLength != (int)bottomLength){
-          //we will place an error here later
-            return false;  
-        }
-        
         //perform calculation
         float area = (height * (topLength * bottomLength)) / 2;
         
@@ -49,7 +42,7 @@ public class PuzzleControl {
         
     }
     
-    /** public int isFactor(String number, String potentialFactor)
+    /** 
     * Description: the user is asked to enter a number greater than 100 and then 
     * a smaller number greater than 2 that is a factor of the first. They will 
     * input two numbers. The function tests if the smaller number is a factor of

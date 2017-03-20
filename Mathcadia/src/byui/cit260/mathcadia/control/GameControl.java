@@ -5,6 +5,7 @@
  */
 package byui.cit260.mathcadia.control;
 
+import byui.cit260.mathcadia.exceptions.QuestionReaderException;
 import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Player;
 import byui.cit260.mathcadia.model.Question;
@@ -12,6 +13,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
@@ -56,9 +58,10 @@ public class GameControl {
     
     
     
-    public ArrayList<Question> buildQuestions(){
+    public ArrayList<Question> buildQuestions() throws QuestionReaderException{
         ArrayList<Question> questions = new ArrayList<>();
         String problem = "";
+        int lineNum = 0;
         
          File file = new File("text/questions.txt");
         Scanner fileReader;
@@ -70,15 +73,26 @@ public class GameControl {
                 //read in 5 lines of question text
                 for(int i = 0; i < 5; i++){
                  problem += fileReader.nextLine() + "\n";
+                 lineNum++;
                 }
                 //read in answer
                 currentQuestion.setAnswer(fileReader.nextLine());
+                lineNum++;
+                if (currentQuestion.getAnswer().length() != 1)
+                    throw new QuestionReaderException("ERROR: Answer does not meet "
+                            + "correct length on line " + lineNum);
+                
                 currentQuestion.setProblem(problem);
                 
                 //add current question to list of questions
                 questions.add(currentQuestion);
-                //skip blank line
+                //skip blank line, catch the error if there are no more lines
+                try{
                 fileReader.nextLine();
+                lineNum++;
+                }catch(NoSuchElementException ex){
+                    break;
+                }
                 //reset variable
                 problem = "";
             

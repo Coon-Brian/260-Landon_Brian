@@ -14,6 +14,8 @@ import byui.cit260.mathcadia.model.Player;
 import byui.cit260.mathcadia.model.Question;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *This control class takes care of all methods related to the player fighting
@@ -46,7 +48,11 @@ public class BattleControl {
             String answer = userInput.nextLine().toUpperCase();
             
             if(answer.equals("U")){
+                try {
                     BattleControl.useItem();
+                } catch (BattleControlException ex) {
+                    System.out.println(ex.getMessage());
+                }
                 continue;
             }
             
@@ -112,10 +118,11 @@ public class BattleControl {
         while(!itemUsed){
         if(hero.getPlayerInventory().size() > 0)
             System.out.println("\nWhich item would you like to use? "
-                                + "(Put in a number between 1 and " + 
-                        hero.getPlayerInventory().size() + " Q to cancel)");
-        else
-            System.out.println("You don't have any items, press Q to return");
+                                + "(enter the number of the item slot, " + " or Q to cancel)");
+        else{
+            System.out.println("You don't have any items");
+            return;
+        }
         hero.displayInventory();
         //get user answer
         String itemPos = userInput.nextLine();
@@ -127,17 +134,17 @@ public class BattleControl {
         try {
             itemSlot = Integer.parseInt(itemPos);
         }catch (NumberFormatException nf){
-            System.out.println("You must enter a number between 1 and " + 
-                        hero.getPlayerInventory().size() + " Q to cancel)");
+            System.out.println("You must enter a number or Q to cancel)");
         }
         
         //this number will tell us what bonus to give
         int itemNum = -1;
         
-        if (itemSlot <= 0 || itemSlot > hero.getPlayerInventory().size())
-                throw new BattleControlException("You must enter a number between 1 and " + 
-                        hero.getPlayerInventory().size() + " Q to cancel)");
+        if (itemSlot <= 0 || itemSlot > hero.getPlayerInventory().size()) 
+                throw new BattleControlException("You must enter a number that "
+                        + "appears in your inventory");
                 
+        
         //loop through player inventory for match
         for(int i = 0; i < hero.getPlayerInventory().size(); i++){
             //if it matches return the enum ordinal number

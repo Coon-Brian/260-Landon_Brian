@@ -6,6 +6,7 @@
 package byui.cit260.mathcadia.model;
 
 import byui.cit260.mathcadia.control.GameControl;
+import byui.cit260.mathcadia.exceptions.QuestionReaderException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,10 +34,14 @@ public class Game {
     
     public Game(){ 
         gameHandler = new GameControl();
-        questions = gameHandler.buildQuestions();
         gameFile = "";
         currentRoom = new Location();
         bestScore = 0;
+        try{
+        questions = gameHandler.buildQuestions();
+        }catch (QuestionReaderException QR){
+            System.out.println(QR.getMessage());
+        }
         
         
     }

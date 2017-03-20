@@ -86,13 +86,11 @@ public class BattleRoomView extends View{
                 Game.getPlayer().displayInventory();
                 break;
             case "U":
-        {
-            try {
-                BattleControl.useItem();
-            } catch (BattleControlException ex) {
-                System.out.println(ex.getMessage());
-            }
-        }
+                try {
+                    BattleControl.useItem();
+                } catch (BattleControlException ex) {
+                    System.out.println(ex.getMessage());
+                }
                 break;
             case "Q":
                 MainMenuView mainMenu = new MainMenuView();
