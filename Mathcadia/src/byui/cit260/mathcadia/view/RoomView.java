@@ -23,9 +23,9 @@ public class RoomView extends View {
     
     public RoomView(String filename){
        super("\n------------------------------"
-                  + "\n|          Main Menu         |"
+                  + "\n|          Room Menu         |"
                   + "\n------------------------------"
-                  + "\n L - Go to Library"
+                  + "\n L - Read from Library"
                   + "\n B - Go to battle Room"
                   + "\n E - Explore Room"
                   + "\n H - Help menu"

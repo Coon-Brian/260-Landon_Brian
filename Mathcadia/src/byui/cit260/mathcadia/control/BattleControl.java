@@ -14,11 +14,9 @@ import byui.cit260.mathcadia.model.Player;
 import byui.cit260.mathcadia.model.Question;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
- *This control class takes care of all methods related to the player fighting
+ * This control class takes care of all methods related to the player fighting
  * monsters, using items, and increasing stats.
  * @author Brian, Landon
  */
@@ -65,10 +63,12 @@ public class BattleControl {
             //check user answer
             if(oldQuestion.getAnswer().equals(answer)){
                 int damage = hero.attack(monster);
-                System.out.println("You did " + damage + " damage to the monster\n");
+                System.out.println("Correct! You did " + damage + " damage to the monster");
+                System.out.println("The monster has " + monster.getHealth() + " health points left!\n");
             }
             else{
                 int damage = monster.attack(hero);
+                System.out.println("Incorrect, the correct answer was " + oldQuestion.getAnswer());
                 System.out.println("The monster did " + damage + " damage to you!\n");
             }
             

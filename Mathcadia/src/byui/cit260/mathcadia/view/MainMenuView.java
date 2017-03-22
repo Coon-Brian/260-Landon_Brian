@@ -16,17 +16,19 @@ import mathcadia.Mathcadia;
  * @author Brian
  */
 public class MainMenuView extends View{
+    boolean gameStarted;
     
     public MainMenuView(){
         super("\n------------------------------"
                   + "\n|          Main Menu         |"
                   + "\n------------------------------"
                   + "\n N - Start new game"
-                  + "\n L - Load saved game"
+                  + "\n L - Load saved game or continue current game"
                   + "\n H - Help menu"
                   + "\n S - Save game"
                   + "\n E - Exit Game"
                   + "\n------------------------------");
+        gameStarted = false;
     }
     
     @Override
@@ -36,10 +38,11 @@ public class MainMenuView extends View{
         switch (choice){
             case "N":
                 this.startNewGame();
+                gameStarted = true;
                 break;
             case "L":
                 this.loadSaveGame();
-                break;
+                return gameStarted;
             case "H":
                 HelpMenuView help = new HelpMenuView();
                 help.display();
@@ -49,7 +52,6 @@ public class MainMenuView extends View{
                 break;
             case "E":
                 this.exitGame();
-                return true;
             default:
                 System.out.println("\n Invalid selection, Please try again.");
                 break;
@@ -70,8 +72,14 @@ public class MainMenuView extends View{
         
     }
 
-    private void loadSaveGame() {
-        System.out.println("\nLoading game...");
+    private boolean loadSaveGame() {
+        
+        if(!gameStarted){
+            System.out.println("You have not started a game yet!");
+        }
+        else
+            System.out.println("\nContinuing game...");
+        return gameStarted;
     }
 
     private void saveGame() {
@@ -80,5 +88,6 @@ public class MainMenuView extends View{
 
     private void exitGame() {
         System.out.println("\nExiting game...");
+        System.exit(0);
     }
 }

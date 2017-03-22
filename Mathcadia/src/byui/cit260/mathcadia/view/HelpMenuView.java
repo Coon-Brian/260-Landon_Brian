@@ -66,7 +66,7 @@ public class HelpMenuView extends View{
                                 "\nThat will help you in your journey.\n");
     }
 
-    private void displayRules() {
+    public void displayRules() {
 
         System.out.println("\nWhen you choose to fight a monster, you will be given a multiple choice " +
                                 "\nquestion. If you answer correctly you do damage to the monster. If not," +

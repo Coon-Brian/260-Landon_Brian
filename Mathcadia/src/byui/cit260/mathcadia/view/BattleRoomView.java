@@ -19,11 +19,14 @@ import java.util.logging.Logger;
  */
 public class BattleRoomView extends View{
     
+    //this determines if the player beat the monster and is moving to next room
+    boolean roomPassed;
     
     public BattleRoomView(){
         super("\n------------------------------"
-                  + "\n|      Game Play Menu        |"
+                  + "\n|      Battle Room Menu      |"
                   + "\n------------------------------"
+                  + "\n D - Display Battle Instructions"
                   + "\n F - Fight Monster"
                   + "\n L - Return to Library"
                   + "\n E - Explore Room"
@@ -31,17 +34,16 @@ public class BattleRoomView extends View{
                   + "\n H - Help Menu"
                   + "\n I - Display Inventory"
                   + "\n U - Use Item"
-                  + "\n Q - Leave Battle Room"
-                  + "\n P - (DEBUG) go to puzzle room #1"
-                  + "\n T - (DEBUG) go to puzzle room #2"
+                  + "\n Q - Leave Game"
                   + "\n------------------------------");
         searched = false;
+        roomPassed = false;
     }    
     
     @Override
     public void display(){
         boolean done = false;
-        System.out.println("\nWelcome to the battle room! ");
+        System.out.println("\nWelcome to battle room #" + LocationControl.battleRoomNumber);
         System.out.println("Your grade is currently at " + Game.getPlayer().getPercent());
         do{
             String menuOption = this.getInput();
@@ -50,7 +52,9 @@ public class BattleRoomView extends View{
             
             done = this.doAction(menuOption);
         }while (!done);
-        
+        //if the monster is beat, moved to next room, otherwise just exit
+        if(roomPassed)
+            nextBattleRoom();
     }    
 
     @Override
@@ -60,7 +64,7 @@ public class BattleRoomView extends View{
         switch (choice){
             case "F":
                 this.startBattle();
-                break;
+                return true;
             case "L":
                 RoomView library;
                 library = new RoomView("text/library.txt");
@@ -96,14 +100,10 @@ public class BattleRoomView extends View{
                 MainMenuView mainMenu = new MainMenuView();
                 mainMenu.display();
                 break; 
-            case "P":
-                PuzzleRoomView puzzleRoom1 = new PuzzleRoomView(1);
-                puzzleRoom1.display();
-                break; 
-            case "T":
-                PuzzleRoomView puzzleRoom2 = new PuzzleRoomView(2);
-                puzzleRoom2.display();
-                break; 
+            case "D":
+                HelpMenuView battleHelp = new HelpMenuView();
+                battleHelp.displayRules();
+                break;
             default:
                 System.out.println("\n Invalid selection, Please try again.");
                 break;
@@ -114,14 +114,38 @@ public class BattleRoomView extends View{
 
     private void startBattle() {
         System.out.println("A monster approaches...\n");
+        //user fights monster
         BattleControl.battleMonster();
-        if(LocationControl.battleRoomNumber == 1){
-            PuzzleRoomView puzzleRoom1 = new PuzzleRoomView(1);
-            puzzleRoom1.display();
-        }
+        //check if it's time to display next puzzle
+        checkPuzzleRoom();
+        roomPassed = true;
     }
 
     private void saveGame() {
        System.out.println("saving game...");
+    }
+    
+    private void nextBattleRoom(){
+        System.out.println("Moving to next battle room");
+        LocationControl.battleRoomNumber++;
+        this.display();
+        searched = false;
+        roomPassed = false;
+    }
+    
+    private void checkPuzzleRoom(){
+        if(LocationControl.battleRoomNumber == 1){
+            PuzzleRoomView puzzleRoom1 = new PuzzleRoomView(1);
+            puzzleRoom1.display();
+        }
+        if(LocationControl.battleRoomNumber == 8){
+            PuzzleRoomView puzzleRoom2 = new PuzzleRoomView(2);
+            puzzleRoom2.display();
+        }
+        if(LocationControl.battleRoomNumber == 14){
+            PuzzleRoomView puzzleRoom3 = new PuzzleRoomView(3);
+            puzzleRoom3.display();
+        }
+        
     }
 }

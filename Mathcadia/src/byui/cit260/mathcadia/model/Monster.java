@@ -5,6 +5,7 @@
  */
 package byui.cit260.mathcadia.model;
 
+import byui.cit260.mathcadia.control.LocationControl;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -19,8 +20,8 @@ public class Monster extends Character implements Serializable{
     private boolean die;
 
     public Monster() {
-        gradePoints = 10;
-        knowledge = 10;
+        gradePoints = 10 + (LocationControl.battleRoomNumber * 3);
+        knowledge = 30;
         power = 0;
     }
     

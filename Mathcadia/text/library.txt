@@ -1,5 +1,5 @@
 Welcome to the Library! There is so much to read and study here. 
-Here you can learn more about algebra topics before you start
-fighting. Would you like to search the library? y/n (Note: if you
-select y, your default web browser will be opened to a website
-about algebra)
+Here you can learn more about algebra topics which will help you
+in your fighting. Would you like to search the library? y/n 
+(Note: if you select y, your default web browser will be opened
+to a website about algebra)
