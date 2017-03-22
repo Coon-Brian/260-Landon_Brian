@@ -1,9 +1,12 @@
 
 package byui.cit260.mathcadia.view;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import mathcadia.Mathcadia;
 
 /**
  *
@@ -14,6 +17,9 @@ public abstract class View implements ViewInterface{
     protected String displayMessage;
     protected String roomText = "";
     protected boolean searched;
+    
+    protected final BufferedReader keyboard = Mathcadia.getInFile();
+    protected final PrintWriter console = Mathcadia.getOutFile();
     
     public View(){
     }
