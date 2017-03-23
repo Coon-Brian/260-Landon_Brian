@@ -96,9 +96,6 @@ public class Mathcadia {
         return mathcadia;
     }
 
-    public static Game getMathcadia() {
-        return mathcadia;
-    }
 
     public static void setMathcadia(Game mathcadia) {
         Mathcadia.mathcadia = mathcadia;
