@@ -3,25 +3,13 @@
  */
 package mathcadia;
 
-import byui.cit260.mathcadia.model.BattleRoom;
-import byui.cit260.mathcadia.model.Bedroom;
-import byui.cit260.mathcadia.model.Item;
-import byui.cit260.mathcadia.model.Library;
-import byui.cit260.mathcadia.model.Location;
-import byui.cit260.mathcadia.model.Monster;
-import byui.cit260.mathcadia.model.Player;
-import byui.cit260.mathcadia.model.PuzzleRoom;
-import byui.cit260.mathcadia.model.Question;
-import byui.cit260.mathcadia.model.Character;
+
 import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.view.StartProgramView;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -57,7 +45,7 @@ public class Mathcadia {
         }catch (Throwable te){
             System.out.println(te.getMessage());
             te.printStackTrace();
-            //startProgramView.display(); //Remove this line or not? Syntax error thrown. Not sure what to do.????????????????
+            startProgramView.display(); 
         }
         finally{
             try {
