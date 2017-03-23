@@ -51,7 +51,7 @@ public class GameControl {
         //System.out.println(mathcadia.getPlayer().toString());
     }
     
-    public static void saveGame(Player player){
+    public static void saveGame(Game mathcadia, String filepath) throws {
         System.out.println("\nSaving game...");
     }
     

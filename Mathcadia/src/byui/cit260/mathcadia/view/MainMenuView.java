@@ -8,7 +8,10 @@ package byui.cit260.mathcadia.view;
 import byui.cit260.mathcadia.control.GameControl;
 import byui.cit260.mathcadia.model.Game;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import mathcadia.Mathcadia;
 
 /**
@@ -83,9 +86,7 @@ public class MainMenuView extends View{
         return gameStarted;
     }
 
-    private void saveGame() {
-        this.console.println("\nSaving game...");
-    }
+   
 
     private void exitGame() {
         this.console.println("\nExiting game...");

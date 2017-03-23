@@ -33,7 +33,7 @@ public class PuzzleRoomView extends View {
                   + "\n|      Puzzle Menu        |"
                   + "\n------------------------------"
                   + "\n P - Solve Puzzle"
-                  + "\n F - Save game"
+                  + "\n S - Save game"
                   + "\n E - Explore Room"
                   + "\n H - Help Menu"
                   + "\n Q - Quit"
@@ -54,7 +54,7 @@ public class PuzzleRoomView extends View {
                 this.solvePuzzle();
                 return true;
             case "S":
-                GameControl.saveGame(Game.getPlayer());
+                this.saveGame();
                 break;
             case "E":
                 LocationControl.searchRoom();

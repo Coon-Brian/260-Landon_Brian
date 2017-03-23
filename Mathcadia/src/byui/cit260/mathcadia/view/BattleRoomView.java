@@ -121,9 +121,7 @@ public class BattleRoomView extends View{
         roomPassed = true;
     }
 
-    private void saveGame() {
-       this.console.println("saving game...");
-    }
+   
     
     private void nextBattleRoom(){
         this.console.println("Moving to next battle room");
