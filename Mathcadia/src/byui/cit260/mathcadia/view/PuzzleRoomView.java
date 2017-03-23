@@ -54,7 +54,7 @@ public class PuzzleRoomView extends View {
                 this.solvePuzzle();
                 return true;
             case "S":
-                GameControl.saveGame(Game.getPlayer());
+                this.saveGame();
                 break;
             case "E":
                 LocationControl.searchRoom();

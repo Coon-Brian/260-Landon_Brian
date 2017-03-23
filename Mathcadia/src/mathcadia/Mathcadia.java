@@ -90,5 +90,13 @@ public class Mathcadia {
         Mathcadia.logFile = logFile;
     }
 
+    public static Game getMathcadia() {
+        return mathcadia;
+    }
+
+    public static void setMathcadia(Game mathcadia) {
+        Mathcadia.mathcadia = mathcadia;
+    }
+
     
 }

@@ -1,6 +1,7 @@
 
 package byui.cit260.mathcadia.view;
 
+import byui.cit260.mathcadia.control.GameControl;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -83,5 +84,20 @@ public abstract class View implements ViewInterface{
         }
         return value;
     }    
-
-}
+protected void saveGame() {
+        this.console.println("\nEnter the file path for file where the game"
+                + " is to be saved");
+        
+        String filePath = "";
+        try{
+            filePath = this.keyboard.readLine();
+       }catch (Exception ex){
+            ErrorView.display(this.getClass().getName(),ex.getMessage());
+       }
+        try{
+            GameControl.saveGame(Mathcadia.getMathcadia(),filePath);
+        } catch (Exception ex){
+            ErrorView.display(this.getClass().getName(),ex.getMessage());
+        }
+    }
+}   

@@ -84,7 +84,20 @@ public class MainMenuView extends View{
     }
 
     private void saveGame() {
-        this.console.println("\nSaving game...");
+        this.console.println("\nEnter the file path for file where the game"
+                + " is to be saved");
+        
+        String filePath = "";
+        try{
+            filePath = this.keyboard.readLine();
+       }catch (Exception ex){
+            ErrorView.display(this.getClass().getName(),ex.getMessage());
+       }
+        try{
+            GameControl.saveGame(Mathcadia.getMathcadia(),filePath);
+        } catch (Exception ex){
+            ErrorView.display(this.getClass().getName(),ex.getMessage());
+        }
     }
 
     private void exitGame() {
