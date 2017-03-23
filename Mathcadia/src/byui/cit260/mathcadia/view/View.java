@@ -84,20 +84,25 @@ public abstract class View implements ViewInterface{
         }
         return value;
     }    
-protected void saveGame() {
-        this.console.println("\nEnter the file path for file where the game"
-                + " is to be saved");
+    
+    protected void saveGame() {
+        this.console.println("\n\nEnter the file path for file where the game "
+        + "is to be saved.");
         
         String filePath = "";
-        try{
+        try {
             filePath = this.keyboard.readLine();
-       }catch (Exception ex){
-            ErrorView.display(this.getClass().getName(),ex.getMessage());
-       }
-        try{
-            GameControl.saveGame(Mathcadia.getMathcadia(),filePath);
-        } catch (Exception ex){
-            ErrorView.display(this.getClass().getName(),ex.getMessage());
+        } catch (IOException ex) {
+           ErrorView.display(this.getClass().getName(), ex.getMessage());
         }
+        
+        try{
+            GameControl.saveGame(Mathcadia.getMathcadia(), filePath);
+        }catch(Exception ex){
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+        }
+        
+        
     }
-}   
+
+}

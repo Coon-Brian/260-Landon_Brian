@@ -62,7 +62,5 @@ public class FinalRoomView extends View{
         this.console.println("\nProceeding to final battle...");
     }
 
-    private void saveGame() {
-        this.console.println("\nSaving the game from final room...");
-    }
+    
 }

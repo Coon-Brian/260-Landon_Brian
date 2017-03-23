@@ -22,6 +22,7 @@ public class Mathcadia {
      */
     private static Game mathcadia;
 
+
     
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
@@ -88,6 +89,11 @@ public class Mathcadia {
 
     public static void setLogFile(PrintWriter logFile) {
         Mathcadia.logFile = logFile;
+    }
+    
+    
+    public static Game getMathcadia() {
+        return mathcadia;
     }
 
     public static Game getMathcadia() {

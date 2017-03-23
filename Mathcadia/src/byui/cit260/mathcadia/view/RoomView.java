@@ -95,7 +95,7 @@ public class RoomView extends View {
                 help.display();
                 break;
             case "S":
-                GameControl.saveGame(Game.getPlayer());
+                this.saveGame();
                 break;
             case "Q":
                 this.exitGame();
