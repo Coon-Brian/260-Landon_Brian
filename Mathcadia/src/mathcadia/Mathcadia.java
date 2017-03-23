@@ -45,7 +45,7 @@ public class Mathcadia {
         }catch (Throwable te){
             System.out.println(te.getMessage());
             te.printStackTrace();
-            startProgramView.display(); 
+            
         }
         finally{
             try {
