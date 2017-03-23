@@ -43,8 +43,8 @@ public class BattleRoomView extends View{
     @Override
     public void display(){
         boolean done = false;
-        System.out.println("\nWelcome to battle room #" + LocationControl.battleRoomNumber);
-        System.out.println("Your grade is currently at " + Game.getPlayer().getPercent());
+        this.console.println("\nWelcome to battle room #" + LocationControl.battleRoomNumber);
+        this.console.println("Your grade is currently at " + Game.getPlayer().getPercent());
         do{
             String menuOption = this.getInput();
             if(menuOption.toUpperCase().equals("Q"))
@@ -113,7 +113,7 @@ public class BattleRoomView extends View{
     }
 
     private void startBattle() {
-        System.out.println("A monster approaches...\n");
+        this.console.println("A monster approaches...\n");
         //user fights monster
         BattleControl.battleMonster();
         //check if it's time to display next puzzle
@@ -122,11 +122,11 @@ public class BattleRoomView extends View{
     }
 
     private void saveGame() {
-       System.out.println("saving game...");
+       this.console.println("saving game...");
     }
     
     private void nextBattleRoom(){
-        System.out.println("Moving to next battle room");
+        this.console.println("Moving to next battle room");
         LocationControl.battleRoomNumber++;
         this.display();
         searched = false;

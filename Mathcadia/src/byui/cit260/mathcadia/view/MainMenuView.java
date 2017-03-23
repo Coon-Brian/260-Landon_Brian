@@ -75,19 +75,19 @@ public class MainMenuView extends View{
     private boolean loadSaveGame() {
         
         if(!gameStarted){
-            System.out.println("You have not started a game yet!");
+            this.console.println("You have not started a game yet!");
         }
         else
-            System.out.println("\nContinuing game...");
+            this.console.println("\nContinuing game...");
         return gameStarted;
     }
 
     private void saveGame() {
-        System.out.println("\nSaving game...");
+        this.console.println("\nSaving game...");
     }
 
     private void exitGame() {
-        System.out.println("\nExiting game...");
+        this.console.println("\nExiting game...");
         System.exit(0);
     }
 }

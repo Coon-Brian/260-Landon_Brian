@@ -51,7 +51,7 @@ public class HelpMenuView extends View{
     } 
 
     private void displayObjective() {
-            System.out.println("\nThe purpose of the game is to improve your " +
+            this.console.println("\nThe purpose of the game is to improve your " +
                                 "\nknowledge in algebra by answering multiple choice questions.\n" +
                                 "Your study will make the game easier for you to complete the levels" +
                                 "\nof the game until you finally defeat the ultimate midterm boss" +
@@ -59,7 +59,7 @@ public class HelpMenuView extends View{
     }
 
     private void displayMovement() {
-        System.out.println("\nThis game moves in a linear fashion. As you defeat " +
+        this.console.println("\nThis game moves in a linear fashion. As you defeat " +
                                 "\nmonsters you will progress through the battle rooms (20 in total)." +
                                 "\nYou can return to the library at any time when you're not fighting" +
                                 "\nto study more. You can also explore each room one time to collect items" +
@@ -68,7 +68,7 @@ public class HelpMenuView extends View{
 
     public void displayRules() {
 
-        System.out.println("\nWhen you choose to fight a monster, you will be given a multiple choice " +
+        this.console.println("\nWhen you choose to fight a monster, you will be given a multiple choice " +
                                 "\nquestion. If you answer correctly you do damage to the monster. If not," +
                                 "\nthen the monster will do damage to you and you will lose grade points." +
                                 "\nYou will continue answering questions until either the monster's health" +

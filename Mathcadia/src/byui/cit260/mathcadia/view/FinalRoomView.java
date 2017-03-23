@@ -51,7 +51,7 @@ public class FinalRoomView extends View{
                 mainMenu.display();
                 break;                
             default:
-                System.out.println("\n Invalid selection, Please try again.");
+                this.console.println("\n Invalid selection, Please try again.");
                 break;
         }
     
@@ -59,10 +59,10 @@ public class FinalRoomView extends View{
     }
 
     private void fightBoss() {
-        System.out.println("\nProceeding to final battle...");
+        this.console.println("\nProceeding to final battle...");
     }
 
     private void saveGame() {
-        System.out.println("\nSaving the game from final room...");
+        this.console.println("\nSaving the game from final room...");
     }
 }
