@@ -41,7 +41,7 @@ public class HelpMenuView extends View{
                 //return to previous menu
                 return true;
             default:
-                System.out.println("\n Invalid selection, Please try again.");
+                this.console.println("\n Invalid selection, Please try again.");
                 break;
         }
                        

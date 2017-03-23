@@ -76,7 +76,7 @@ public class BattleRoomView extends View{
                 searched = true;
                 }
                 else{
-                    System.out.println("You've already searched this room!");
+                    this.console.println("You've already searched this room!");
                 }
                 break;
             case "S":
@@ -93,7 +93,7 @@ public class BattleRoomView extends View{
                 try {
                     BattleControl.useItem();
                 } catch (BattleControlException ex) {
-                    System.out.println(ex.getMessage());
+                    ErrorView.display(this.getClass().getName(),ex.getMessage());
                 }
                 break;
             case "Q":
@@ -105,7 +105,7 @@ public class BattleRoomView extends View{
                 battleHelp.displayRules();
                 break;
             default:
-                System.out.println("\n Invalid selection, Please try again.");
+                this.console.println("\n Invalid selection, Please try again.");
                 break;
         }
                        

@@ -4,8 +4,11 @@ package byui.cit260.mathcadia.view;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import mathcadia.Mathcadia;
 
 /**
@@ -37,7 +40,7 @@ public abstract class View implements ViewInterface{
             this.roomText += fileReader.nextLine() + "\n";
         }
         } catch (FileNotFoundException ex) {
-            this.console.print(ex.getMessage());
+            ErrorView.display(this.getClass().getName(),ex.getMessage());
         }
         
         
@@ -66,7 +69,11 @@ public abstract class View implements ViewInterface{
         
         while (!valid){
             this.console.println("\n" + this.displayMessage); // created field "menu" to resolve error
-            value = this.keyboard.readLine();
+            try {
+                value = this.keyboard.readLine();
+            } catch (IOException ex) {
+                ErrorView.display(this.getClass().getName(),"Trouble reading input:" + ex.getMessage());
+            }
             value = value.trim();
             if (value.length() < 1){
                 this.console.println("\nInvald value: value cannot be blank");

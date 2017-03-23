@@ -52,8 +52,9 @@ public class MainMenuView extends View{
                 break;
             case "E":
                 this.exitGame();
+                return true;
             default:
-                System.out.println("\n Invalid selection, Please try again.");
+                this.console.println("\n Invalid selection, Please try again.");
                 break;
         }
                        
@@ -88,6 +89,6 @@ public class MainMenuView extends View{
 
     private void exitGame() {
         this.console.println("\nExiting game...");
-        System.exit(0);
+        //System.exit(0);
     }
 }

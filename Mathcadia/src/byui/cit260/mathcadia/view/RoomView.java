@@ -9,7 +9,7 @@ import byui.cit260.mathcadia.control.GameControl;
 import byui.cit260.mathcadia.control.LocationControl;
 import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Library;
-import java.util.Scanner;
+import java.io.IOException;
 
 /**
  *
@@ -58,7 +58,11 @@ public class RoomView extends View {
             read = true;
         } else{
             this.console.println("\n" + this.displayMessage);
-            value = keyboard.readLine();
+                try {
+                    value = keyboard.readLine();
+                } catch (IOException ex) {
+                    ErrorView.display(this.getClass().getName(),"Trouble reading input:" + ex.getMessage());
+                }
             value = value.trim();
             if (value.length() < 1){
                 this.console.println("\nInvald value: value cannot be blank");
@@ -127,7 +131,11 @@ public class RoomView extends View {
         boolean valid = false;
         
         while (!valid){
-            value = keyboard.readLine();
+            try {
+                value = keyboard.readLine();
+            } catch (IOException ex) {
+                ErrorView.display(this.getClass().getName(),"Trouble reading input:" + ex.getMessage());
+            }
             value = value.trim();
             if (value.length() < 1){
                 this.console.println("\nInvald value: value should be Y or N");

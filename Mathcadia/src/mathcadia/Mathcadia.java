@@ -47,6 +47,7 @@ public class Mathcadia {
             te.printStackTrace();
             
         }
+        
         finally{
             try {
                 if (Mathcadia.inFile != null)

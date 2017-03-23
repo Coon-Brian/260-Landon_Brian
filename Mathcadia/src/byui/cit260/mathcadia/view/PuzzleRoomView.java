@@ -13,7 +13,10 @@ import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Location;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -84,7 +87,7 @@ public class PuzzleRoomView extends View {
                 try {
                 solvePuzzleTwo();
                 }catch(PuzzleControlException me){
-                    System.out.println(me.getMessage());
+                    ErrorView.display(this.getClass().getName(),"Error with puzzle two " + me.getMessage());
                 }
                 break;
             case 3:
@@ -97,28 +100,34 @@ public class PuzzleRoomView extends View {
         boolean passedTest = false;
         
         while(!passedTest){
-            this.console.println("Enter the height of door");
             
-            String userHeight = this.keyboard.readLine();
-            this.console.println("Enter the bottom length of door");
-            String userLength = this.keyboard.readLine();
-            int height = 0;
-            int length = 0;
-
             try{
-                height = Integer.parseInt(userHeight);
-                length = Integer.parseInt(userLength);
-            }catch(NumberFormatException nf){
-                System.out.println("You must enter a valid number");
-            }
-
-
-            passedTest = PuzzleControl.calcDoorSize(height, length);
-            if(passedTest){
-                this.console.println("You passed the test and escaped!");
-            }
-            else{
-                this.console.println("Incorrect: you are still trapped!");
+                
+                this.console.println("Enter the height of door");
+                
+                String userHeight = this.keyboard.readLine();
+                this.console.println("Enter the bottom length of door");
+                String userLength = this.keyboard.readLine();
+                int height = 0;
+                int length = 0;
+                
+                try{
+                    height = Integer.parseInt(userHeight);
+                    length = Integer.parseInt(userLength);
+                }catch(NumberFormatException nf){
+                    ErrorView.display(this.getClass().getName(), "You must enter a valid number");
+                }
+                
+                
+                passedTest = PuzzleControl.calcDoorSize(height, length);
+                if(passedTest){
+                    this.console.println("You passed the test and escaped!");
+                }
+                else{
+                    this.console.println("Incorrect: you are still trapped!");
+                }
+            }catch(IOException ex){
+                ErrorView.display(this.getClass().getName(),"Trouble reading input:" + ex.getMessage());
             }
         }
     }
@@ -128,17 +137,21 @@ public class PuzzleRoomView extends View {
         
         
         while(!passedTest){
-            this.console.println("Enter the large number");
-            
-            String largeNum = keyboard.readLine();
-            this.console.println("Enter the potential factor");
-            String pFactor = keyboard.readLine();
-
-
-
-           int otherFactor = PuzzleControl.isFactor(largeNum, pFactor);
-           passedTest = true; 
-           this.console.println("you passed the test!");
+             try {
+                 this.console.println("Enter the large number");
+                 
+                 String largeNum = keyboard.readLine();
+                 this.console.println("Enter the potential factor");
+                 String pFactor = keyboard.readLine();
+                 
+                 
+                 
+                 int otherFactor = PuzzleControl.isFactor(largeNum, pFactor);
+                 passedTest = true;
+                 this.console.println("you passed the test!");
+             } catch (IOException ex) {
+                 ErrorView.display(this.getClass().getName(),"Trouble reading input:" + ex.getMessage());
+             }
             
             
         }
@@ -148,28 +161,32 @@ public class PuzzleRoomView extends View {
          boolean passedTest = false;
         
         while(!passedTest){
-            this.console.println("Enter the height of door");
-          
-            String userHeight = keyboard.readLine();
-            this.console.println("Enter the bottom length of door");
-            String userLength = keyboard.readLine();
-            int height = 0;
-            int length = 0;
             try{
-                height = Integer.parseInt(userHeight);
-                length = Integer.parseInt(userLength);
-            }catch(NumberFormatException nf){
-                System.out.println("You must enter a valid number");
-            }
-
-
-
-            passedTest = PuzzleControl.calcDoorSize(height, length);
-            if(passedTest){
-                this.console.println("GOOD JOB BRO!");
-            }
-            else{
-                this.console.println("Incorrect: you are still trapped!");
+                this.console.println("Enter the height of door");
+                
+                String userHeight = keyboard.readLine();
+                this.console.println("Enter the bottom length of door");
+                String userLength = keyboard.readLine();
+                int height = 0;
+                int length = 0;
+                try{
+                    height = Integer.parseInt(userHeight);
+                    length = Integer.parseInt(userLength);
+                }catch(NumberFormatException nf){
+                    ErrorView.display(this.getClass().getName(),"You must enter a valid number");
+                }
+                
+                
+                
+                passedTest = PuzzleControl.calcDoorSize(height, length);
+                if(passedTest){
+                    this.console.println("GOOD JOB BRO!");
+                }
+                else{
+                    this.console.println("Incorrect: you are still trapped!");
+                }
+            }catch(IOException ex){
+                 ErrorView.display(this.getClass().getName(),"Trouble reading input:" + ex.getMessage());
             }
         }
     }
@@ -199,7 +216,7 @@ public class PuzzleRoomView extends View {
                     this.roomText += fileReader.nextLine() + "\n";
                 }
                 } catch (FileNotFoundException ex) {
-                    System.out.print(ex.getMessage());
+                    ErrorView.display(this.getClass().getName(),ex.getMessage());
                 }
     }
 }
