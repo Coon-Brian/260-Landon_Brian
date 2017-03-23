@@ -10,6 +10,7 @@ import byui.cit260.mathcadia.control.LocationControl;
 import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Library;
 import java.io.IOException;
+import mathcadia.Mathcadia;
 
 /**
  *
@@ -57,7 +58,11 @@ public class RoomView extends View {
             this.displayLibraryMenu();
             read = true;
         } else{
-            this.console.println("\n" + this.displayMessage);
+                //let the user know they are in the bedroom
+                if(!"text/library.txt".equals(currentFile))
+                    this.console.print("\n" + "You are currently in the Bedroom");
+                //display normal message
+            this.console.println(this.displayMessage);
                 try {
                     value = keyboard.readLine();
                 } catch (IOException ex) {
@@ -95,6 +100,7 @@ public class RoomView extends View {
                 help.display();
                 break;
             case "S":
+                this.saveRoom();
                 this.saveGame();
                 break;
             case "Q":
@@ -157,5 +163,18 @@ public class RoomView extends View {
                 this.console.println("\nInvald value: value should be Y or N");
                 break;
         }
+    }
+
+    private void saveRoom() {
+        
+        this.console.println(Mathcadia.getMathcadia().getRoomNumber());
+        //if the room is the library, save room as 50
+       if("text/library.txt".equals(currentFile)){
+           Mathcadia.getMathcadia().setRoomNumber(50);
+       }
+       //else set it to the bedroom number of 25
+       else{
+           Mathcadia.getMathcadia().setRoomNumber(25);
+       }
     }
 }

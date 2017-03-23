@@ -10,11 +10,15 @@ import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Player;
 import byui.cit260.mathcadia.model.Question;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+import mathcadia.Mathcadia;
 
 /**
  *
@@ -33,7 +37,7 @@ public class GameControl {
         Player player = new Player();
         player.setName(name);
         
-        Game.setPlayer(player);
+        Mathcadia.getMathcadia().setPlayer(player);
         
         return player;
     }
@@ -42,23 +46,48 @@ public class GameControl {
         
         //All of our code for setting up the game is in the constructor
         mathcadia = new Game();
+        Mathcadia.setMathcadia(mathcadia);
+        Mathcadia.getMathcadia().setPlayer(player);
         
-        //the static variable player has already been set, so we don't need to 
-        //do it again
         
         //for debugging
         //System.out.println(mathcadia.toString());
         //System.out.println(mathcadia.getPlayer().toString());
     }
     
-    public static void saveGame(Game mathcadia, String filepath) throws {
-        System.out.println("\nSaving game...");
+    public static void saveGame(Game mathcadia, String filepath)throws QuestionReaderException {
+        try( FileOutputStream fops = new FileOutputStream(filepath)){
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            //write game and location
+            output.writeObject(mathcadia);
+            //write player and stats
+            output.writeObject(Game.getPlayer());
+        } catch(Exception e) {
+            throw new QuestionReaderException(e.getMessage());
+        }
+        System.out.println("Game Saved Successfully");
+    }
+    
+    public static void loadGame(String filepath) throws QuestionReaderException{
+        Game game = null;
+        Player player = null;
+        
+        try(FileInputStream fips = new FileInputStream(filepath)){
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();
+            player = (Player) input.readObject();
+        }catch(Exception e){
+            throw new QuestionReaderException(e.getMessage());
+        }
+        Game.setPlayer(player);
+        Mathcadia.setMathcadia(game);
     }
     
     
     
     
-    public ArrayList<Question> buildQuestions() throws QuestionReaderException{
+    public static ArrayList<Question> buildQuestions() throws QuestionReaderException{
         ArrayList<Question> questions = new ArrayList<>();
         String problem = "";
         int lineNum = 0;

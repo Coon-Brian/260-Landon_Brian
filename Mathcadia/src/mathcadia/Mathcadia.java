@@ -23,6 +23,7 @@ public class Mathcadia {
     private static Game mathcadia;
 
 
+
     
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
@@ -101,5 +102,9 @@ public class Mathcadia {
         Mathcadia.mathcadia = mathcadia;
     }
 
+    
+    public static void setMathcadia(Game mathcadia) {
+        Mathcadia.mathcadia = mathcadia;
+    }
     
 }

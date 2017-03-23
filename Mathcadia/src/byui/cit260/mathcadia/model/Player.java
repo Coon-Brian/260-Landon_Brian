@@ -5,8 +5,6 @@ package byui.cit260.mathcadia.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**

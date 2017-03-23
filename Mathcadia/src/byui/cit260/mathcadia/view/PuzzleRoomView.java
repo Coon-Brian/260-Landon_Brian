@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import mathcadia.Mathcadia;
 
 /**
  *
@@ -54,7 +55,8 @@ public class PuzzleRoomView extends View {
                 this.solvePuzzle();
                 return true;
             case "S":
-                this.saveGame();
+                this.changeRoomNum();
+                this.saveGame();  
                 break;
             case "E":
                 LocationControl.searchRoom();
@@ -218,5 +220,26 @@ public class PuzzleRoomView extends View {
                 } catch (FileNotFoundException ex) {
                     ErrorView.display(this.getClass().getName(),ex.getMessage());
                 }
+    }
+
+    /* 
+    * this sets the proper room number so the user will return to the same
+    * location when they load the game.
+    */
+    
+    private void changeRoomNum() {
+        switch(LocationControl.battleRoomNumber){
+            case 3:
+                Mathcadia.getMathcadia().setRoomNumber(100);
+                break;
+            case 8:
+                Mathcadia.getMathcadia().setRoomNumber(200);
+                break;
+            case 14:
+                Mathcadia.getMathcadia().setRoomNumber(300);
+                break;
+            default:
+                ErrorView.display("PuzzleView", "Error Saving room Number");
+            }
     }
 }
