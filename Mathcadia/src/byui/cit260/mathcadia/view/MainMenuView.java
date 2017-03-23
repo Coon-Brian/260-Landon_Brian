@@ -78,6 +78,24 @@ public class MainMenuView extends View{
 
     private boolean loadSaveGame() {
         
+        this.console.println("\n\nEnter the file path for file where game is saved");
+        
+        String filePath = "";
+        try {
+            filePath = this.keyboard.readLine();
+        } catch (IOException ex) {
+           ErrorView.display(this.getClass().getName(), ex.getMessage());
+        }
+        
+        try{
+            GameControl.loadGame(filePath);
+        }catch (Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        
+        
+        
         if(!gameStarted){
             this.console.println("You have not started a game yet!");
         }

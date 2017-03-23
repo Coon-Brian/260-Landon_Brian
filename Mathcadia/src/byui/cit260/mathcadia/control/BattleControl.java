@@ -83,7 +83,7 @@ public class BattleControl {
             }
             if(!hero.isAlive()){
                 console.println("Hero! You are totally dead!");
-                Game.endGame = true;
+                //Game.endGame = true;
             }
             
         }

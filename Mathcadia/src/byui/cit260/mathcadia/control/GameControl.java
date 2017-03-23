@@ -9,12 +9,18 @@ import byui.cit260.mathcadia.exceptions.QuestionReaderException;
 import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Player;
 import byui.cit260.mathcadia.model.Question;
+import byui.cit260.mathcadia.view.ErrorView;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+import mathcadia.Mathcadia;
 
 /**
  *
@@ -51,8 +57,28 @@ public class GameControl {
         //System.out.println(mathcadia.getPlayer().toString());
     }
     
-    public static void saveGame(Game mathcadia, String filepath) throws {
-        System.out.println("\nSaving game...");
+    public static void saveGame(Game mathcadia, String filepath)throws QuestionReaderException {
+        try( FileOutputStream fops = new FileOutputStream(filepath)){
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(mathcadia);
+        } catch(Exception e) {
+            throw new QuestionReaderException(e.getMessage());
+        }
+    }
+    
+    public static void loadGame(String filepath) throws QuestionReaderException{
+        Game game = null;
+        
+        try(FileInputStream fips = new FileInputStream(filepath)){
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();
+        }catch(Exception e){
+            throw new QuestionReaderException(e.getMessage());
+        }
+        
+        Mathcadia.setMathcadia(game);
     }
     
     

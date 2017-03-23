@@ -25,6 +25,7 @@ public class Game {
 
     private String gameFile;
     private Location currentRoom;
+    private int roomNumber = 0;
     private GameControl gameHandler;
     private ArrayList<Question> questions;
     private int bestScore;
