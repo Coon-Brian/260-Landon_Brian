@@ -98,10 +98,10 @@ public class PuzzleRoomView extends View {
         
         while(!passedTest){
             System.out.println("Enter the height of door");
-            Scanner keyBoard = new Scanner(System.in);
-            String userHeight = keyBoard.next();
+            
+            String userHeight = this.keyboard.readLine();
             System.out.println("Enter the bottom length of door");
-            String userLength = keyBoard.next();
+            String userLength = this.keyboard.readLine();
             int height = 0;
             int length = 0;
 
@@ -129,10 +129,10 @@ public class PuzzleRoomView extends View {
         
         while(!passedTest){
             System.out.println("Enter the large number");
-            Scanner keyBoard = new Scanner(System.in);
-            String largeNum = keyBoard.next();
+            
+            String largeNum = keyboard.readLine();
             System.out.println("Enter the potential factor");
-            String pFactor = keyBoard.next();
+            String pFactor = keyboard.readLine();
 
 
 
@@ -149,10 +149,18 @@ public class PuzzleRoomView extends View {
         
         while(!passedTest){
             System.out.println("Enter the height of door");
-            Scanner keyBoard = new Scanner(System.in);
-            int height = keyBoard.nextInt();
+          
+            String userHeight = keyboard.readLine();
             System.out.println("Enter the bottom length of door");
-            int length = keyBoard.nextInt();
+            String userLength = keyboard.readLine();
+            int height = 0;
+            int length = 0;
+            try{
+                height = Integer.parseInt(userHeight);
+                length = Integer.parseInt(userLength);
+            }catch(NumberFormatException nf){
+                System.out.println("You must enter a valid number");
+            }
 
 
 

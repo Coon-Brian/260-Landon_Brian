@@ -47,7 +47,7 @@ public abstract class View implements ViewInterface{
     public void display(){  //code copied from displayMainMenuView()
         boolean done = false;
         if (roomText != null)
-            System.out.println(roomText);
+            this.console.println(roomText);
         
         do{
             String menuOption = this.getInput(); // created method to resolve error message (see below)
@@ -60,13 +60,13 @@ public abstract class View implements ViewInterface{
     } 
     @Override
     public String getInput(){ // code copied from displayMainMenuView()
-        Scanner keyBoard = new Scanner(System.in);
+        
         String value = "";
         boolean valid = false;
         
         while (!valid){
             System.out.println("\n" + this.displayMessage); // created field "menu" to resolve error
-            value = keyBoard.nextLine();
+            value = this.keyboard.readLine();
             value = value.trim();
             if (value.length() < 1){
                 System.out.println("\nInvald value: value cannot be blank");
