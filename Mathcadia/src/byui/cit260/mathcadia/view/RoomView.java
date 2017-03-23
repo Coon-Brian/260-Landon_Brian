@@ -43,7 +43,7 @@ public class RoomView extends View {
     
     @Override
     public String getInput(){
-        Scanner keyBoard = new Scanner(System.in);
+        
         String value = "";
         boolean valid = false;
         
@@ -58,7 +58,7 @@ public class RoomView extends View {
             read = true;
         } else{
             System.out.println("\n" + this.displayMessage);
-            value = keyBoard.nextLine();
+            value = keyboard.readLine();
             value = value.trim();
             if (value.length() < 1){
                 System.out.println("\nInvald value: value cannot be blank");
@@ -122,12 +122,12 @@ public class RoomView extends View {
 
     private void displayLibraryMenu() {
         System.out.println("Read from the Library? (y/n)");
-        Scanner keyBoard = new Scanner(System.in);
+      
         String value = "";
         boolean valid = false;
         
         while (!valid){
-            value = keyBoard.nextLine();
+            value = keyboard.readLine();
             value = value.trim();
             if (value.length() < 1){
                 System.out.println("\nInvald value: value should be Y or N");
