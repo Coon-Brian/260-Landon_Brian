@@ -28,8 +28,8 @@ public class BattleControl {
     private static final PrintWriter console = Mathcadia.getOutFile();
     
     public static void battleMonster(){
-        ArrayList<Question> questions = mathcadia.getQuestions();
-        Player hero = Game.getPlayer();
+        ArrayList<Question> questions = Mathcadia.getMathcadia().getQuestions();
+        Player hero = Mathcadia.getMathcadia().getPlayer();
         Monster monster = new Monster();
         //iterate through array of questions here...
         //1.display question
@@ -95,7 +95,7 @@ public class BattleControl {
     public static void checkLevelUp(){
         
         int[] levels = Game.getLevelUp();
-        Player hero = Game.getPlayer();
+        Player hero = Mathcadia.getMathcadia().getPlayer();
         //get experience points to measure 
         int experience = hero.getExp();
         int counter = 0;
@@ -117,7 +117,7 @@ public class BattleControl {
     public static void useItem() throws BattleControlException {
         
         boolean itemUsed = false;
-        Player hero = Game.getPlayer();
+        Player hero = Mathcadia.getMathcadia().getPlayer();
         while(!itemUsed){
         if(hero.getPlayerInventory().size() > 0)
             console.println("\nWhich item would you like to use? "

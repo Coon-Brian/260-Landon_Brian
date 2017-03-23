@@ -7,26 +7,21 @@ package byui.cit260.mathcadia.model;
 
 import byui.cit260.mathcadia.control.GameControl;
 import byui.cit260.mathcadia.exceptions.QuestionReaderException;
+import byui.cit260.mathcadia.view.ErrorView;
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
  * @author Landon
  */
-public class Game {
-
-   
+public class Game implements Serializable {
 
   
     private static Player player;
     //this array holds the experience values needed to level up
     private static int[] levelUp = { 0, 100, 300, 600, 1000, 1500, 2100, 2800 }; 
-
-    private String gameFile;
-    private Location currentRoom;
-    private int roomNumber = 0;
-    private GameControl gameHandler;
+    private int roomNumber;
     private ArrayList<Question> questions;
     private int bestScore;
     public static boolean endGame = false;
@@ -34,16 +29,13 @@ public class Game {
     
     
     public Game(){ 
-        gameHandler = new GameControl();
-        gameFile = "";
-        currentRoom = new Location();
         bestScore = 0;
+        roomNumber = 25;
         try{
-        questions = gameHandler.buildQuestions();
+        questions = GameControl.buildQuestions();
         }catch (QuestionReaderException QR){
-            System.out.println(QR.getMessage());
+            ErrorView.display(this.getClass().getName(), QR.getMessage());
         }
-        
         
     }
     
@@ -59,30 +51,7 @@ public class Game {
     public static void setPlayer(Player player) {
         Game.player = player;
     }
-    
-    public String getGameFile() {
-        return gameFile;
-    }
-
-    public void setGameFile(String gameFile) {
-        this.gameFile = gameFile;
-    }
-
-    public Location getCurrentRoom() {
-        return currentRoom;
-    }
-
-    public void setCurrentRoom(Location currentRoom) {
-        this.currentRoom = currentRoom;
-    }
-
-    public GameControl getGameHandler() {
-        return gameHandler;
-    }
-
-    public void setGameHandler(GameControl gameHandler) {
-        this.gameHandler = gameHandler;
-    }
+  
 
     public ArrayList<Question> getQuestions() {
         return questions;
@@ -105,7 +74,16 @@ public class Game {
     public static int[] getLevelUp() {
         return levelUp;
     }
+    
+     public int getRoomNumber() {
+        return roomNumber;
+    }
 
+    public void setRoomNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
+    }
+
+    //for debugging
     private void displayQuestions() {
         for(int i = 0; i < questions.size();i++)
         System.out.println(this.questions.get(i).getProblem());
@@ -113,8 +91,8 @@ public class Game {
         
     }
     
-     @Override
+      @Override
     public String toString() {
-        return "Game{" + "gameFile=" + gameFile + ", currentRoom=" + currentRoom + ", gameHandler=" + gameHandler + ", questions=" + questions + ", bestScore=" + bestScore + '}';
+        return "Game{" + "player=" + player + ", roomNumber=" + roomNumber + ", questions=" + questions + ", bestScore=" + bestScore + '}';
     }
 }

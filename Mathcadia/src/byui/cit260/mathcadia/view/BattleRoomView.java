@@ -12,6 +12,7 @@ import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Location;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import mathcadia.Mathcadia;
 
 /**
  *
@@ -80,6 +81,7 @@ public class BattleRoomView extends View{
                 }
                 break;
             case "S":
+                this.saveRoom();
                 this.saveGame();
                 break;
             case "H":
@@ -132,7 +134,7 @@ public class BattleRoomView extends View{
     }
     
     private void checkPuzzleRoom(){
-        if(LocationControl.battleRoomNumber == 1){
+        if(LocationControl.battleRoomNumber == 3){
             PuzzleRoomView puzzleRoom1 = new PuzzleRoomView(1);
             puzzleRoom1.display();
         }
@@ -145,5 +147,9 @@ public class BattleRoomView extends View{
             puzzleRoom3.display();
         }
         
+    }
+    //set the room number the same as the current battle room
+    private void saveRoom() {
+        Mathcadia.getMathcadia().setRoomNumber(LocationControl.battleRoomNumber);
     }
 }
