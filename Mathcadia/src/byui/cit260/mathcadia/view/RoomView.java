@@ -57,11 +57,11 @@ public class RoomView extends View {
             this.displayLibraryMenu();
             read = true;
         } else{
-            System.out.println("\n" + this.displayMessage);
+            this.console.println("\n" + this.displayMessage);
             value = keyboard.readLine();
             value = value.trim();
             if (value.length() < 1){
-                System.out.println("\nInvald value: value cannot be blank");
+                this.console.println("\nInvald value: value cannot be blank");
                 continue;
             }
             break;
@@ -102,14 +102,14 @@ public class RoomView extends View {
                 searched = true;
                 }
                 else{
-                    System.out.println("You've already searched this room!");
+                    this.console.println("You've already searched this room!");
                 }
                 break;
             case "I":
                 Game.getPlayer().displayInventory();
                 break;
             default:
-                System.out.println("\n Invalid selection, Please try again.");
+                this.console.println("\n Invalid selection, Please try again.");
                 break;
         }
                        
@@ -121,7 +121,7 @@ public class RoomView extends View {
     }
 
     private void displayLibraryMenu() {
-        System.out.println("Read from the Library? (y/n)");
+        this.console.println("Read from the Library? (y/n)");
       
         String value = "";
         boolean valid = false;
@@ -130,7 +130,7 @@ public class RoomView extends View {
             value = keyboard.readLine();
             value = value.trim();
             if (value.length() < 1){
-                System.out.println("\nInvald value: value should be Y or N");
+                this.console.println("\nInvald value: value should be Y or N");
                 continue;
             }
             break;
@@ -140,13 +140,13 @@ public class RoomView extends View {
             case "Y":
                 Library library = new Library();
                 library.openWebBrowser();
-                System.out.println("Once you're done reading, head to the battle room!");
+                this.console.println("Once you're done reading, head to the battle room!");
                 break;
             case "N":
-                System.out.println("Well then let's go fight");
+                this.console.println("Well then let's go fight");
                 break;
             default:
-                System.out.println("\nInvald value: value should be Y or N");
+                this.console.println("\nInvald value: value should be Y or N");
                 break;
         }
     }

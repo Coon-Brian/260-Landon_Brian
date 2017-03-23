@@ -12,8 +12,10 @@ import byui.cit260.mathcadia.model.Item;
 import byui.cit260.mathcadia.model.Monster;
 import byui.cit260.mathcadia.model.Player;
 import byui.cit260.mathcadia.model.Question;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
+import mathcadia.Mathcadia;
 
 /**
  * This control class takes care of all methods related to the player fighting
@@ -23,6 +25,7 @@ import java.util.Scanner;
 public class BattleControl {
     
     private static Scanner userInput = new Scanner(System.in);
+    private static final PrintWriter console = Mathcadia.getOutFile();
     
     public static void battleMonster(){
         ArrayList<Question> questions = mathcadia.getQuestions();
@@ -39,8 +42,8 @@ public class BattleControl {
         //6. if neither is dead, start over at step 1;
         
         while(hero.isAlive() && monster.isAlive()){
-            System.out.println("Insert an answer: A,B,C,D  or use an item with U\n");
-            System.out.println(questions.get(0).getProblem());
+            console.println("Insert an answer: A,B,C,D  or use an item with U\n");
+            console.println(questions.get(0).getProblem());
             
             
             String answer = userInput.nextLine().toUpperCase();
@@ -63,23 +66,23 @@ public class BattleControl {
             //check user answer
             if(oldQuestion.getAnswer().equals(answer)){
                 int damage = hero.attack(monster);
-                System.out.println("Correct! You did " + damage + " damage to the monster");
-                System.out.println("The monster has " + monster.getHealth() + " health points left!\n");
+                console.println("Correct! You did " + damage + " damage to the monster");
+                console.println("The monster has " + monster.getHealth() + " health points left!\n");
             }
             else{
                 int damage = monster.attack(hero);
-                System.out.println("Incorrect, the correct answer was " + oldQuestion.getAnswer());
-                System.out.println("The monster did " + damage + " damage to you!\n");
+                console.println("Incorrect, the correct answer was " + oldQuestion.getAnswer());
+                console.println("The monster did " + damage + " damage to you!\n");
             }
             
             if(!monster.isAlive()){
-                System.out.println("The monster is dead!");
+                console.println("The monster is dead!");
                 hero.addExperience(LocationControl.battleRoomNumber * 100);
-                System.out.println("you gained " + LocationControl.battleRoomNumber * 100 + " experience points!");
+                console.println("you gained " + LocationControl.battleRoomNumber * 100 + " experience points!");
                 BattleControl.checkLevelUp();
             }
             if(!hero.isAlive()){
-                System.out.println("Hero! You are totally dead!");
+                console.println("Hero! You are totally dead!");
                 Game.endGame = true;
             }
             
@@ -105,7 +108,7 @@ public class BattleControl {
         }
 
         if(counter > hero.getLevel()){
-            System.out.println("You have leveled up!\n");
+            console.println("You have leveled up!\n");
             hero.levelUp();
         }
     }
@@ -117,10 +120,10 @@ public class BattleControl {
         Player hero = Game.getPlayer();
         while(!itemUsed){
         if(hero.getPlayerInventory().size() > 0)
-            System.out.println("\nWhich item would you like to use? "
+            console.println("\nWhich item would you like to use? "
                                 + "(enter the number of the item slot, " + " or Q to cancel)");
         else{
-            System.out.println("You don't have any items");
+            console.println("You don't have any items");
             return;
         }
         hero.displayInventory();
@@ -161,28 +164,28 @@ public class BattleControl {
         switch(itemNum){
             case 0:
                 hero.addHealth(Item.ExtraCredit.getBonusValue());
-                System.out.println("you gained " + 
+                console.println("you gained " + 
                         Item.ExtraCredit.getBonusValue() + " Health Points!\n");
                 break;
             case 1:
                 hero.addKnowledge(Item.Knowledge.getBonusValue());
-                System.out.println("you gained " + 
+                console.println("you gained " + 
                         Item.Knowledge.getBonusValue() + " Knowledge!\n");
                 break;
             case 2:
                 hero.addPower(Item.Power.getBonusValue());
-                System.out.println("you gained " + 
+                console.println("you gained " + 
                         Item.Power.getBonusValue() + " Power!\n");
                 break;
             case 3:
                 hero.addExperience(Item.Experience.getBonusValue());
-                System.out.println("you gained " + 
+                console.println("you gained " + 
                         Item.Experience.getBonusValue() + " Experience Points!\n");
                 //check to see if they leveled up
                 BattleControl.checkLevelUp();
                 break;
             default:
-                System.out.println("Item not found... Please try again or cancel");
+                console.println("Item not found... Please try again or cancel");
                 continue;
         }
         

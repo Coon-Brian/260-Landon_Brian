@@ -65,7 +65,7 @@ public class PuzzleRoomView extends View {
                 mainMenu.display();
                 break;                
             default:
-                System.out.println("\n Invalid selection, Please try again.");
+                this.console.println("\n Invalid selection, Please try again.");
                 break;
         }
                        
@@ -97,10 +97,10 @@ public class PuzzleRoomView extends View {
         boolean passedTest = false;
         
         while(!passedTest){
-            System.out.println("Enter the height of door");
+            this.console.println("Enter the height of door");
             
             String userHeight = this.keyboard.readLine();
-            System.out.println("Enter the bottom length of door");
+            this.console.println("Enter the bottom length of door");
             String userLength = this.keyboard.readLine();
             int height = 0;
             int length = 0;
@@ -115,10 +115,10 @@ public class PuzzleRoomView extends View {
 
             passedTest = PuzzleControl.calcDoorSize(height, length);
             if(passedTest){
-                System.out.println("GOOD JOB BRO!");
+                this.console.println("You passed the test and escaped!");
             }
             else{
-                System.out.println("Incorrect: you are still trapped!");
+                this.console.println("Incorrect: you are still trapped!");
             }
         }
     }
@@ -128,17 +128,17 @@ public class PuzzleRoomView extends View {
         
         
         while(!passedTest){
-            System.out.println("Enter the large number");
+            this.console.println("Enter the large number");
             
             String largeNum = keyboard.readLine();
-            System.out.println("Enter the potential factor");
+            this.console.println("Enter the potential factor");
             String pFactor = keyboard.readLine();
 
 
 
            int otherFactor = PuzzleControl.isFactor(largeNum, pFactor);
            passedTest = true; 
-           System.out.println("GOOD JOB BRO!");
+           this.console.println("you passed the test!");
             
             
         }
@@ -148,10 +148,10 @@ public class PuzzleRoomView extends View {
          boolean passedTest = false;
         
         while(!passedTest){
-            System.out.println("Enter the height of door");
+            this.console.println("Enter the height of door");
           
             String userHeight = keyboard.readLine();
-            System.out.println("Enter the bottom length of door");
+            this.console.println("Enter the bottom length of door");
             String userLength = keyboard.readLine();
             int height = 0;
             int length = 0;
@@ -166,10 +166,10 @@ public class PuzzleRoomView extends View {
 
             passedTest = PuzzleControl.calcDoorSize(height, length);
             if(passedTest){
-                System.out.println("GOOD JOB BRO!");
+                this.console.println("GOOD JOB BRO!");
             }
             else{
-                System.out.println("Incorrect: you are still trapped!");
+                this.console.println("Incorrect: you are still trapped!");
             }
         }
     }
