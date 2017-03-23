@@ -102,9 +102,6 @@ public class Mathcadia {
         Mathcadia.mathcadia = mathcadia;
     }
 
-    
-    public static void setMathcadia(Game mathcadia) {
-        Mathcadia.mathcadia = mathcadia;
-    }
+   
     
 }
