@@ -23,7 +23,7 @@ public class StartProgramView extends View{
     }
 
     private void displayBanner() {
-        System.out.println(
+        this.console.println(
                 "\n********************************************************"
               + "\n*                                                      *"
               + "\n*                      MATHCADIA                       *"
@@ -60,7 +60,7 @@ public class StartProgramView extends View{
     @Override
     public boolean doAction(String playerName){
         if (playerName.length() < 2){
-            System.out.println("\nInvalid Player name: " + 
+            this.console.println("\nInvalid Player name: " + 
                     "the name must be greater than one character in length");
             return false;
         }
@@ -68,7 +68,7 @@ public class StartProgramView extends View{
         Player player = GameControl.createPlayer(playerName);
         
         if (player == null){
-            System.out.println("\nError creating the player");
+            this.console.println("\nError creating the player");
             return false;
         }
         
@@ -78,7 +78,7 @@ public class StartProgramView extends View{
     }
 
     private void displayNextView(Player player){
-        System.out.print
+        this.console.print
         ("\n*======================================================*" +
          "\n* Hello " + player.getName() + ", welcome to MathCadia" +
          "\n*======================================================*");

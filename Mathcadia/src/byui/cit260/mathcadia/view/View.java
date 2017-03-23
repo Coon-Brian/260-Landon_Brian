@@ -37,7 +37,7 @@ public abstract class View implements ViewInterface{
             this.roomText += fileReader.nextLine() + "\n";
         }
         } catch (FileNotFoundException ex) {
-            System.out.print(ex.getMessage());
+            this.console.print(ex.getMessage());
         }
         
         
@@ -65,11 +65,11 @@ public abstract class View implements ViewInterface{
         boolean valid = false;
         
         while (!valid){
-            System.out.println("\n" + this.displayMessage); // created field "menu" to resolve error
+            this.console.println("\n" + this.displayMessage); // created field "menu" to resolve error
             value = this.keyboard.readLine();
             value = value.trim();
             if (value.length() < 1){
-                System.out.println("\nInvald value: value cannot be blank");
+                this.console.println("\nInvald value: value cannot be blank");
                 continue;
             }
             break;
