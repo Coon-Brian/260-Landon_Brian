@@ -5,18 +5,13 @@
  */
 package byui.cit260.mathcadia.view;
 
-import byui.cit260.mathcadia.control.GameControl;
 import byui.cit260.mathcadia.control.LocationControl;
 import byui.cit260.mathcadia.control.PuzzleControl;
 import byui.cit260.mathcadia.exceptions.PuzzleControlException;
-import byui.cit260.mathcadia.model.Game;
-import byui.cit260.mathcadia.model.Location;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import mathcadia.Mathcadia;
 
 /**
