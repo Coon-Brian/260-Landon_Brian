@@ -1,0 +1,617 @@
+[Question{problem=﻿Which number does not have a reciprocal?
+(A) –1
+(B) 0
+(C) 1 / 1000
+(D) 3 
+, answer=B}, Question{problem=Which of these is equal to 5(8 − x) ?
+(A) 5x – 40
+(B) x – 40
+(C) 40 – 5x
+(D) 5 – 8x
+, answer=C}, Question{problem=Suppose 2(2 − y) = 3x. When y = 8, what is the value of x ?
+(A) –20/3
+(B) 20/3
+(C) 4
+(D) −4
+, answer=D}, Question{problem=Simplify 15ax^2 / 5x
+(A) 3ax
+(B) 3ax^2
+(C) 5ax^2
+(D) 5ax
+, answer=A}, Question{problem=Simplify a(c - b) - b(a - c)
+(A) ac - 2ab - bc
+(B) ac - 2ab + bc
+(C) ac + 2ab + bc
+(D) ac + bc
+, answer=B}, Question{problem=Expand and simplfy (x - 5)(x + 4)
+(A) x^2 + 9x - 20
+(B) x^2 - x - 9
+(C) x^2 - x - 1
+(D) x^2 - x - 20
+, answer=D}, Question{problem=Expand and simplfy (x - y)(x + y)
+(A) x^2 - 2xy + y^2
+(B) x^2 + 2xy + y^2
+(C) x^2 - y^2
+(D) x^2 + y^2
+, answer=C}, Question{problem=(a - b)^2 =
+(A) a^2 - 2ab + b^2
+(B) a^2 + 2ab + b^2
+(C) a^2 - b^2
+(D) a^2 + b^2
+, answer=A}, Question{problem=Factorise -20x^2 - 9x + 20
+(A) (5 + 4x)(4 - 5x)
+(B) (5 - 4x)(4 - 5x)
+(C) (5 - 4x)(4 + 5x)
+(D) (5 + 4x)(4 + 5x)
+, answer=A}, Question{problem=Simplify (3x / 2y)(x / 3y)
+(A) x / 2y
+(B) (3x^2) / (2y^2)
+(C) x^2 / (6y^2)
+(D) x^2 / (2y^2)
+, answer=D}, Question{problem=The ratio of the height of two buildings is 7 to 5. The first building is 210 feet tall. How tall is the second building?
+(A) 140
+(B) 145
+(C) 150
+(D) 155
+, answer=C}, Question{problem=Multiply (-1 + i)(-1 + 6i)
+(A) 118 + 142i
+(B) -5 - 7i
+(C) -27 + 50i
+(D) -136 + 111i
+, answer=B}, Question{problem=Find 3 consecutive numbers such that 3 times the first is equal to 8 more than the sum of the other two
+(A) 8, 9, 10
+(B) 9, 10, 11
+(C) 11, 12, 13
+(D) 12, 13, 14
+, answer=C}, Question{problem=Add by uniting the literal coefficients: ax + bx
+(A) x(a + b)
+(B) a + b / x
+(C) 2x + ab
+(D) 2 + x + ab
+, answer=A}, Question{problem=Find the value of 3abc, where a=2, b=3 and c=4
+(A) 27
+(B) 12
+(C) 82
+(D) 72
+, answer=D}, Question{problem=The equation mx - 8 = 6 - 7(x + 3) DOES NOT have any solution if m = 
+(A) 3
+(B) 7
+(C) -7
+(D) 0
+, answer=C}, Question{problem=Add the following: 3x - 2y + 2y + 3z + 2 z - 4x - 5y
+(A) x - 5y - z
+(B) x -
+(C) - x - 5y - z
+(D) - x - 5y + 5z
+, answer=D}, Question{problem=The opposite of a number is less than the original number. Which is the correct answer is for this statement?
+(A) This statement is never true
+(B) This statement is always true
+(C) This statement is true for positive numbers
+(D) This statement is true for negative numbers
+, answer=C}, Question{problem=What are the solutions to 6x^2 = 18x ?
+(A) x = 0, x = 3
+(B) x = 0, x = -3
+(C) x = 6, x = 3
+(D) x = 6, x = -3
+, answer=A}, Question{problem=Simplify (-a^2 b^3)^2 (c^2)^0
+(A) a^4 b^6 c^2
+(B) a^4 b^6
+(C) a^4 b^3
+(D) a^2 b^5
+, answer=B}, Question{problem=If a and b are positive real numbers, then (a^0 - 3b^0)5 =
+(A) 0
+(B) 1
+(C) -32
+(D) 32
+, answer=C}, Question{problem=There are 58 DVD's and CD's. If the number of CD's is two more than three times the number of DVD's, how many are CD's?
+(A) 4
+(B) -4
+(C) 1
+(D) -1
+, answer=C}, Question{problem=The equation - mx + 1 = 13 - 4(x + 3) is an identity if m = 
+(A) 42
+(B) 43
+(C) 44
+(D) 45
+, answer=A}, Question{problem=Solve 5x^2 + 12x = 9 
+(A) -3/5, -3
+(B) 3/5
+(C) 3/5, 3
+(D) 3/5, -3
+, answer=D}, Question{problem=Which of the following is a factor of the polynomial x^2 – x – 20 ?
+(A) x – 5
+(B) x – 4
+(C) x + 5
+(D) x + 10
+, answer=A}, Question{problem=(4x^2 −2x + 8)−(x^2 + 3x − 2)=
+(A) 3x^2 + x + 6
+(B) 3x^2 + x + 10
+(C) 3x^2 + 5x + 6
+(D) 3x^2 + 5x + 10
+, answer=D}, Question{problem=Evaluate 11 + sqrt(-4 + 6 × 4 ÷ 3)
+(A) 15
+(B) 14
+(C) 13
+(D) 12
+, answer=C}, Question{problem=Which is the equation for a line with slope -3 and y-intercept (0 , -5) ?
+(A) y = -3x + 5
+(B) y = -3x - 5
+(C) y = 3x - 5
+(D) y = 3x + 5
+, answer=B}, Question{problem=Solve 9[7 - (6x - 3)] + 5x = 0
+(A) 90/49
+(B) 119/62
+(C) -1
+(D) 88/17
+, answer=A}, Question{problem=For the function f(x) = + 3x + 2, find x such that f(x) = 14
+(A) 6
+(B) 5
+(C) 3
+(D) 4
+, answer=D}, Question{problem=Evaluate [5 - (4 - 4(6 - 7) + 7)] + 2
+(A) -45
+(B) 46
+(C) -8
+(D) -37
+, answer=C}, Question{problem=Factor 100x^6 - 81y^4
+(A) (10x^3 + 9y^2)(10x^3 - 9y^2)
+(B) (10x^3 - 9y^2)^2
+(C) 10x^6 (10 - 81y^4)
+(D) (9x^3 + 10y^2)(9x^3 - 10y^2)
+, answer=A}, Question{problem=Which equation has intercepts (0, -5) and (-9, 0) ?
+(A) -4x - 10y = 40
+(B) 5x - 8y = -40
+(C) -6x - 8y = 48
+(D) -5x - 9y = 45
+, answer=D}, Question{problem=What is the slope of the line perpendicular to the line y = (1/3)x - 7 ?
+(A) -3
+(B) 3
+(C) 4
+(D) -2
+, answer=A}, Question{problem=Which mathematical sentence represents the solution for d in the equation 6e = ef + 3d ?
+(A) d = 6e - ef / 3
+(B) d = 6e + ef / 3
+(C) d = 2e - ef / 3
+(D) d = 2e + ef / 3
+, answer=A}, Question{problem=Which of the following represents the linear equation 2x = y + 3 in slope-intercept form?
+(A) 2x + y = 3 
+(B) 2x – y = 3
+(C) y = 2x – 3
+(D) y = 2x + 3 
+, answer=C}, Question{problem=The number of solutions of (x^2 + 1)^2 + 2(x^2 + 1) - 3 = 0 is equal to 
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+, answer=A}, Question{problem=How many times does the graph of y = 2x^2 −2x + 3 intersect the x-axis? 
+(A) 1
+(B) 2
+(C) 3
+(D) none
+, answer=D}, Question{problem=Which quadratic function, when graphed, has x-intercepts of 4 and −3 ?
+(A) y =(x −3)(x + 4)
+(B) y =(x +3)(2x −8)
+(C) y =(3x −1)(4x +1)
+(D) y =(3x +1)(8x −2)
+, answer=B}, Question{problem=If ln(3x - 2) = 1, then x =
+(A) 2/3
+(B) e/3
+(C) 3/2
+(D) (2 + e)/3
+, answer=D}, Question{problem=If f(x) = -x^2 + 1, then f(x + 1) = -x2 - 2x
+(A) -x^2 + 1
+(B) -x^2
+(C) -x^2 - 2x
+(D) -x^2 -2x - 2
+, answer=C}, Question{problem=The lines y = (a - 5)x + 5 and y = -2x + 7 are parallel if a = 
+(A) -2
+(B) 3
+(C) 5
+(D) -5
+, answer=B}, Question{problem=What is the complete factorization of 32 − 8z^2 ? 
+(A) −8(2 + z)(2 − z)
+(B) 8(2 + z)(2 −z) 
+(C) −8(2 + z)^2
+(D) 8(2 - z)^2
+, answer=B}, Question{problem=The range of the function f(x) = -x 2 + 2x - 5 is given by
+(A) (0 , infity)
+(B) (-infinity , 4]
+(C) (-infinity , -4]
+(D) (-infinity , -5]
+, answer=C}, Question{problem=Let f(x) = x^2 + 2x + 4. Which of the following statements is NOT true? 
+(A) f(x) has a maximum value
+(B) The graph of f is not a line
+(C) The graph of f has no x-intercepts
+(D) The graph of f has a y-intercept
+, answer=A}, Question{problem=-x^2 + x - 3 = 
+(A) -(x + 1/2)^2 - 11/4
+(B) (x - 1/2)^2 - 11/4
+(C) -(x - 1/2)^2 - 11/4
+(D) -(x - 1/2)^2 + 11/4
+, answer=C}, Question{problem=Which of these functions does not have an inverse? 
+(A) f(x) = |x - 5|
+(B) h(x) = 2x - 9
+(C) k(x) = ln(- x + 4)
+(D) j(x) = x^1/3
+, answer=A}, Question{problem=How many solutions do the equation 1/x + 1/(x + 1) = 1/3 have? 
+(A) 1
+(B) 0
+(C) 3
+(D) 2
+, answer=D}, Question{problem=If f(2x + 3) = 2x - 1, then f(3x + 4) = 
+(A) 6x + 7
+(B) 3x
+(C) 6x + 11
+(D) 9x + 15
+, answer=B}, Question{problem=If the whole graph of function f lies in quadrant IV, then the graph of the inverse of lies in quadrant?
+(A) I
+(B) II
+(C) III
+(D) IV
+, answer=D}, Question{problem=Simplify (2x^-3 y^4)^3 (x^3 + y)^0 / (4xy^-2)^3
+(A) (1/8)(y^18 / x^12)
+(B) (1/4)(y^16 / x^12)
+(C) (1/6)(y^18 / x^14)
+(D) (1/8)(y^16 / x^14)
+, answer=D}]List of Questions
+
+Questions                                                               Answer
+-----------------------------------------------------------------------------
+
+﻿Which number does not have a reciprocal?
+(A) –1
+(B) 0
+(C) 1 / 1000
+(D) 3 
+
+=The Answer is:                                                  B
+Which of these is equal to 5(8 − x) ?
+(A) 5x – 40
+(B) x – 40
+(C) 40 – 5x
+(D) 5 – 8x
+
+=The Answer is:                                                  C
+Suppose 2(2 − y) = 3x. When y = 8, what is the value of x ?
+(A) –20/3
+(B) 20/3
+(C) 4
+(D) −4
+
+=The Answer is:                                                  D
+Simplify 15ax^2 / 5x
+(A) 3ax
+(B) 3ax^2
+(C) 5ax^2
+(D) 5ax
+
+=The Answer is:                                                  A
+Simplify a(c - b) - b(a - c)
+(A) ac - 2ab - bc
+(B) ac - 2ab + bc
+(C) ac + 2ab + bc
+(D) ac + bc
+
+=The Answer is:                                                  B
+Expand and simplfy (x - 5)(x + 4)
+(A) x^2 + 9x - 20
+(B) x^2 - x - 9
+(C) x^2 - x - 1
+(D) x^2 - x - 20
+
+=The Answer is:                                                  D
+Expand and simplfy (x - y)(x + y)
+(A) x^2 - 2xy + y^2
+(B) x^2 + 2xy + y^2
+(C) x^2 - y^2
+(D) x^2 + y^2
+
+=The Answer is:                                                  C
+(a - b)^2 =
+(A) a^2 - 2ab + b^2
+(B) a^2 + 2ab + b^2
+(C) a^2 - b^2
+(D) a^2 + b^2
+
+=The Answer is:                                                  A
+Factorise -20x^2 - 9x + 20
+(A) (5 + 4x)(4 - 5x)
+(B) (5 - 4x)(4 - 5x)
+(C) (5 - 4x)(4 + 5x)
+(D) (5 + 4x)(4 + 5x)
+
+=The Answer is:                                                  A
+Simplify (3x / 2y)(x / 3y)
+(A) x / 2y
+(B) (3x^2) / (2y^2)
+(C) x^2 / (6y^2)
+(D) x^2 / (2y^2)
+
+=The Answer is:                                                  D
+The ratio of the height of two buildings is 7 to 5. The first building is 210 feet tall. How tall is the second building?
+(A) 140
+(B) 145
+(C) 150
+(D) 155
+
+=The Answer is:                                                  C
+Multiply (-1 + i)(-1 + 6i)
+(A) 118 + 142i
+(B) -5 - 7i
+(C) -27 + 50i
+(D) -136 + 111i
+
+=The Answer is:                                                  B
+Find 3 consecutive numbers such that 3 times the first is equal to 8 more than the sum of the other two
+(A) 8, 9, 10
+(B) 9, 10, 11
+(C) 11, 12, 13
+(D) 12, 13, 14
+
+=The Answer is:                                                  C
+Add by uniting the literal coefficients: ax + bx
+(A) x(a + b)
+(B) a + b / x
+(C) 2x + ab
+(D) 2 + x + ab
+
+=The Answer is:                                                  A
+Find the value of 3abc, where a=2, b=3 and c=4
+(A) 27
+(B) 12
+(C) 82
+(D) 72
+
+=The Answer is:                                                  D
+The equation mx - 8 = 6 - 7(x + 3) DOES NOT have any solution if m = 
+(A) 3
+(B) 7
+(C) -7
+(D) 0
+
+=The Answer is:                                                  C
+Add the following: 3x - 2y + 2y + 3z + 2 z - 4x - 5y
+(A) x - 5y - z
+(B) x -
+(C) - x - 5y - z
+(D) - x - 5y + 5z
+
+=The Answer is:                                                  D
+The opposite of a number is less than the original number. Which is the correct answer is for this statement?
+(A) This statement is never true
+(B) This statement is always true
+(C) This statement is true for positive numbers
+(D) This statement is true for negative numbers
+
+=The Answer is:                                                  C
+What are the solutions to 6x^2 = 18x ?
+(A) x = 0, x = 3
+(B) x = 0, x = -3
+(C) x = 6, x = 3
+(D) x = 6, x = -3
+
+=The Answer is:                                                  A
+Simplify (-a^2 b^3)^2 (c^2)^0
+(A) a^4 b^6 c^2
+(B) a^4 b^6
+(C) a^4 b^3
+(D) a^2 b^5
+
+=The Answer is:                                                  B
+If a and b are positive real numbers, then (a^0 - 3b^0)5 =
+(A) 0
+(B) 1
+(C) -32
+(D) 32
+
+=The Answer is:                                                  C
+There are 58 DVD's and CD's. If the number of CD's is two more than three times the number of DVD's, how many are CD's?
+(A) 4
+(B) -4
+(C) 1
+(D) -1
+
+=The Answer is:                                                  C
+The equation - mx + 1 = 13 - 4(x + 3) is an identity if m = 
+(A) 42
+(B) 43
+(C) 44
+(D) 45
+
+=The Answer is:                                                  A
+Solve 5x^2 + 12x = 9 
+(A) -3/5, -3
+(B) 3/5
+(C) 3/5, 3
+(D) 3/5, -3
+
+=The Answer is:                                                  D
+Which of the following is a factor of the polynomial x^2 – x – 20 ?
+(A) x – 5
+(B) x – 4
+(C) x + 5
+(D) x + 10
+
+=The Answer is:                                                  A
+(4x^2 −2x + 8)−(x^2 + 3x − 2)=
+(A) 3x^2 + x + 6
+(B) 3x^2 + x + 10
+(C) 3x^2 + 5x + 6
+(D) 3x^2 + 5x + 10
+
+=The Answer is:                                                  D
+Evaluate 11 + sqrt(-4 + 6 × 4 ÷ 3)
+(A) 15
+(B) 14
+(C) 13
+(D) 12
+
+=The Answer is:                                                  C
+Which is the equation for a line with slope -3 and y-intercept (0 , -5) ?
+(A) y = -3x + 5
+(B) y = -3x - 5
+(C) y = 3x - 5
+(D) y = 3x + 5
+
+=The Answer is:                                                  B
+Solve 9[7 - (6x - 3)] + 5x = 0
+(A) 90/49
+(B) 119/62
+(C) -1
+(D) 88/17
+
+=The Answer is:                                                  A
+For the function f(x) = + 3x + 2, find x such that f(x) = 14
+(A) 6
+(B) 5
+(C) 3
+(D) 4
+
+=The Answer is:                                                  D
+Evaluate [5 - (4 - 4(6 - 7) + 7)] + 2
+(A) -45
+(B) 46
+(C) -8
+(D) -37
+
+=The Answer is:                                                  C
+Factor 100x^6 - 81y^4
+(A) (10x^3 + 9y^2)(10x^3 - 9y^2)
+(B) (10x^3 - 9y^2)^2
+(C) 10x^6 (10 - 81y^4)
+(D) (9x^3 + 10y^2)(9x^3 - 10y^2)
+
+=The Answer is:                                                  A
+Which equation has intercepts (0, -5) and (-9, 0) ?
+(A) -4x - 10y = 40
+(B) 5x - 8y = -40
+(C) -6x - 8y = 48
+(D) -5x - 9y = 45
+
+=The Answer is:                                                  D
+What is the slope of the line perpendicular to the line y = (1/3)x - 7 ?
+(A) -3
+(B) 3
+(C) 4
+(D) -2
+
+=The Answer is:                                                  A
+Which mathematical sentence represents the solution for d in the equation 6e = ef + 3d ?
+(A) d = 6e - ef / 3
+(B) d = 6e + ef / 3
+(C) d = 2e - ef / 3
+(D) d = 2e + ef / 3
+
+=The Answer is:                                                  A
+Which of the following represents the linear equation 2x = y + 3 in slope-intercept form?
+(A) 2x + y = 3 
+(B) 2x – y = 3
+(C) y = 2x – 3
+(D) y = 2x + 3 
+
+=The Answer is:                                                  C
+The number of solutions of (x^2 + 1)^2 + 2(x^2 + 1) - 3 = 0 is equal to 
+(A) 1
+(B) 2
+(C) 3
+(D) 4
+
+=The Answer is:                                                  A
+How many times does the graph of y = 2x^2 −2x + 3 intersect the x-axis? 
+(A) 1
+(B) 2
+(C) 3
+(D) none
+
+=The Answer is:                                                  D
+Which quadratic function, when graphed, has x-intercepts of 4 and −3 ?
+(A) y =(x −3)(x + 4)
+(B) y =(x +3)(2x −8)
+(C) y =(3x −1)(4x +1)
+(D) y =(3x +1)(8x −2)
+
+=The Answer is:                                                  B
+If ln(3x - 2) = 1, then x =
+(A) 2/3
+(B) e/3
+(C) 3/2
+(D) (2 + e)/3
+
+=The Answer is:                                                  D
+If f(x) = -x^2 + 1, then f(x + 1) = -x2 - 2x
+(A) -x^2 + 1
+(B) -x^2
+(C) -x^2 - 2x
+(D) -x^2 -2x - 2
+
+=The Answer is:                                                  C
+The lines y = (a - 5)x + 5 and y = -2x + 7 are parallel if a = 
+(A) -2
+(B) 3
+(C) 5
+(D) -5
+
+=The Answer is:                                                  B
+What is the complete factorization of 32 − 8z^2 ? 
+(A) −8(2 + z)(2 − z)
+(B) 8(2 + z)(2 −z) 
+(C) −8(2 + z)^2
+(D) 8(2 - z)^2
+
+=The Answer is:                                                  B
+The range of the function f(x) = -x 2 + 2x - 5 is given by
+(A) (0 , infity)
+(B) (-infinity , 4]
+(C) (-infinity , -4]
+(D) (-infinity , -5]
+
+=The Answer is:                                                  C
+Let f(x) = x^2 + 2x + 4. Which of the following statements is NOT true? 
+(A) f(x) has a maximum value
+(B) The graph of f is not a line
+(C) The graph of f has no x-intercepts
+(D) The graph of f has a y-intercept
+
+=The Answer is:                                                  A
+-x^2 + x - 3 = 
+(A) -(x + 1/2)^2 - 11/4
+(B) (x - 1/2)^2 - 11/4
+(C) -(x - 1/2)^2 - 11/4
+(D) -(x - 1/2)^2 + 11/4
+
+=The Answer is:                                                  C
+Which of these functions does not have an inverse? 
+(A) f(x) = |x - 5|
+(B) h(x) = 2x - 9
+(C) k(x) = ln(- x + 4)
+(D) j(x) = x^1/3
+
+=The Answer is:                                                  A
+How many solutions do the equation 1/x + 1/(x + 1) = 1/3 have? 
+(A) 1
+(B) 0
+(C) 3
+(D) 2
+
+=The Answer is:                                                  D
+If f(2x + 3) = 2x - 1, then f(3x + 4) = 
+(A) 6x + 7
+(B) 3x
+(C) 6x + 11
+(D) 9x + 15
+
+=The Answer is:                                                  B
+If the whole graph of function f lies in quadrant IV, then the graph of the inverse of lies in quadrant?
+(A) I
+(B) II
+(C) III
+(D) IV
+
+=The Answer is:                                                  D
+Simplify (2x^-3 y^4)^3 (x^3 + y)^0 / (4xy^-2)^3
+(A) (1/8)(y^18 / x^12)
+(B) (1/4)(y^16 / x^12)
+(C) (1/6)(y^18 / x^14)
+(D) (1/8)(y^16 / x^14)
+
+=The Answer is:                                                  D
