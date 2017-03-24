@@ -36,7 +36,7 @@ public class RoomView extends View {
                   + "\n S - Save game"
                   + "\n Q - Exit Room"
                   + "\n I - Display inventory"
-                  + "\n W - Questions" 
+                  + "\n W - Print Questions & Answers" 
                   + "\n P - Print Player's Inventory"
                   + "\n------------------------------", filename);
         
@@ -214,11 +214,12 @@ public class RoomView extends View {
             //create printwrite to write to specified file
             statWriter = new PrintWriter(filePath);
             
-               statWriter.println("Questions                                                Answer");
-                statWriter.println("----------------------------------------------------------------");
+               statWriter.println("      Questions and Answers List for Mathcadia      \n");
+               statWriter.println("Questions & Choices                         Answer");
+               statWriter.println("-----------------------------------------------------------");
                for(int i = 0; i < questions.size(); i++){
                    statWriter.println((questions.get(i).getProblem()) 
-                           + "                                       the answer is: " 
+                           + "                                       The answer is: " 
                            + questions.get(i).getAnswer() + "\n\n\n");
                }
       
@@ -227,7 +228,7 @@ public class RoomView extends View {
         } finally {
             statWriter.close();
         
-        this.console.println("Stats successfully printed!");
+        this.console.println("Questions & answers successfully printed!");
 
         }
     
