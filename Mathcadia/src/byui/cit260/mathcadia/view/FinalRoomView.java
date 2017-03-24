@@ -13,7 +13,7 @@ package byui.cit260.mathcadia.view;
 public class FinalRoomView extends View{
     
 
-    public FinalRoomView(){
+    public FinalRoomView(String filename){
        super("\n------------------------------"
                   + "\n|      Final Room Menu       |"
                   + "\n------------------------------"
@@ -22,7 +22,7 @@ public class FinalRoomView extends View{
                   + "\n H - Help Menu"
                   + "\n S - Save Game"
                   + "\n M - Main Menu"
-                  + "\n------------------------------");
+                  + "\n------------------------------",filename);
     }    
        
 

@@ -37,6 +37,7 @@ public class RoomView extends View {
                   + "\n Q - Exit Room"
                   + "\n I - Display inventory"
                   + "\n W - Questions" 
+                  + "\n P - Print Player's Inventory"
                   + "\n------------------------------", filename);
         
        currentFile = filename;
@@ -120,7 +121,11 @@ public class RoomView extends View {
                 }
                 break;
             case "I":
-                Game.getPlayer().displayInventory();
+                String inventory = Game.getPlayer().displayInventory();
+                this.console.print(inventory);
+                break;
+            case "P":
+                this.printPlayerInventory();
                 break;
             case "W":
                 this.printQuestions();
@@ -174,7 +179,7 @@ public class RoomView extends View {
 
     private void saveRoom() {
         
-        this.console.println(Mathcadia.getMathcadia().getRoomNumber());
+        
         //if the room is the library, save room as 50
        if("text/library.txt".equals(currentFile)){
            Mathcadia.getMathcadia().setRoomNumber(50);
@@ -209,12 +214,12 @@ public class RoomView extends View {
             //create printwrite to write to specified file
             statWriter = new PrintWriter(filePath);
             
-               statWriter.println();
-               statWriter.println("Questions                                                               Answer\n"
-                                + "----------------------------------------------------------------\n");
+               statWriter.println("Questions                                                Answer");
+                statWriter.println("----------------------------------------------------------------");
                for(int i = 0; i < questions.size(); i++){
                    statWriter.println((questions.get(i).getProblem()) 
-                           + "\n=The Answer is:" +"                                        " + questions.get(i).getAnswer());
+                           + "                                       the answer is: " 
+                           + questions.get(i).getAnswer() + "\n\n\n");
                }
       
         } catch (Exception ex) {

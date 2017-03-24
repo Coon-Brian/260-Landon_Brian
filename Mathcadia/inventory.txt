@@ -1,0 +1,7 @@
+la's Inventory:
+
+ Item	Name                                Bonus Value
+---------------------------------------------------------
+POWER POTION5 points  
+POWER POTION5 points  
+POWER POTION5 points  
