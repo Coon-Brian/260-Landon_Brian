@@ -128,28 +128,29 @@ public abstract class View implements ViewInterface{
     }
 
     private void writeInventory(String filePath) {
-        PrintWriter statWriter = null;
+        PrintWriter inventoryWriter = null;
         try {
             //get lists of hero stats
             Player hero = Game.getPlayer();
             
             //create printwrite to write to specified file
-            statWriter = new PrintWriter(filePath);
+            inventoryWriter = new PrintWriter(filePath);
             
-             statWriter.println( hero.getName() + "'s Inventory:\n");
-             statWriter.println( " Item	Name                                Bonus Value\n"
+             inventoryWriter.println( hero.getName() + "'s Inventory:" + System.lineSeparator());
+             inventoryWriter.println( " ItemName                                Bonus Value" + System.lineSeparator()
                               + "---------------------------------------------------------");
 
              for (Item currentItem: hero.getPlayerInventory()){
-                 statWriter.print(currentItem.getItemName());
-                 statWriter.println(String.format("%-3s", currentItem.getBonusValue() + " points"));
+                 inventoryWriter.println(String.format("%-25s %25s ", 
+                         currentItem.getItemName(), currentItem.getBonusValue() + " points"));
+                 
              }
              
             
         } catch (Exception ex) {
             ErrorView.display(this.getClass().getName(), ex.getMessage());
         }  finally {
-            statWriter.close();
+            inventoryWriter.close();
         }
         
        
