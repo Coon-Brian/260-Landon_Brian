@@ -210,7 +210,7 @@ public class RoomView extends View {
             statWriter = new PrintWriter(filePath);
             
                statWriter.println();
-               statWriter.println("Questions                                                Answer\n"
+               statWriter.println("Questions                                                               Answer\n"
                                 + "----------------------------------------------------------------\n");
                for(int i = 0; i < questions.size(); i++){
                    statWriter.println((questions.get(i).getProblem()) 
