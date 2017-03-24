@@ -214,12 +214,12 @@ public class RoomView extends View {
             //create printwrite to write to specified file
             statWriter = new PrintWriter(filePath);
             
-               statWriter.println();
-               statWriter.println("Questions                                                Answer\n"
-                                + "----------------------------------------------------------------\n");
+               statWriter.println("Questions                                                Answer");
+                statWriter.println("----------------------------------------------------------------");
                for(int i = 0; i < questions.size(); i++){
                    statWriter.println((questions.get(i).getProblem()) 
-                           + "\n=The Answer is:" +"                                        " + questions.get(i).getAnswer());
+                           + "                                       the answer is: " 
+                           + questions.get(i).getAnswer() + "\n\n\n");
                }
       
         } catch (Exception ex) {
