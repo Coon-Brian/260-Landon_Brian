@@ -2,11 +2,15 @@
 package byui.cit260.mathcadia.view;
 
 import byui.cit260.mathcadia.control.GameControl;
+import byui.cit260.mathcadia.model.Game;
+import byui.cit260.mathcadia.model.Item;
+import byui.cit260.mathcadia.model.Player;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -102,6 +106,54 @@ public abstract class View implements ViewInterface{
             ErrorView.display(this.getClass().getName(), ex.getMessage());
         }
         
+        
+    }
+    
+    protected void printPlayerInventory(){
+         this.console.println("\n\nEnter the file path for file where the player's "
+        + "stats will be printed.");
+        
+        String filePath = "";
+        try {
+            filePath = this.keyboard.readLine();
+        } catch (IOException ex) {
+           ErrorView.display(this.getClass().getName(), ex.getMessage());
+        }
+        
+        try{
+            this.writeInventory(filePath);
+        }catch(Exception ex){
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+        }
+    }
+
+    private void writeInventory(String filePath) {
+        PrintWriter statWriter = null;
+        try {
+            //get lists of hero stats
+            Player hero = Game.getPlayer();
+            
+            //create printwrite to write to specified file
+            statWriter = new PrintWriter(filePath);
+            
+             statWriter.println( hero.getName() + "'s Inventory:\n");
+             statWriter.println( " Item	Name                                Bonus Value\n"
+                              + "---------------------------------------------------------");
+
+             for (Item currentItem: hero.getPlayerInventory()){
+                 statWriter.print(currentItem.getItemName());
+                 statWriter.println(String.format("%-3s", currentItem.getBonusValue() + " points"));
+             }
+             
+            
+        } catch (Exception ex) {
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+        }  finally {
+            statWriter.close();
+        }
+        
+       
+        this.console.println("Stats successfully printed!");
         
     }
 

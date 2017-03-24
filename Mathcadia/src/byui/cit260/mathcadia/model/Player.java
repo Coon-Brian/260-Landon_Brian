@@ -15,6 +15,8 @@ public class Player extends Character implements Serializable{
     private String userName;
     private ArrayList<Item> playerInventory;
     private int level;
+     private ArrayList<String> playerStats;
+    private ArrayList<Integer> playerValues;
 
     public Player() {
         userName = "";
@@ -25,6 +27,19 @@ public class Player extends Character implements Serializable{
         knowledge = 5;
         power = 2;
         level = 1;
+        
+        playerStats = new ArrayList<>();
+        playerValues = new ArrayList<>();
+        
+        playerStats.add("Grade");
+        playerStats.add("Knowledge");
+        playerStats.add("Power");
+        playerStats.add("Experience");
+        
+        playerValues.add(this.gradePoints);
+        playerValues.add(this.knowledge);
+        playerValues.add(this.power);
+        playerValues.add(this.experience);
     }
     
     public Player(String name){
@@ -35,6 +50,20 @@ public class Player extends Character implements Serializable{
         gradePoints = 1000;
         knowledge = 1;
         power = 1;
+        
+        playerStats = new ArrayList<>();
+        playerValues = new ArrayList<>();
+        
+        playerStats.add("Grade");
+        playerStats.add("Knowledge");
+        playerStats.add("Power");
+        playerStats.add("Experience");
+        
+        playerValues.add(this.gradePoints);
+        playerValues.add(this.knowledge);
+        playerValues.add(this.power);
+        playerValues.add(this.experience);
+        
     }
     
 
@@ -92,6 +121,14 @@ public class Player extends Character implements Serializable{
         return percent;
     }
     
+     public ArrayList<String> getPlayerStats() {
+        return playerStats;
+    }
+
+    public ArrayList<Integer> getPlayerValues() {
+        return playerValues;
+    }
+    
     @Override
     public Boolean isAlive(){
         //if the player's grade is still above 69% they are alive
@@ -99,12 +136,15 @@ public class Player extends Character implements Serializable{
     }
 
     // displays players current inventory
-    public void displayInventory(){
+    public String displayInventory(){
+        String inventoryList = "";
         int counter = 1;
-        System.out.println("____  THIS IS YOUR INVENTORY  ____" + "\n");
+        inventoryList+= "____  THIS IS YOUR INVENTORY  ____" + "\n";
         for (Item currentItem: playerInventory){
-            System.out.println("--- " + currentItem.getItemName() + "\t" + counter++);
+            inventoryList += "--- " + currentItem.getItemName() + "\t" + counter++ + "\n";
         }
+        inventoryList += "\n\n";
+        return inventoryList;
     }
     
     

@@ -9,9 +9,6 @@ import byui.cit260.mathcadia.control.BattleControl;
 import byui.cit260.mathcadia.control.LocationControl;
 import byui.cit260.mathcadia.exceptions.BattleControlException;
 import byui.cit260.mathcadia.model.Game;
-import byui.cit260.mathcadia.model.Location;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import mathcadia.Mathcadia;
 
 /**
@@ -145,7 +142,11 @@ public class BattleRoomView extends View{
         if(LocationControl.battleRoomNumber == 14){
             PuzzleRoomView puzzleRoom3 = new PuzzleRoomView(3);
             puzzleRoom3.display();
+            //display the final room
+            FinalRoomView bossRoom = new FinalRoomView("text/bossRoom.txt");
+            bossRoom.display();
         }
+        
         
     }
     //set the room number the same as the current battle room

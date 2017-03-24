@@ -33,6 +33,7 @@ public class RoomView extends View {
                   + "\n S - Save game"
                   + "\n Q - Exit Room"
                   + "\n I - Display inventory"
+                  + "\n P - Print Player's Inventory"
                   + "\n------------------------------", filename);
         
        currentFile = filename;
@@ -116,7 +117,11 @@ public class RoomView extends View {
                 }
                 break;
             case "I":
-                Game.getPlayer().displayInventory();
+                String inventory = Game.getPlayer().displayInventory();
+                this.console.print(inventory);
+                break;
+            case "P":
+                this.printPlayerInventory();
                 break;
             default:
                 this.console.println("\n Invalid selection, Please try again.");
@@ -167,7 +172,7 @@ public class RoomView extends View {
 
     private void saveRoom() {
         
-        this.console.println(Mathcadia.getMathcadia().getRoomNumber());
+        
         //if the room is the library, save room as 50
        if("text/library.txt".equals(currentFile)){
            Mathcadia.getMathcadia().setRoomNumber(50);
