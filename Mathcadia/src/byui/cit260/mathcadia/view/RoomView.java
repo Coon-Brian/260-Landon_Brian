@@ -9,7 +9,10 @@ import byui.cit260.mathcadia.control.GameControl;
 import byui.cit260.mathcadia.control.LocationControl;
 import byui.cit260.mathcadia.model.Game;
 import byui.cit260.mathcadia.model.Library;
+import byui.cit260.mathcadia.model.Question;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import mathcadia.Mathcadia;
 
 /**
@@ -33,6 +36,7 @@ public class RoomView extends View {
                   + "\n S - Save game"
                   + "\n Q - Exit Room"
                   + "\n I - Display inventory"
+                  + "\n W - Questions" 
                   + "\n P - Print Player's Inventory"
                   + "\n------------------------------", filename);
         
@@ -123,6 +127,9 @@ public class RoomView extends View {
             case "P":
                 this.printPlayerInventory();
                 break;
+            case "W":
+                this.printQuestions();
+                break;     
             default:
                 this.console.println("\n Invalid selection, Please try again.");
                 break;
@@ -181,5 +188,48 @@ public class RoomView extends View {
        else{
            Mathcadia.getMathcadia().setRoomNumber(25);
        }
+    }
+        private void printQuestions() {
+        this.console.println("\n\nEnter the file path for file where the questions "
+                + "are to be printed.");
+        
+        String filePath = "";
+        try {
+            filePath = this.keyboard.readLine();
+        } catch (IOException ex) {
+           ErrorView.display(this.getClass().getName(), ex.getMessage());
+        }
+        
+        try{
+            this.writeQuestions(filePath);
+        }catch(Exception ex){
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+        }
+    }
+
+    private void writeQuestions(String filePath) {
+       PrintWriter statWriter = null;
+        try {
+            ArrayList<Question> questions = Mathcadia.getMathcadia().getQuestions();
+            //create printwrite to write to specified file
+            statWriter = new PrintWriter(filePath);
+            
+               statWriter.println();
+               statWriter.println("Questions                                                Answer\n"
+                                + "----------------------------------------------------------------\n");
+               for(int i = 0; i < questions.size(); i++){
+                   statWriter.println((questions.get(i).getProblem()) 
+                           + "\n=The Answer is:" +"                                        " + questions.get(i).getAnswer());
+               }
+      
+        } catch (Exception ex) {
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+        } finally {
+            statWriter.close();
+        
+        this.console.println("Stats successfully printed!");
+
+        }
+    
     }
 }
