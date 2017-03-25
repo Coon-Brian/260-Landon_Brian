@@ -154,7 +154,7 @@ public abstract class View implements ViewInterface{
         }
         
        
-        this.console.println("Stats successfully printed!");
+        this.console.println("Inventory successfully printed!");
         
     }
 

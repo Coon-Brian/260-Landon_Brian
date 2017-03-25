@@ -1,8 +1,0 @@
-Landon's Stats:
-
- Stat			Value
-------------------------------
-Grade        1000
-Knowledge           5
-Power           2
-Experience           0

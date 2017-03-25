@@ -1,8 +1,0 @@
-la's Inventory:
-
- ItemName                                Bonus Value
----------------------------------------------------------
-EXTRA CREDIT POTION                      100 points 
-EXTRA CREDIT POTION                      100 points 
-EXPERIENCE POTION                        100 points 
-KNOWLEDGE POTION                           2 points 
