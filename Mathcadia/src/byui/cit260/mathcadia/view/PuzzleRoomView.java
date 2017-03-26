@@ -162,7 +162,7 @@ public class PuzzleRoomView extends View {
                 this.console.println("Enter the diameter of the paper cup cone");
                 String userDiameter = keyboard.readLine();
                 
-                this.console.println("Enter the hitght of the paper cup cone");
+                this.console.println("Enter the height of the paper cup cone");
                 String userHeight = keyboard.readLine();
                 
                 int diameter = 0;
