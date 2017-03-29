@@ -42,7 +42,7 @@ public class PuzzleControl {
         
     }
     
-    /** 
+    /** e
     * Description: the user is asked to enter a number greater than 100 and then 
     * a smaller number greater than 2 that is a factor of the first. They will 
     * input two numbers. The function tests if the smaller number is a factor of
@@ -95,15 +95,15 @@ public class PuzzleControl {
      * @param height
      * @return 
     */  
-    public static double calcVolumeOfCone(double diameter, double height) {
+    public static boolean calcVolumeOfCone(int diameter, int height) {
         
         // checks to see if diameter is too small or large
         if (diameter <= 0 || diameter >= 7){
-            return -1;
+            return false;
         }
         // checks to see if height is too small
         if (height <= 0) {
-            return -1;
+            return false;
         }
         // calrulation for volume
         double radius = diameter / 2;
@@ -111,13 +111,13 @@ public class PuzzleControl {
         
          // volume not enough
         if (volume <= 40) {
-            return -1;
+            return false;
         }
         // volume too much
         if (volume > 65.9735) { 
-            return -1;
+            return false;
         }
         else 
-            return volume;
+            return true;
     } 
 }

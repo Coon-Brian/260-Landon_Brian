@@ -159,28 +159,28 @@ public class PuzzleRoomView extends View {
         
         while(!passedTest){
             try{
-                this.console.println("Enter the height of door");
+                this.console.println("Enter the diameter of the paper cup cone");
+                String userDiameter = keyboard.readLine();
                 
+                this.console.println("Enter the height of the paper cup cone");
                 String userHeight = keyboard.readLine();
-                this.console.println("Enter the bottom length of door");
-                String userLength = keyboard.readLine();
+                
+                int diameter = 0;
                 int height = 0;
-                int length = 0;
+                
                 try{
+                    diameter = Integer.parseInt(userDiameter);
                     height = Integer.parseInt(userHeight);
-                    length = Integer.parseInt(userLength);
                 }catch(NumberFormatException nf){
                     ErrorView.display(this.getClass().getName(),"You must enter a valid number");
                 }
                 
-                
-                
-                passedTest = PuzzleControl.calcDoorSize(height, length);
+                passedTest = PuzzleControl.calcVolumeOfCone(diameter, height);
                 if(passedTest){
                     this.console.println("GOOD JOB BRO!");
                 }
                 else{
-                    this.console.println("Incorrect: you are still trapped!");
+                    this.console.println("Incorrect: you are still extremely thirsty and can't continue!");
                 }
             }catch(IOException ex){
                  ErrorView.display(this.getClass().getName(),"Trouble reading input:" + ex.getMessage());
