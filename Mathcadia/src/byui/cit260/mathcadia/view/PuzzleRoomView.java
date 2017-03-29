@@ -78,7 +78,11 @@ public class PuzzleRoomView extends View {
         
         switch(roomNum){
             case 1:
+                try {
                 solvePuzzleOne();
+                }catch(PuzzleControlException me){
+                   ErrorView.display(this.getClass().getName(),"Error with puzzle three " + me.getMessage());
+                } 
                 break;
             case 2:
                 try {
@@ -88,12 +92,16 @@ public class PuzzleRoomView extends View {
                 }
                 break;
             case 3:
+                try {
                 solvePuzzleThree();
+                }catch(PuzzleControlException me){
+                   ErrorView.display(this.getClass().getName(),"Error with puzzle three " + me.getMessage());
+                }       
                 break;
         }
     }
     
-    private void solvePuzzleOne(){
+    private void solvePuzzleOne()throws PuzzleControlException {
         boolean passedTest = false;
         
         while(!passedTest){
@@ -154,7 +162,7 @@ public class PuzzleRoomView extends View {
         }
     }
     
-    private void solvePuzzleThree(){
+    private void solvePuzzleThree()throws PuzzleControlException{
          boolean passedTest = false;
         
         while(!passedTest){
