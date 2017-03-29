@@ -81,7 +81,7 @@ public class PuzzleRoomView extends View {
                 try {
                 solvePuzzleOne();
                 }catch(PuzzleControlException me){
-                   ErrorView.display(this.getClass().getName(),"Error with puzzle three " + me.getMessage());
+                   ErrorView.display(this.getClass().getName(),"Error with puzzle one " + me.getMessage());
                 } 
                 break;
             case 2:
