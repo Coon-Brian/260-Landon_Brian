@@ -129,7 +129,7 @@ public class RoomView extends View {
                 break;
             case "W":
                 this.printQuestions();
-                break;     
+                break;   
             default:
                 this.console.println("\n Invalid selection, Please try again.");
                 break;

@@ -5,6 +5,16 @@
  */
 package byui.cit260.mathcadia.view;
 
+import byui.cit260.mathcadia.control.PuzzleControl;
+import byui.cit260.mathcadia.model.Game;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import mathcadia.Mathcadia;
+
 
 /**
  *
@@ -17,8 +27,7 @@ public class FinalRoomView extends View{
        super("\n------------------------------"
                   + "\n|      Final Room Menu       |"
                   + "\n------------------------------"
-                  + "\n F - Proceed to final battle"
-                  + "\n L - Back to Library"
+                  + "\n F - Answer Question"
                   + "\n H - Help Menu"
                   + "\n S - Save Game"
                   + "\n M - Main Menu"
@@ -33,11 +42,6 @@ public class FinalRoomView extends View{
         switch (choice){
             case "F":
                 this.fightBoss();
-                break;
-            case "L":
-                RoomView library;
-                library = new RoomView("text/library.txt");
-                library.display();
                 break;
             case "H":
                 HelpMenuView help = new HelpMenuView();
@@ -59,7 +63,40 @@ public class FinalRoomView extends View{
     }
 
     private void fightBoss() {
-        this.console.println("\nProceeding to final battle...");
+        try {
+            this.console.println("What is your answer?");
+            String answer = keyboard.readLine();
+            
+            if (answer.equals("5"))
+                readFinalStory("text/win.txt");
+            else
+                readFinalStory("text/lose.txt");
+            
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(), "Error reading input");
+        }
+    }
+
+    private void readFinalStory(String filename) {
+        
+        String storyText = "";
+        File file = new File(filename);
+        Scanner fileReader;
+        try {
+            fileReader = new Scanner(file);
+            while (fileReader.hasNextLine()){
+             storyText += fileReader.nextLine() + "\n";
+        }
+        } catch (FileNotFoundException ex) {
+            ErrorView.display(this.getClass().getName(),ex.getMessage());
+        }
+        
+        
+        this.console.println(storyText);
+        
+        this.console.println("Game Over! You have finished the challenges!");
+        this.console.println("Your final grade was " + Game.getPlayer().getPercent());
+        
     }
 
     

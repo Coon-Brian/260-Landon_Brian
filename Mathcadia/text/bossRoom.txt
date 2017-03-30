@@ -11,6 +11,5 @@ and asks...
   
   Then find the greatest common factor between that number and 12."
   
-  
-What is your answer?
+can you solve the question?
 

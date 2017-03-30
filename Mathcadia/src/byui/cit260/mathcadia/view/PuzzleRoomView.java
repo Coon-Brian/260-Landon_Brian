@@ -145,7 +145,7 @@ public class PuzzleRoomView extends View {
                  
                  int otherFactor = PuzzleControl.isFactor(largeNum, pFactor);
                  passedTest = true;
-                 this.console.println("you passed the test!");
+                 this.console.println("you passed the test! The door opens!");
              } catch (IOException ex) {
                  ErrorView.display(this.getClass().getName(),"Trouble reading input:" + ex.getMessage());
              }

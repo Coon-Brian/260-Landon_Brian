@@ -10,6 +10,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -21,10 +23,7 @@ public class Mathcadia {
      * @param args the command line arguments
      */
     private static Game mathcadia;
-
-
-
-    
+   
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
     
@@ -32,6 +31,7 @@ public class Mathcadia {
         
     public static void main(String[] args) {
         try{
+          
             //Open charcter stream file for end users input and output
             Mathcadia.inFile = new BufferedReader (new InputStreamReader(System.in));
             Mathcadia.outFile = new PrintWriter(System.out, true);

@@ -1,1 +1,9 @@
-This is puzzle 2, enter two numbers:
+You have finally reached the door to the midterm boss.
+Over the door you read the following inscription:
+
+"To enter this room, enter a number larger than 100,
+then enter a factor of that number that is larger than 2. 
+Only then will you be prepared for your final test."
+
+You find two keypads on the door for entering the numbers...
+

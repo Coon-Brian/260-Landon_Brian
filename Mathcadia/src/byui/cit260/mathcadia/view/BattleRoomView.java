@@ -131,20 +131,21 @@ public class BattleRoomView extends View{
     }
     
     private void checkPuzzleRoom(){
-        if(LocationControl.battleRoomNumber == 3){
+        if(LocationControl.battleRoomNumber == 2){
             PuzzleRoomView puzzleRoom1 = new PuzzleRoomView(1);
             puzzleRoom1.display();
         }
-        if(LocationControl.battleRoomNumber == 8){
-            PuzzleRoomView puzzleRoom2 = new PuzzleRoomView(2);
-            puzzleRoom2.display();
-        }
         if(LocationControl.battleRoomNumber == 14){
-            PuzzleRoomView puzzleRoom3 = new PuzzleRoomView(3);
-            puzzleRoom3.display();
+            PuzzleRoomView puzzleRoom2 = new PuzzleRoomView(2);
+            puzzleRoom2.display(); 
             //display the final room
             FinalRoomView bossRoom = new FinalRoomView("text/bossRoom.txt");
             bossRoom.display();
+        }
+        if(LocationControl.battleRoomNumber == 7){
+            PuzzleRoomView puzzleRoom3 = new PuzzleRoomView(3);
+            puzzleRoom3.display();
+           
         }
         
         
