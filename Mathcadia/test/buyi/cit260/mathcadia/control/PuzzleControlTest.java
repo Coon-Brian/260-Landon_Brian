@@ -6,6 +6,7 @@
 package buyi.cit260.mathcadia.control;
 
 import byui.cit260.mathcadia.control.PuzzleControl;
+import byui.cit260.mathcadia.exceptions.PuzzleControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -71,54 +72,54 @@ public class PuzzleControlTest {
         System.out.println("calcVolumeOfCone");
         
         System.out.println("Test Case #1");
-        double diameter = 5.0;
-        double height = 7.0;
+        int diameter = (int) 5.0;
+        int height = (int) 7.0;
         PuzzleControl instance = new PuzzleControl();
-        double expResult = 45.8149;
-        double result = instance.calcVolumeOfCone(diameter, height);
-        assertEquals(expResult, result, 0.0001);
+        boolean expResult = true;
+        boolean result = instance.calcVolumeOfCone(diameter, height);
+        assertEquals(expResult, result);
         
         System.out.println("Test Case #2");
-        diameter = -1.0;
-        height = 7.0;
-        expResult = -1;
+        diameter = (int) -1.0;
+        height = (int) 7.0;
+        expResult = false;
         result = instance.calcVolumeOfCone(diameter, height);
-        assertEquals(expResult, result, 0.0001);
+        assertEquals(expResult, result);
         
         System.out.println("Test Case #3");
-        diameter = 6.0;
-        height = -1.0;
-        expResult = -1;
+        diameter = (int) 6.0;
+        height = (int) -1.0;
+        expResult = false;
         result = instance.calcVolumeOfCone(diameter, height);
-        assertEquals(expResult, result, 0.0001);
+        assertEquals(expResult, result);
         
         System.out.println("Test Case #4");
-        diameter = 7.0;
-        height = 8.0;
-        expResult = -1;
+        diameter = (int) 7.0;
+        height = (int) 8.0;
+        expResult = false;
         result = instance.calcVolumeOfCone(diameter, height);
-        assertEquals(expResult, result, 0.0001);
+        assertEquals(expResult, result);
 
         System.out.println("Test Case #5");
-        diameter = 0.0;
-        height = 7.0;
-        expResult = -1;
+        diameter = (int) 0.0;
+        height = (int) 7.0;
+        expResult = false;
         result = instance.calcVolumeOfCone(diameter, height);
-        assertEquals(expResult, result, 0.0001);
+        assertEquals(expResult, result);
 
         System.out.println("Test Case #6");
-        diameter = 6.0;
-        height = 0.0;
-        expResult = -1;
+        diameter = (int) 6.0;
+        height = (int) 0.0;
+        expResult = false;
         result = instance.calcVolumeOfCone(diameter, height);
-        assertEquals(expResult, result, 0.0001);
+        assertEquals(expResult, result);
 
         System.out.println("Test Case #7");
-        diameter = 6.0;
-        height = 7.0;
-        expResult = 65.9734;
+        diameter = (int) 6.0;
+        height = (int) 7.0;
+        expResult = false;
         result = instance.calcVolumeOfCone(diameter, height);
-        assertEquals(expResult, result, 0.0001);
+        assertEquals(expResult, result);
     }
     
     
@@ -126,7 +127,7 @@ public class PuzzleControlTest {
      /* Test of isFactor method, of class PuzzleControl.
      */
     @Test
-    public void testIsFactor() {
+    public void testIsFactor() throws PuzzleControlException {
         System.out.println("isFactor");
         
         System.out.println("Test Case #1");
