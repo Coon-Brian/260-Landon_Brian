@@ -101,7 +101,7 @@ public class PuzzleRoomView extends View {
         }
     }
     
-    private void solvePuzzleOne() {
+    private void solvePuzzleOne()throws PuzzleControlException {
         boolean passedTest = false;
         
         while(!passedTest){
@@ -162,7 +162,7 @@ public class PuzzleRoomView extends View {
         }
     }
     
-    private void solvePuzzleThree() {
+    private void solvePuzzleThree()throws PuzzleControlException{
          boolean passedTest = false;
         
         while(!passedTest){
