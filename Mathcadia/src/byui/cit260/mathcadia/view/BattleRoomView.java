@@ -86,7 +86,8 @@ public class BattleRoomView extends View{
                 help.display();
                 break;
             case "I":
-                Game.getPlayer().displayInventory();
+                String inventory = Game.getPlayer().displayInventory();
+                this.console.print(inventory);
                 break;
             case "U":
                 try {
