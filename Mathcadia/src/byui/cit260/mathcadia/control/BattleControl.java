@@ -126,7 +126,8 @@ public class BattleControl {
             console.println("You don't have any items");
             return;
         }
-        hero.displayInventory();
+        String inventory = hero.displayInventory();
+        console.println(inventory);
         //get user answer
         String itemPos = userInput.nextLine();
         //check for cancel
